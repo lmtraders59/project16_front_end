@@ -1,22 +1,26 @@
 import logo from './logo.svg';
 import './App.css';
+import ItemModal from "./ItemModal/ItemModal";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className='header'>
+      <header>
+        <div className="header__logo">
+          <div><img src="/images/wtr.svg" alt="logo"/>
+            logo
+          </div>
+          <div>l
+            Date
+          </div>
+        </div>  
+        <div className="header__avatar-logo">
+          <div>
+          <button type='text' >Add New Clothes</button>
+          </div>    
+          <div>Name</div>  
+          <div>Avatar Logo</div>
+        </div>
       </header>
     </div>
   );
