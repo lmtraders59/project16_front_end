@@ -52,14 +52,15 @@ function App() {
         <section className ="card_section" id='card-section'>{defaultClothingItems.map(x =>{
           console.log(x)
           return 
-          (<div>
+          <div>
             </div>
               <div>
                 <img src=(x.link) />
               </div>
-              <div>(x.name) 
+              <div>
+                (x.name) 
               </div>);
-          })
+          
         </section>
       </main>       
     </div>
