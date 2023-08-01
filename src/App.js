@@ -49,18 +49,16 @@ function App() {
       <header /> 
       <main className='main'>
         <WeatherCard day={true} type = 'cloudy' />
-        <section className ="card_section" id='card-section'>{defaultClothingItems.map(x =>{
-          console.log(x)
-          return 
-          <div>
-            </div>
-              <div>
-                <img src=(x.link) />
-              </div>
-              <div>
-                (x.name) 
-              </div>);
-          
+        <section className ="card_section" id='card-section'>
+          {defaultClothingItems.map{(x) =>
+            (
+              <>
+                <div></div>
+                <div><img src=(x.link) /></div>
+                <div>(x.name)</div>  
+              </>  
+            )  
+          })
         </section>
       </main>       
     </div>
