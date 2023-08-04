@@ -1,8 +1,8 @@
 const weatherOptions = [
   { url: require("../images/day/sunny.svg").default,day: true, type: "sunny"},
-  { url: require(.."/images/day/cloudy.svg").default,day: true, type: "cloudy"},
-  { url: require(.."/images/night/cloud.svg").default,day: false, type: "cloud"},
-  { url: require(.."/images/night/moon.svg").default,day: false, type: "moon"}
+  { url: require("../images/day/cloudy.svg").default,day: true, type: "cloudy"},
+  { url: require("../images/night/cloud.svg").default,day: false, type: "cloud"},
+  { url: require("../images/night/moon.svg").default,day: false, type: "moon"}
   ]
 
 const WeatherCard = ({ day, type }) => {
@@ -10,7 +10,7 @@ const WeatherCard = ({ day, type }) => {
     console.log(i)
     return i.day === day && i.type === type
   }
-  console.log(imageSrc)
+  console.log(imageSrc),
   console.log(imageSrc[0].url)
 
   imageSrcUrl = imageSrc[0].url || '';
