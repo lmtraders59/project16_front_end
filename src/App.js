@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import logo from './images/night/logo.svg';
 import './App.css';
 import ItemModal from "./ItemModal/ItemModal";
 import Header from './Header/Header';
