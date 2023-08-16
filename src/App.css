@@ -1,22 +1,4 @@
-.header{
-  background-color: #20b2aa;
-  display: flex;
-  justify-content: space-between;
-  align-items: center
-  min-height 60px;
-  padding: 0 20px;
-};
- 
-.header__logo {
- display: flex;
- gap: 20px;
- align-items: center
-}
-.header__avatar-logo {
- display: flex;
- gap: 20px;
- align-items: center
-}
+
 .weather {
   position: relative;
 }
@@ -29,6 +11,7 @@
 }
 .weather_image {
   width: 100%;
+  min-height: 70px;
 }
 .main {
   padding: 0 20px;

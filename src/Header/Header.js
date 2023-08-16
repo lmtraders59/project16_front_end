@@ -7,8 +7,7 @@ const Header = () => {
      <header className='header'>
          <div className="header__logo">
            <div>
-            <img src={require("../images/night/logo.svg").default} alt="logo" />
-             logo
+            <img src={require("../images/wtwr.svg").default} alt="logo" />
            </div>
            <div>
              Date
@@ -18,7 +17,7 @@ const Header = () => {
            <div>
            <button type='text' >Add New Clothes</button>
            </div>    
-           <div>Name</div>  
+           <div>Terrence Tegegne</div>  
            <div>Avatar Logo</div>
          </div>
        </header>
