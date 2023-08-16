@@ -48,18 +48,18 @@ function App() {
     <div>
       <header /> 
       <main className='main'>
+       <header /> 
         <WeatherCard day={true} type = 'cloudy' />
         <section className ="card_section" id='card-section'>
           {defaultClothingItems.map((x) =>
             (
               <>
-                <div></div>
-                <div><img src="" /></div>
+                <div>{" "}</div>
+                <div><img src={x.link} alt="x"/></div>
                 <div>(x.name)</div>  
               </>  
             )  
           )}
-
         </section>
       </main>       
     </div>
