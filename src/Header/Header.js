@@ -18,7 +18,9 @@ const Header = () => {
            <button type='text' >Add New Clothes</button>
            </div>    
            <div>Terrence Tegegne</div>  
-           <div>Avatar Logo</div>
+           <div>
+            <img src={require("../images/Avatar.svg").default} alt="avatar" />
+           </div>
          </div>
        </header>
     )

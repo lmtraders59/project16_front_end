@@ -1,6 +1,6 @@
-import logo from './images/night/logo.svg';
+// import logo from '../images/wtwr.svg';
 import './App.css';
-import ItemModal from "./ItemModal/ItemModal";
+// import ItemModal from "./ItemModal/ItemModal";
 import Header from './Header/Header';
 import WeatherCard from './WeatherCard/WeatherCard';
 
@@ -46,10 +46,12 @@ const defaultClothingItems = [
 function App() {
   return (
     <div>
-      {/* <Header />  */}
       <main className='main'>
        <Header /> 
-        <WeatherCard day={true} type = 'cloudy' />
+       <section className ="weather" id='weather'>
+         <WeatherCard day={true} type = 'cloudy' />
+        </section>
+
         <section className ="card_section" id='card-section'>
           {defaultClothingItems.map((x) =>
             (
