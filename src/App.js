@@ -1,6 +1,7 @@
 // import logo from '../images/wtwr.svg';
 import './App.css';
 // import ItemModal from "./ItemModal/ItemModal";
+import ItemCard from './ItemCard/ItemCard';
 import Header from './Header/Header';
 import WeatherCard from './WeatherCard/WeatherCard';
 
@@ -52,16 +53,11 @@ function App() {
          <WeatherCard day={true} type = 'cloudy' />
         </section>
         <section className ="card_section" id='card-section'>
-          {defaultClothingItems.map((x) => {
-            console.log(x);
+            Today is 75° F / You may want to wear:
+            {defaultClothingItems.map((item) => {
             return (
-              <>
-                <div>
-                  <img src={x.link} className='card_image' alt="x"/>
-                </div>
-                <div className='card_name'>{x.name}</div>  
-              </>  
-            )  
+              <ItemCard item={item}/>  
+            );  
           })}
         </section>
       </main>       
