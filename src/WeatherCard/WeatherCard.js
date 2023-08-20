@@ -5,7 +5,7 @@ const weatherOptions = [
   { url: require("../images/night/moon.svg").default,day: false, type: "moon"}
   ]
 
-const WeatherCard = ({ day, type }) => {
+const WeatherCard = ({ day, type, weatherTemp = '' }) => {
   const imageSrc = weatherOptions.filter ((i) => {
     console.log(i)
     return i.day === day && i.type === type
@@ -16,7 +16,7 @@ const WeatherCard = ({ day, type }) => {
   const imageSrcUrl = imageSrc[0].url || '';
   return (
     <section className='weather' id='weather'>
-          <div className='weather_info'>75F</div>
+          <div className='weather_info'>{weatherTemp}</div>
           <img src={imageSrcUrl} className='weather_image' alt="weather"/>
     </section>
   ); 

@@ -32,5 +32,8 @@ height: 328px;
 border-radius: 10px;
 }  
 .card_items {
-  
+  /* display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center; */
 }
