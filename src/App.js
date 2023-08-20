@@ -51,17 +51,18 @@ function App() {
        <section className ="weather" id='weather'>
          <WeatherCard day={true} type = 'cloudy' />
         </section>
-
         <section className ="card_section" id='card-section'>
-          {defaultClothingItems.map((x) =>
-            (
+          {defaultClothingItems.map((x) => {
+            console.log(x);
+            return (
               <>
-                <div>{" "}</div>
-                <div><img src={x.link} alt="x"/></div>
-                <div>(x.name)</div>  
+                <div>
+                  <img src={x.link} className='card_image' alt="x"/>
+                </div>
+                <div className='card_name'>{x.name}</div>  
               </>  
             )  
-          )}
+          })}
         </section>
       </main>       
     </div>
