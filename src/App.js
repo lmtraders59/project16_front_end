@@ -50,18 +50,14 @@ function App() {
     <div>
        <Header /> 
       <main className='main'>
-       
          <WeatherCard day={true} type = 'cloudy' weatherTemp={weatherTemp} />
-          <div>Today is {weatherTemp} / You may want to wear:</div>
+          <div className='main_subheading'>Today is {weatherTemp} / You may want to wear:</div>
         <section className ="card_section" id='card-section'>
-          <div>
-            
             {defaultClothingItems.map((item) => {
             return (
               <ItemCard item={item}/>  
             );  
-          })}
-          </div>
+            })}
         </section>
       </main>       
     </div>

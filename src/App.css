@@ -19,9 +19,9 @@
 .card_section {
  margin-top: 20px;
  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
+ flex-wrap: wrap;
+ gap: 20px;
+ justify-content: center;
 }
 .card_name {
   text-align: center;
