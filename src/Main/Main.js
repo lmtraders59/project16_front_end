@@ -1,8 +1,4 @@
-import { defaultClothingItems } from "../utils/const";
-import WeatherCard from "../WeatherCard/WeatherCard";
-import ItemCard from "../ItemCard/ItemCard";
-
-function Main({ weatherTemp }) {
+function Main() {
     return <main className='main'>
       <WeatherCard day={true} type='cloudy' weatherTemp={weatherTemp} />
       <div className='main_subheading'>Today is {weatherTemp} / You may want to wear:</div>

@@ -1,6 +1,4 @@
-// import logo from '../images/wtwr.svg';
 import './App.css';
-// import ItemModal from "./ItemModal/ItemModal";
 import ItemCard from './ItemCard/ItemCard';
 import Header from './Header/Header';
 import WeatherCard from './WeatherCard/WeatherCard';
