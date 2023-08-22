@@ -47,19 +47,23 @@ function App() {
   return (
     <div>
        <Header /> 
-      <main className='main'>
-         <WeatherCard day={true} type = 'cloudy' weatherTemp={weatherTemp} />
-          <div className='main_subheading'>Today is {weatherTemp} / You may want to wear:</div>
-        <section className ="card_section" id='card-section'>
-            {defaultClothingItems.map((item) => {
-            return (
-              <ItemCard item={item}/>  
-            );  
-            })}
-        </section>
-      </main>       
+     <Main/>       
     </div>
   );
+
+  function Main() {
+    return <main className='main'>
+      <WeatherCard day={true} type='cloudy' weatherTemp={weatherTemp} />
+      <div className='main_subheading'>Today is {weatherTemp} / You may want to wear:</div>
+      <section className="card_section" id='card-section'>
+        {defaultClothingItems.map((item) => {
+          return (
+            <ItemCard item={item} />
+          );
+        })}
+      </section>
+    </main>;
+  }
 }
 
 export default App;
