@@ -14,7 +14,7 @@ function App() {
   };
   
   const handleCloseModal = () => {
-    setActiveModal = ('');
+    setActiveModal('');
   };
 
   return (
