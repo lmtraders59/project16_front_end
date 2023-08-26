@@ -1,7 +1,7 @@
-const ItemCard = ({ item }) => {
+const ItemCard = ({ item, onSelectCard }) => {
     return <> 
      <div>
-        <img src={item.link} className='card_image' alt="CardImage" />
+        <img src={item.link} className='card_image' onClick={() => onSelectCard(item)} alt="CardImage" />
         <div className='card_name'>{item.name}</div>
      </div>
     </>;
