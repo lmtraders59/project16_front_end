@@ -20,7 +20,8 @@ function App() {
   };
 
   const handleSelectedCard = (card) => {
-    setSelectedCard = (card)
+    setActiveModal('preview')
+    setSelectedCard(card);
   }
   console.log(selectedCard)
   return (
@@ -55,16 +56,7 @@ function App() {
         </div>
       </ModalWithForm>
       )}
-      {activeModal === 'preview' && ( <ItemModal selectedCard={selectedCard} />
-        
-      //  <div className={`modal`}>  
-      //    <div className="modal__content">
-      //     <img/>
-      //     <div>Text for the Item name</div>
-      //     <div>Weather Type</div>
-      //   </div>
-      //  </div>
-      )}
+      {activeModal === 'preview' && <ItemModal selectedCard={selectedCard} />}
     </div>
   );
 }
