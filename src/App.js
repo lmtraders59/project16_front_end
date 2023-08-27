@@ -23,7 +23,15 @@ function App() {
     setActiveModal('preview')
     setSelectedCard(card);
   }
-  console.log(selectedCard)
+
+  // useEffect (() => {
+  //   getForecastWeather().then((data) => {
+  //     const temperature = parseWeatherData(data);
+  //     setTemp(temperature)
+  //   });
+  // }, []);
+  // console.log(temperature)
+
   return (
     <div>
        <Header onCreateModal = {handleCreateModal} /> 
