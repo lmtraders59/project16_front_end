@@ -9,7 +9,7 @@ import ItemModal from './ItemModal/ItemModal';
 function App() {
   const weatherTemp = '75°F'
   const [activeModal, setActiveModal] = useState('')
-  const {selectedCard, setSelectedCard} = useState({})
+  const [selectedCard, setSelectedCard] = useState({})
 
   const handleCreateModal = () => {
     setActiveModal('create');
@@ -56,7 +56,9 @@ function App() {
         </div>
       </ModalWithForm>
       )}
-      {activeModal === 'preview' && <ItemModal selectedCard={selectedCard} />}
+      {activeModal === 'preview' && <ItemModal selectedCard={selectedCard}
+       onClose={handleCloseModal}
+      />}
     </div>
   );
 }
