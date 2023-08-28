@@ -18,3 +18,9 @@ export const getForecastWeather = () => {
     });
     return weatherApi;
 };
+
+export const parseWeatherData = (data) => {
+    const main = data.main;
+    const temperature = main && main.temp;
+    return temperature;
+}
