@@ -8,7 +8,6 @@ import ItemModal from './ItemModal/ItemModal';
 
 function App() {
   const weatherTemp = 75
-  // const weatherTemp = '75°F'
   const [activeModal, setActiveModal] = useState('')
   const [selectedCard, setSelectedCard] = useState({})
 
@@ -25,13 +24,13 @@ function App() {
     setSelectedCard(card);
   }
 
-  // useEffect (() => {
-  //   getForecastWeather().then((data) => {
-  //     const temperature = parseWeatherData(data);
-  //     setTemp(temperature)
-  //   });
-  // }, []);
-  // console.log(temperature)
+  useEffect (() => {
+    getForecastWeather().then((data) => {
+      const temperature = parseWeatherData(data);
+      setTemp(temperature)
+    });
+  }, []);
+  console.log(temperature)
 
   return (
     <div>
