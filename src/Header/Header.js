@@ -1,6 +1,6 @@
 import './Header.css'
 
-// const currentDate = new Date().toLocaleString('default', { month: 'long', day: 'numeric' });
+const currentDate = new Date().toLocaleString('default', { month: 'long', day: 'numeric' });
 const Header = ({onCreateModal}) => {
   return (
      <header className='header'>
@@ -8,7 +8,7 @@ const Header = ({onCreateModal}) => {
            <div>
             <img src={require("../images/wtwr.svg").default} alt="logo" />
            </div>
-           <div>
+           <div className="currentDate">
              Date
            </div>
          </div>  
