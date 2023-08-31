@@ -11,7 +11,6 @@ import { parseWeatherData } from './utils/weatherApi';
 
  
 function App() {
-  // const weatherTemp = 75
   const [activeModal, setActiveModal] = useState('')
   const [selectedCard, setSelectedCard] = useState({})
   const [temperature, setTemp] = useState(0)
@@ -44,10 +43,12 @@ function App() {
       <Footer />   
       {activeModal === 'create' && ( 
       <ModalWithForm title="New Garment" onClose={handleCloseModal}>
-        <label>
+        <div>
+          <label>
           Name
           <input type='text' name='name' minLength={1} maxLength={30}/>
-        </label>
+          </label>
+        </div>  
         <label>
           Image
           <input type='url' name='link' minLength={1} maxLength={30}/>

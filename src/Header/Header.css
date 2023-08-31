@@ -10,7 +10,6 @@
    display: flex;
    gap: 20px;
    align-items: center;
-   width: 89px;
    height: 40px;
   }
 
@@ -18,4 +17,8 @@
    display: flex;
    gap: 20px;
    align-items: center;
+  }
+
+  .header__currentDate {
+    display: flex;
   }

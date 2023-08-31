@@ -17,3 +17,8 @@
     border-radius: 20px;
     padding: 34px 36px;
 }
+
+
+.modal__hot {
+    bottom: 20px;
+}
