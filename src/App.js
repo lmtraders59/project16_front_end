@@ -3,11 +3,9 @@ import Header from './Header/Header';
 import Main from './Main/Main';
 import Footer from './footer/Footer.js';
 import ModalWithForm from './ModalWithForm/ModalWithForm';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ItemModal from './ItemModal/ItemModal';
-import { getForecastWeather } from './utils/weatherApi';
-import { useEffect } from 'react';
-import { parseWeatherData } from './utils/weatherApi';
+import { getForecastWeather, parseWeatherData } from './utils/weatherApi';
 
  
 function App() {
@@ -45,26 +43,26 @@ function App() {
       <ModalWithForm title="New Garment" onClose={handleCloseModal}>
         <div>
           <label>
-          Name
-          <input type='text' name='name' minLength={1} maxLength={30}/>
+          Name 
+          <input className='modal__name' type='text' name='name' minLength={1} maxLength={30}/>
           </label>
         </div>  
         <label>
           Image
-          <input type='url' name='link' minLength={1} maxLength={30}/>
+          <input className='modal__link' type='url' name='link' minLength={1} maxLength={30}/>
         </label>
-        <p>Select the weather type:</p>
-        <div>
+        <p><b>Select the weather type:</b></p>
+        <div className='ModalWithForm__radio-buttons'>
           <div>
-            <input type='radio' id='hot' value='hot'/>
+            <input className='modal__hot' type='radio' id='hot' value='hot'/>
             <label>Hot</label>
           </div>
           <div>
-            <input type='radio' id='warm' value='warm'/>
+            <input className='modal__warm' type='radio' id='warm' value='warm'/>
             <label>Warm</label>
           </div>
           <div>
-            <input type='radio' id='cold' value='Cold'/>
+            <input className='modal__cold' type='radio' id='cold' value='Cold'/>
             <label>Cold</label>
           </div>
         </div>
