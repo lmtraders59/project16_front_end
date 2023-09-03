@@ -16,7 +16,7 @@
     width: 100%;
     border-radius: 20px;
     padding: 34px 36px;
-    gap: 20px;
+    position: relative;
 }
 
 .modal__radio-buttons {
@@ -52,7 +52,16 @@
     margin-bottom: 20px;
 }
 
-/* .modal__submit {
-    background-color: grey;
+.modal__close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    border: none;
+}
+
+.modal__button-text {
+    font-size: large;
+    bottom: 20px;
+    background-color: gray;
     color: white;
-} */
+}    
