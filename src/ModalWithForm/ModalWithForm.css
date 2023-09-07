@@ -25,31 +25,35 @@
 }    
 
 .modal__name {
+    margin-top: 10px;
     margin-bottom: 20px;
     display: flex;
     border: none;
     border-bottom: solid;
     border-bottom-width: 1px;
+    width: 100%
 }
 
 .modal__link {
+    margin-top: 10px;
     margin-bottom: 20px;
     display: flex;
     border: none;
     border-bottom: solid;
     border-bottom-width: 1px;
+    width: 100%
 }
 
 .modal__hot {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .modal__warm {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .modal__cold {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 .modal__close {

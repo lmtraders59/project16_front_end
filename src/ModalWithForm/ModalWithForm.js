@@ -10,7 +10,8 @@ const ModalWithForm = ({ children, buttonText ='Add garment', title,  onClose, n
                 </button> 
                 <h3>{title}</h3>
                 <form>{children}</form>
-                <button className="modal__button-text" type="submit"> {buttonText}</button>
+                <button type="submit"> {buttonText}</button>
+                {/* <button className="modal__button-text" type="submit"> {buttonText}</button> */}
             </div>
         </div>
     )
