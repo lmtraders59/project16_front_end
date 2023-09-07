@@ -60,7 +60,7 @@
     position: absolute;
     top: 20px;
     right: 30px;
-    border: none;
+    border: non0;
 }
 
 .modal__button-text {
