@@ -31,7 +31,7 @@
     border: none;
     border-bottom: solid;
     border-bottom-width: 1px;
-    width: 100%
+    width: 100%;
 }
 
 .modal__link {
@@ -60,7 +60,8 @@
     position: absolute;
     top: 20px;
     right: 30px;
-    border: non0;
+    border: none;
+    background-color: white;
 }
 
 .modal__button-text {

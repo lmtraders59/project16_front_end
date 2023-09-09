@@ -22,9 +22,15 @@
  flex-wrap: wrap;
  gap: 20px;
  justify-content: center;
+ position: relative;
 }
 .card_name {
   text-align: center;
+  top: 20px;
+  position: absolute;
+  color: black;
+  background-color: white;
+  margin-left: 160px;
 }
 .card_image {
 width: 365px;
