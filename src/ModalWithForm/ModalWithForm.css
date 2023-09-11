@@ -15,8 +15,8 @@
     max-width: 498px;
     width: 100%;
     border-radius: 20px;
-    padding: 34px 36px;
     position: relative;
+    overflow: hidden;
 }
 
 .modal__radio-buttons {
@@ -70,3 +70,12 @@
     background-color: gray;
     color: white;
 }    
+
+.modal__selected-card {
+  margin-left: 20px;
+}
+
+.modal__weather-type {
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
