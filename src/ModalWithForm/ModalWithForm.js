@@ -4,7 +4,7 @@ const ModalWithForm = ({ children, buttonText ='Add garment', title,  onClose, n
     console.log("ModalWithForm")
     return (
         <div className={`modal modal_type_${name}`}> 
-            <div className="modal__content">
+            <div className="modal__content modal__content_type_image">
                 <button className ="modal__close" type="button" onClick={onClose}>
                  <img src={require("../images/close_button.svg").default} alt="close button" />
                 </button> 

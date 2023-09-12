@@ -3,7 +3,7 @@ const ItemModal = ({ selectedCard, onClose }) => {
  console.log('item modal') 
  return (
     <div className={`modal`}> 
-     <div className="modal__content">
+     <div className="modal__content modal__content_type_image">
        <button className ="modal__close" type="button" onClick={onClose}>
         <img src={require("../images/close_button.svg").default} alt="close button" />
        </button> 
