@@ -16,6 +16,18 @@
     width: 100%;
     border-radius: 20px;
     position: relative;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    overflow: hidden;
+}
+
+.modal__content_type_image {
+    background-color: white;
+    max-width: 498px;
+    width: 100%;
+    border-radius: 20px;
+    position: relative;
+    padding-bottom: 20px;
     overflow: hidden;
 }
 
@@ -76,6 +88,5 @@
 }
 
 .modal__weather-type {
-    margin-bottom: 10px;
     margin-left: 20px;
 }
