@@ -43,12 +43,12 @@ function App() {
       <ModalWithForm title="New Garment" onClose={handleCloseModal}>
         <div>
           <label>
-          Name 
+          <b>Name</b> 
           <input className='modal__name' type='text' placeholder="Name" name='name' minLength={1} maxLength={30}/>
           </label>
         </div>  
         <label>
-          Image
+          <b>Image</b>
           <input className='modal__link' type='url' placeholder="Image URL" name='link' minLength={1} maxLength={30}/>
         </label>
         <p><b>Select the weather type:</b></p>
