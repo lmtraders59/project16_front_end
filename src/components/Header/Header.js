@@ -8,7 +8,7 @@ const Header = ({onCreateModal}) => {
      <header className='header'>
          <div className="header__logo">
            <div>
-            <img src={require("../images/wtwr.svg").default} alt="logo" />
+            <img src={require("./src/images/wtwr.svg").default} alt="logo" />
            </div>
            <div> 
              <div className="header__currentDate">{currentDate}, {WeatherCity}</div>
