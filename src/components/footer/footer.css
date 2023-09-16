@@ -1,13 +1,3 @@
-/* .footer {
-    display: flex;
-    justify-content: space-between;
-    max-width: 1440px;
-    max-height: 20px;
-    line-height: 20px;
-    font-family: CabinetGrotesk-Medium;
-    font-weight: 500;
-  } */
-  
   .footer {
     display: flex;
     justify-content: space-between;
