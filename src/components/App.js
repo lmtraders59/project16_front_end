@@ -32,7 +32,7 @@ function App() {
       setTemp(temperature)
     });
   }, []);
-    
+  // .catch((err) => console.log(err));
 
   return (
     <div>
