@@ -5,6 +5,8 @@ const weatherOptions = [
   { url: require("../../images/night/moon.svg").default,day: false, type: "moon"}
   ]
 
+  // import { weatherOptions } from "../../utils/constants"
+
 const WeatherCard = ({ day, type, weatherTemp = '' }) => {
   const imageSrc = weatherOptions.filter ((i) => {
     console.log(i)
