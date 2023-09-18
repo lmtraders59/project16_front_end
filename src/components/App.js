@@ -6,7 +6,6 @@ import ModalWithForm from "./ModalWithForm/ModalWithForm";
 import { useState, useEffect } from "react";
 import ItemModal from "./ItemModal/ItemModal";
 import { getForecastWeather, parseWeatherData } from "../utils/weatherApi";
-import "../index.js"
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
