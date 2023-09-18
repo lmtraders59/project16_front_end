@@ -13,12 +13,27 @@
    height: 40px;
   }
 
+  .header__add-clothes {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 700;
+  }
+
+  .header__name-person {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 700;
+  }
+
   .header__avatar-logo{
    display: flex;
    gap: 20px;
    align-items: center;
-  }
+  } 
 
   .header__currentDate {
     display: flex;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 700;
   }

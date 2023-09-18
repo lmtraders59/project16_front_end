@@ -38,5 +38,7 @@ border-radius: 20px;
 }  
 
 .main_subheading {
-  font-size: 18px;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
 }

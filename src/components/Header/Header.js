@@ -23,11 +23,11 @@ const Header = ({ onCreateModal }) => {
       </div>
       <div className="header__avatar-logo">
         <div>
-          <div type="text" onClick={onCreateModal}>
+          <div className='header__add-clothes' type="text" onClick={onCreateModal}>
             + Add New Clothes
           </div>
         </div>
-        <div>Terrence Tegegne</div>
+        <div className='header__name-person'>Terrence Tegegne</div>
         <div>
           <img src={avatar} alt="avatar" />
         </div>
