@@ -37,13 +37,6 @@ export const defaultClothingItems = [
   },
 ];
 
-// export const weatherOptions = [
-//   sunny: "../images/day/sunny.svg",
-//   cloudy: "../images/day/cloudy.svg",
-//   cloud: "../images/night/cloud.svg",
-//   moon: "../images/night/moon.svg"
-// ]
-
 export const weatherOptions = [
     {
       url: require("../images/day/sunny.svg").default,
