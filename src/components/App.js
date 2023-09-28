@@ -45,7 +45,8 @@ function App() {
 
   return (
     <div>
-      <CurrentTemperatureUnitContext.Provider value={{currentTemperatureUnit, HandleToggleSwitchChange}} >
+      <CurrentTemperatureUnitContext.Provider value={{currentTemperatureUnit, HandleToggleSwitchChange}}>
+      console.log(currentTemperatureUnit);
       <Header onCreateModal={handleCreateModal} />
       <Main weatherTemp={temperature} onSelectCard={handleSelectedCard} />
       <Footer />
