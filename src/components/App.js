@@ -47,7 +47,6 @@ function App() {
   return (
     <div>
       <CurrentTemperatureUnitContext.Provider value={{currentTemperatureUnit, HandleToggleSwitchChange}}>
-      console.log(currentTemperatureUnit);
       <Header onCreateModal={handleCreateModal} />
       <Switch>
         <Route exact path="/">
