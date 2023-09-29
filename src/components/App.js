@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 import ItemModal from "./ItemModal/ItemModal";
 import { getForecastWeather, parseWeatherData } from "../utils/weatherApi";
 import {CurrentTemperatureUnitContext} from './contexts/CurrentTemperatureUnitContext';
+import { Switch, Route } from "react-router-dom/cjs/react-router-dom";
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
@@ -48,7 +49,14 @@ function App() {
       <CurrentTemperatureUnitContext.Provider value={{currentTemperatureUnit, HandleToggleSwitchChange}}>
       console.log(currentTemperatureUnit);
       <Header onCreateModal={handleCreateModal} />
-      <Main weatherTemp={temperature} onSelectCard={handleSelectedCard} />
+      <Switch>
+        <Route exact path="/">
+         <Main weatherTemp={temperature} onSelectCard={handleSelectedCard} />
+        </Route>
+        <Route path="/profile">
+          Profile
+        </Route>
+      </Switch> 
       <Footer />
       {activeModal === "create" && (
         <ModalWithForm title="New Garment" onClose={handleCloseModal}>
