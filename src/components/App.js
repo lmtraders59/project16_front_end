@@ -8,7 +8,7 @@ import ItemModal from "./ItemModal/ItemModal";
 import { getForecastWeather, parseWeatherData } from "../utils/weatherApi";
 import {CurrentTemperatureUnitContext} from './contexts/CurrentTemperatureUnitContext';
 import { Switch, Route } from "react-router-dom/cjs/react-router-dom";
-import AddItemModal from "./AddItemModal/AddItemModaol";
+import AddItemModal from "./AddItemModal/AddItemModal";
 
 function App() {
   const [activeModal, setActiveModal] = useState("");

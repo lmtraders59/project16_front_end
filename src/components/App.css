@@ -32,9 +32,11 @@
   margin-left: 160px;
 }
 .card_image {
-width: 365px;
-height: 369px;
-border-radius: 20px;
+  /* width: 365px;
+  height: 369px; */
+  width: 325px;
+  height: 328px;
+  border-radius: 20px;
 }  
 
 .main_subheading {
