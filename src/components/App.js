@@ -29,9 +29,8 @@ function App() {
     setSelectedCard(card);
   };
 
-  const onAddItem =(e) => {
-    e.preventDefault();
-    // console.log(e)
+  const onAddItem =(values) => {
+    console.log(values)  
   };
 
   const handleToggleSwitchChange =() => {

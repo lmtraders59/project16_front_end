@@ -2,16 +2,24 @@ import React, {useState} from "react"
 import ModalWithForm from "../ModalWithForm/ModalWithForm"
 
 const AddItemModal =({handleCloseModal, onAddItem, isOpen}) => {
-    const [name, setName] = useState=("")
+    const [name, setName] = useState = ('')
     const handleNameChange =(e) => {
-        console.log(e)
-        setName()
-
+        console.log(e.target.value)
+        setName(e.target.value)
+    }
+    const [link, setUrl] = useState = ('')
+    const handleUrlChange =(e) => {
+        console.log(e.target.value)
+        setUrl(e.target.value)
     }
 
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        onAddItem({name, link})
+    };
 
     return (
-        <ModalWithForm title="New Garment" onClose={handleCloseModal} isOpen={isOpen} onSubmit={onAddItem}>
+        <ModalWithForm title="New Garment" onClose={handleCloseModal} isOpen={isOpen} onSubmit={handleSubmit}>
           <div>
             <label>
               <b>Name</b>
@@ -31,11 +39,13 @@ const AddItemModal =({handleCloseModal, onAddItem, isOpen}) => {
             <b>Image</b>
             <input
               className="modal__link"
-              type="url"
+              type="text"
               placeholder="Image URL"
               name="link"
               minLength={1}
               maxLength={30}
+              value={link}
+              onChange={handleUrlChange}
             />
           </label>
           <p>
