@@ -34,12 +34,12 @@ function Main({ weatherTemp, onSelectCard }) {
     return item.weather.toLowerCase() === weatherType;
   });
   console.log(filterCards);
-
+  <div className="weather_info">{weatherTemp} {currentTemperatureUnit}</div> 
   return (
     <main className="main">
       <WeatherCard day={true} type="cloudy" weatherTemp={temp} />
       <div className="main_subheading">
-        Today is {temp}° F / You may want to wear:
+        Today is {temp} {currentTemperatureUnit} / You may want to wear:
       </div>
       <div className="card_section" id="card-section">
         {filterCards.map((item) => {
