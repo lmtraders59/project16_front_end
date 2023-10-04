@@ -76,6 +76,7 @@
     right: 30px;
     border: none;
     background-color: white;
+    background: transparent;
 }
 
 .modal__button-text {
