@@ -15,7 +15,7 @@ const WeatherCard = ({ day, type, weatherTemp = "" }) => {
   const { currentTemperatureUnit} = useContext(CurrentTemperatureUnitContext)
   return (
     <section className="weather" id="weather">
-      <div className="weather_info">{weatherTemp} {currentTemperatureUnit}</div>      
+      <div className="weather_info">{weatherTemp}°{currentTemperatureUnit}</div>      
       <img src={imageSrcUrl} className="weather_image" alt="weather" />
     </section>
   );
