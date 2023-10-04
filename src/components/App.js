@@ -8,6 +8,8 @@ import { getForecastWeather, parseWeatherData } from "../utils/weatherApi";
 import {CurrentTemperatureUnitContext} from './contexts/CurrentTemperatureUnitContext';
 import { Switch, Route } from "react-router-dom/cjs/react-router-dom";
 import AddItemModal from "./AddItemModal/AddItemModal";
+import avatar from "../images/Avatar.svg";
+
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
@@ -57,7 +59,12 @@ function App() {
          <Main weatherTemp={temperature} onSelectCard={handleSelectedCard} />
         </Route>
         <Route path="/profile">
-          Profile
+          <div>
+          <img src={avatar} alt="avatar" />
+          </div>
+          <div className='header__name-person'>Terrence Tegegne</div>
+          Your items
+          + Add new
         </Route>
       </Switch> 
       <Footer />
