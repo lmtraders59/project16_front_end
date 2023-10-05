@@ -16,12 +16,12 @@
   padding: 0 20px;
 }
 .card_section {
- margin-top: 20px;
- display: flex;
- flex-wrap: wrap;
- gap: 20px;
- justify-content: center;
- position: relative;
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  position: relative;
 }
 .card_name {
   text-align: center;
@@ -37,7 +37,7 @@
   width: 325px;
   height: 328px;
   border-radius: 20px;
-}  
+}
 
 .main_subheading {
   font-size: 20px;
@@ -45,6 +45,6 @@
   font-weight: 700;
 }
 
-.card{
+.card {
   position: relative;
 }

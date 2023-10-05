@@ -16,8 +16,8 @@ const Header = ({ onCreateModal }) => {
       <div className="header__logo">
         <div>
           <Link to="/">
-           <img src={logo} alt="logo" />
-          </Link> 
+            <img src={logo} alt="logo" />
+          </Link>
         </div>
         <div>
           <div className="header__currentDate">
@@ -28,12 +28,16 @@ const Header = ({ onCreateModal }) => {
       <div className="header__avatar-logo">
         <ToggleSwitch />
         <div>
-          <div className='header__add-clothes' type="text" onClick={onCreateModal}>
+          <div
+            className="header__add-clothes"
+            type="text"
+            onClick={onCreateModal}
+          >
             + Add New Clothes
           </div>
         </div>
         <Link to="/profile">
-        <div className='header__name-person'>Terrence Tegegne</div>
+          <div className="header__name-person">Terrence Tegegne</div>
         </Link>
         <div>
           <img src={avatar} alt="avatar" />

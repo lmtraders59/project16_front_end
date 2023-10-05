@@ -63,7 +63,7 @@ function App() {
             <Main weatherTemp={temperature} onSelectCard={handleSelectedCard} />
           </Route>
           <Route path="/profile">
-            <Profile onSelectCard={handleSelectedCard}/>
+            <Profile onSelectCard={handleSelectedCard} />
           </Route>
         </Switch>
         <Footer />
