@@ -1,7 +1,7 @@
 .profile {
-  display: flexbox;
+  display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   min-height: 60px;
   padding: 0 20px;
   position: relative;
@@ -18,7 +18,14 @@
   font-size: 20px;
   line-height: 24px;
   font-weight: 700;
-  /* position: absolute; */
+  display: flexbox;
+}
+
+.profile__new-clothes {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
+  display: flexbox;
 }
 
 .profile__avatar-logo {
@@ -29,18 +36,22 @@
   width: 56px;
 }
 
-.profile__add-clothes {
-  font-size: 20px;
-  line-height: 24px;
-  font-weight: 700;
-}
-
 .profile__name-person {
   font-size: 20px;
   line-height: 24px;
   font-weight: 700;
+  margin-right: 68px;
 }
 
 .profile__items {
   display: flex;
+}
+
+.profile_section {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  position: relative;
 }

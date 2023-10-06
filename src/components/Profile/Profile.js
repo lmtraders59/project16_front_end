@@ -8,13 +8,21 @@ const Profile = ({ onSelectCard }) => {
     <div className="profile">
       <div className="profile__logo">
         <img src={avatar} alt="avatar" />
-        <div className="profile__name-person">Terrence Tegegne</div>
+        <div className="profile__name-person" type="text">
+          Terrence Tegegne
+        </div>
       </div>
       <div className="profile__items">
-        Your items
         <div className="profile__add-clothes" type="text">
-          + Add New
-          <div className="card_section">
+          Your items
+          <div
+            className="profile__new-clothes"
+            type="text"
+            onClick={onSelectCard}
+          >
+            + Add New
+          </div>
+          <div className="profile_section">
             {defaultClothingItems.map((item) => (
               <ItemCard item={item} onSelectCard={onSelectCard} />
             ))}
