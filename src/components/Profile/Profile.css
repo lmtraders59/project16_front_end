@@ -45,6 +45,7 @@
 
 .profile__items {
   display: flex;
+  left: 60px;
 }
 
 .profile_section {
@@ -55,4 +56,15 @@
   justify-content: center;
   position: relative;
   margin-right: 80px;
+}
+
+.profile__add-button {
+  background-color: initial;
+  border: none;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 25px;
+  margin-left: 20px;
+  margin-right: 20px;
 }

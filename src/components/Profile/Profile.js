@@ -14,13 +14,13 @@ const Profile = ({ onSelectCard }) => {
       </div>
       <div className="profile__items">
         <div className="profile__add-clothes" type="text">
-          Your items
+          <p>Your items</p>
           <div
             className="profile__new-clothes"
             type="text"
             onClick={onSelectCard}
           >
-            + Add New
+            <button className="profile__add-button">+ Add New</button>
           </div>
           <div className="profile_section">
             {defaultClothingItems.map((item) => (
