@@ -20,7 +20,9 @@ const Profile = ({ onSelectCard }) => {
             type="text"
             onClick={onSelectCard}
           >
-            <button className="profile__add-button">+ Add New</button>
+            <div className="profile__add-new">
+              <button className="profile__add-button">+ Add New</button>
+            </div>
           </div>
           <div className="profile_section">
             {defaultClothingItems.map((item) => (
