@@ -1,95 +1,95 @@
 .modal {
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0,0,0,0.5);
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .modal__content {
-    background-color: white;
-    max-width: 498px;
-    width: 100%;
-    border-radius: 20px;
-    position: relative;
-    padding-bottom: 20px;
-    padding-left: 0px;
-    overflow: hidden;
-    padding-left: 20px;
+  background-color: white;
+  max-width: 498px;
+  width: 100%;
+  border-radius: 20px;
+  position: relative;
+  padding-bottom: 20px;
+  padding-left: 0px;
+  overflow: hidden;
+  padding-left: 20px;
 }
 
 .modal__content_type_image {
-    background-color: white;
-    max-width: 498px;
-    width: 100%;
-    border-radius: 20px;
-    position: relative;
-    padding-bottom: 20px;
-    overflow: hidden;
-    padding-left: 0;
+  background-color: white;
+  max-width: 498px;
+  width: 100%;
+  border-radius: 20px;
+  position: relative;
+  padding-bottom: 20px;
+  overflow: hidden;
+  padding-left: 0;
 }
 
 .modal__radio-buttons {
-    flex-wrap: wrap;
-    gap: 20px;
-}    
+  flex-wrap: wrap;
+  gap: 20px;
+}
 
 .modal__name {
-    margin-top: 10px;
-    margin-bottom: 20px;
-    display: flex;
-    border: none;
-    border-bottom: solid;
-    border-bottom-width: 1px;
-    width: 100%;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  border: none;
+  border-bottom: solid;
+  border-bottom-width: 1px;
+  width: 100%;
 }
 
 .modal__link {
-    margin-top: 10px;
-    margin-bottom: 20px;
-    display: flex;
-    border: none;
-    border-bottom: solid;
-    border-bottom-width: 1px;
-    width: 100%
+  margin-top: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  border: none;
+  border-bottom: solid;
+  border-bottom-width: 1px;
+  width: 100%;
 }
 
 .modal__hot {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .modal__warm {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .modal__cold {
-    margin-bottom: 40px;
+  margin-bottom: 40px;
 }
 
 .modal__close {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    border: none;
-    background-color: white;
-    background: transparent;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  border: none;
+  background-color: white;
+  background: transparent;
 }
 
 .modal__button-text {
-    font-size: large;
-    bottom: 20px;
-    background-color: gray;
-    color: white;
-}    
+  font-size: large;
+  bottom: 20px;
+  background-color: gray;
+  color: white;
+}
 
 .modal__selected-card {
   margin-left: 20px;
 }
 
 .modal__weather-type {
-    margin-left: 20px;
+  margin-left: 20px;
 }

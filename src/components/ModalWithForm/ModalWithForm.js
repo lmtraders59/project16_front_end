@@ -8,7 +8,6 @@ const ModalWithForm = ({
   name,
   isOpen,
   onSubmit,
-
 }) => {
   console.log("ModalWithForm");
   return (
