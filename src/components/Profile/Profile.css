@@ -7,7 +7,7 @@
   position: relative;
 }
 
-.profile__logo {
+.profile__sidebar {
   display: flex;
   gap: 20px;
   align-items: center;
@@ -48,7 +48,7 @@
   left: 60px;
 }
 
-.profile_section {
+.profile__clothes-section {
   margin-top: 20px;
   display: flex;
   flex-wrap: wrap;

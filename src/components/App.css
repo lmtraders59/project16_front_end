@@ -24,12 +24,15 @@
   position: relative;
 }
 .card_name {
+  border-radius: 4px;
+  padding: 2px 12px;
+  width: max-content;
   text-align: center;
   top: 20px;
   position: absolute;
   color: black;
   background-color: white;
-  margin-left: 160px;
+  margin-left: 120px;
 }
 .card_image {
   /* width: 365px;

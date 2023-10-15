@@ -6,7 +6,7 @@ import "./Profile.css";
 const Profile = ({ onSelectCard, onCreateModal }) => {
   return (
     <div className="profile">
-      <div className="profile__logo">
+      <div className="profile__sidebar">
         <img src={avatar} alt="avatar" />
         <div className="profile__name-person" type="text">
           Terrence Tegegne
@@ -20,9 +20,10 @@ const Profile = ({ onSelectCard, onCreateModal }) => {
               <button className="profile__add-button" onClick={onCreateModal}>
                 + Add New
               </button>
+              {/* add card delete, card add should be added? */}
             </div>
           </div>
-          <div className="profile_section">
+          <div className="profile__clothes-section">
             {defaultClothingItems.map((item) => (
               <ItemCard item={item} onSelectCard={onSelectCard} />
             ))}

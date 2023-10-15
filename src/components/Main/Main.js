@@ -5,19 +5,18 @@ import { useMemo, useContext } from "react";
 import { CurrentTemperatureUnitContext } from "../contexts/CurrentTemperatureUnitContext";
 
 function Main({ weatherTemp, onSelectCard }) {
-
-  const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext)
-  console.log(currentTemperatureUnit)
-    const temp = weatherTemp?.temperature?.[currentTemperatureUnit] || 999
+  const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
+  console.log(currentTemperatureUnit);
+  const temp = weatherTemp?.temperature?.[currentTemperatureUnit] || 999;
   const weatherType = useMemo(() => {
-   if (currentTemperatureUnit === "F") {
-     if (temp >= 86) {
-       return "hot";
-     } else if (temp >= 66 && temp <= 85) {
-       return "warm";
-     } else if (temp <= 65) {
-       return "cold";
-     }  
+    if (currentTemperatureUnit === "F") {
+      if (temp >= 86) {
+        return "hot";
+      } else if (temp >= 66 && temp <= 85) {
+        return "warm";
+      } else if (temp <= 65) {
+        return "cold";
+      }
     } else {
       if (temp >= 30) {
         return "hot";
@@ -25,8 +24,8 @@ function Main({ weatherTemp, onSelectCard }) {
         return "warm";
       } else if (temp <= 19) {
         return "cold";
-      }  
-    }  
+      }
+    }
   }, [temp, currentTemperatureUnit]);
 
   const filterCards = defaultClothingItems.filter((item) => {
@@ -34,7 +33,9 @@ function Main({ weatherTemp, onSelectCard }) {
     return item.weather.toLowerCase() === weatherType;
   });
   console.log(filterCards);
-  <div className="weather_info">{weatherTemp} {currentTemperatureUnit}</div> 
+  <div className="weather_info">
+    {weatherTemp} {currentTemperatureUnit}
+  </div>;
   return (
     <main className="main">
       <WeatherCard day={true} type="cloudy" weatherTemp={temp} />
