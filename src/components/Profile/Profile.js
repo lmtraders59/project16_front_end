@@ -20,7 +20,7 @@ const Profile = ({ onSelectCard, onCreateModal }) => {
               <button className="profile__add-button" onClick={onCreateModal}>
                 + Add New
               </button>
-              {/* add card delete, card add should be added? */}
+              {/*  card add should be added / add card delete */}
             </div>
           </div>
           <div className="profile__clothes-section">
