@@ -1,3 +1,8 @@
+const baseUrl =
+  process.env.NODE_ENV === "production"
+    ? "https://api.wtwr.mooo.com"
+    : "http://localhost:3001";
+
 const handleServerResponse = (res) => {
   if (res.ok) {
     return res.json();
@@ -32,7 +37,7 @@ const addItem = async (name, imageUrl, weather) => {
   return handleServerResponse(res);
 };
 
-const removeItem = async (id) => {
+const deleteItem = async (id) => {
   const res = await fetch(`${baseUrl}/items/${id}`, {
     method: "DELETE",
     headers: {
@@ -43,4 +48,4 @@ const removeItem = async (id) => {
   return handleServerResponse(res);
 };
 
-export { getItems, addItem, removeItem, baseUrl, handleServerResponse };
+export { getItems, addItem, deleteItem, baseUrl, handleServerResponse };

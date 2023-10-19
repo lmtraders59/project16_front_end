@@ -12,12 +12,27 @@ import AddItemModal from "./AddItemModal/AddItemModal";
 import "./Profile/Profile.css";
 // import { defaultClothingItems } from "../utils/constants";
 import Profile from "./Profile/Profile";
+// import { getItems, addItem, deleteItem, baseUrl, handleServerResponse } from "../utils/api";
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
   const [temperature, setTemp] = useState(0);
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
+  const [clothingItems, setClothingItems] = useState([])
+
+  useEffect(() => {
+    getForecastWeather()
+      .then((data) => {
+        const temperature = parseWeatherData(data);
+        setTemp(temperature);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+      getItems().then((response => {
+  setClothingItems(response)})
+  }, []);
 
   const handleCreateModal = () => {
     setActiveModal("create");
