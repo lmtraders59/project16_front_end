@@ -12,6 +12,7 @@ import AddItemModal from "./AddItemModal/AddItemModal";
 import "./Profile/Profile.css";
 // import { defaultClothingItems } from "../utils/constants";
 import Profile from "./Profile/Profile";
+import { getItems } from "../utils/api";
 // import { getItems, addItem, deleteItem, baseUrl, handleServerResponse } from "../utils/api";
 
 function App() {
@@ -69,6 +70,9 @@ function App() {
       .catch((err) => {
         console.log(err);
       });
+      getItems().then((response) => {
+        setClothingItems(response);
+      )};
   }, []);
 
   return (
