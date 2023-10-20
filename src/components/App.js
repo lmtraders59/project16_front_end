@@ -20,20 +20,20 @@ function App() {
   const [selectedCard, setSelectedCard] = useState({});
   const [temperature, setTemp] = useState(0);
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
-  const [clothingItems, setClothingItems] = useState([])
+  const [clothingItems, setClothingItems] = useState([]);
 
-  useEffect(() => {
-    getForecastWeather()
-      .then((data) => {
-        const temperature = parseWeatherData(data);
-        setTemp(temperature);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-      getItems().then((response => {
-  setClothingItems(response)})
-  }, []);
+  //   useEffect(() => {
+  //     getForecastWeather()
+  //       .then((data) => {
+  //         const temperature = parseWeatherData(data);
+  //         setTemp(temperature);
+  //       })
+  //       .catch((err) => {
+  //         console.log(err);
+  //       )};
+  //       getItems().then((response => {
+  //   setClothingItems(response)})
+  //  }, []);
 
   const handleCreateModal = () => {
     setActiveModal("create");
@@ -70,9 +70,9 @@ function App() {
       .catch((err) => {
         console.log(err);
       });
-      getItems().then((response) => {
-        setClothingItems(response);
-      )};
+    getItems().then((response) => {
+      setClothingItems(response);
+    });
   }, []);
 
   return (
