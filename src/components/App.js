@@ -52,6 +52,10 @@ function App() {
     console.log(values);
   };
 
+  // const clothingItems =() => {
+
+  // }
+
   // const handleAddItemSubmit =() => {
 
   // }
@@ -80,9 +84,11 @@ function App() {
       <CurrentTemperatureUnitContext.Provider
         value={{ currentTemperatureUnit, handleToggleSwitchChange }}
       >
+        <Main clothingItems={clothingItems} />
         <Header onCreateModal={handleCreateModal} />
         <Switch>
           <Route exact path="/">
+            <Profile clothingItems={clothingItems} />
             <Main weatherTemp={temperature} onSelectCard={handleSelectedCard} />
           </Route>
           <Route path="/profile">
