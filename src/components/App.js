@@ -52,10 +52,6 @@ function App() {
     console.log(values);
   };
 
-  // const clothingItems =() => {
-
-  // }
-
   // const handleAddItemSubmit =() => {
 
   // }
