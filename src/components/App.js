@@ -49,12 +49,21 @@ function App() {
   };
 
   const onAddItem = (values) => {
+    // const handleAddItemSubmit = (name, imageUrl, weatherType) => {
+    //   addItem(name, imageUrl, weatherType)
+    //     .then((item) => {
+    //       const items = [...clothingItems, item.data];
+    //       setClothingItems(items);
+    //       closeModal();
+    //     })
+    //     .catch((err) => console.log(err));
+    // };
+
+    // here should be an API request
+    // fetch(URL).then.apply...
+    // /items POST {id: string}
     console.log(values);
   };
-
-  // const handleAddItemSubmit =() => {
-
-  // }
 
   const handleToggleSwitchChange = () => {
     if (currentTemperatureUnit === "C") setCurrentTemperatureUnit("F");
@@ -80,17 +89,16 @@ function App() {
       <CurrentTemperatureUnitContext.Provider
         value={{ currentTemperatureUnit, handleToggleSwitchChange }}
       >
-        <Main clothingItems={clothingItems} />
         <Header onCreateModal={handleCreateModal} />
         <Switch>
           <Route exact path="/">
-            <Profile clothingItems={clothingItems} />
             <Main weatherTemp={temperature} onSelectCard={handleSelectedCard} />
           </Route>
           <Route path="/profile">
             <Profile
               onSelectCard={handleSelectedCard}
               onCreateModal={handleCreateModal}
+              clothingItems={clothingItems}
             />
           </Route>
         </Switch>
