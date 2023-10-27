@@ -8,6 +8,7 @@ import { getForecastWeather, parseWeatherData } from "../utils/weatherApi";
 import { CurrentTemperatureUnitContext } from "./contexts/CurrentTemperatureUnitContext";
 import { Switch, Route } from "react-router-dom/cjs/react-router-dom";
 import AddItemModal from "./AddItemModal/AddItemModal";
+import { addItem } from "../utils/api";
 
 import "./Profile/Profile.css";
 // import { defaultClothingItems } from "../utils/constants";
@@ -20,6 +21,7 @@ function App() {
   const [selectedCard, setSelectedCard] = useState({});
   const [temperature, setTemp] = useState(0);
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
+  // storage for your cards
   const [clothingItems, setClothingItems] = useState([]);
 
   //   useEffect(() => {
@@ -48,7 +50,14 @@ function App() {
     setSelectedCard(card);
   };
 
-  const onAddItem = (values) => {
+  const onAddItem = ({ name, link, weatherType }) => {
+    addItem(name, link, weatherType)
+      .then((item) => {
+        const items = [...clothingItems, item.data];
+        setClothingItems(items);
+        // closeModal();
+      })
+      .catch((err) => console.log(err));
     // const handleAddItemSubmit = (name, imageUrl, weatherType) => {
     //   addItem(name, imageUrl, weatherType)
     //     .then((item) => {
@@ -58,11 +67,10 @@ function App() {
     //     })
     //     .catch((err) => console.log(err));
     // };
-
     // here should be an API request
     // fetch(URL).then.apply...
     // /items POST {id: string}
-    console.log(values);
+    // console.log(values);
   };
 
   const handleToggleSwitchChange = () => {
@@ -77,12 +85,22 @@ function App() {
         setTemp(temperature);
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
       });
-    getItems().then((response) => {
-      setClothingItems(response);
-    });
+    // here we request items from server
+    getItems();
+    // .then((response) => {
+    //   console.log(123);
+    //   console.log(response);
+    //   return response;
+    // })
+    // .then((response) => {
+    //   setClothingItems(response);
+    // });
   }, []);
+
+  console.log("=====");
+  console.log(clothingItems);
 
   return (
     <div>

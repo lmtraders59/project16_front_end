@@ -7,7 +7,7 @@ export const getForecastWeather = () => {
   const weatherApi = fetch(
     `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=${APIkey}`
   ).then((res) => {
-    console.log(res);
+    // console.log(res);
     if (res.ok) {
       return res.json();
     } else {
@@ -20,7 +20,12 @@ export const getForecastWeather = () => {
 export const parseWeatherData = (data) => {
   const main = data.main;
   const temperature = main && Math.ceil(main.temp);
-  const weather = {temperature: {F: Math.round(temperature),  C: Math.round((temperature - 32) * 5/9)}}
+  const weather = {
+    temperature: {
+      F: Math.round(temperature),
+      C: Math.round(((temperature - 32) * 5) / 9),
+    },
+  };
   return weather;
 };
 
