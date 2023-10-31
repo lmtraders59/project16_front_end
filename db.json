@@ -119,6 +119,18 @@
       "imageUrl": "C:\\Users\\Lou\\se_project_3\\imag",
       "weather": "hot",
       "_id": 19
+    },
+    {
+      "name": "Bella",
+      "imageUrl": "https://www.images-apmex.com/i",
+      "weather": "hot",
+      "_id": 20
+    },
+    {
+      "name": "Dortay Dave",
+      "imageUrl": "https://code.s3.yandex.net/web",
+      "weather": "Cold",
+      "_id": 21
     }
   ]
 }

@@ -21,7 +21,7 @@ function App() {
   const [selectedCard, setSelectedCard] = useState({});
   const [temperature, setTemp] = useState(0);
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
-  // storage for your cards
+  // storage for my cards
   const [clothingItems, setClothingItems] = useState([]);
 
   //   useEffect(() => {
@@ -56,6 +56,7 @@ function App() {
         const items = [...clothingItems, item.data];
         setClothingItems(items);
         // closeModal();
+        // handleCloseModal();
       })
       .catch((err) => console.log(err));
     // const handleAddItemSubmit = (name, imageUrl, weatherType) => {
@@ -74,8 +75,8 @@ function App() {
   };
 
   const handleToggleSwitchChange = () => {
-    if (currentTemperatureUnit === "C") setCurrentTemperatureUnit("F");
     if (currentTemperatureUnit === "F") setCurrentTemperatureUnit("C");
+    if (currentTemperatureUnit === "C") setCurrentTemperatureUnit("F");
   };
 
   useEffect(() => {

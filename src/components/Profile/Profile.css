@@ -72,4 +72,5 @@
 .profile__add-new {
   display: flex;
   align-items: center;
+  margin-left: 130px;
 }
