@@ -59,6 +59,7 @@ function App() {
         // handleCloseModal();
       })
       .catch((err) => console.log(err));
+    console.log(addItem);
     // const handleAddItemSubmit = (name, imageUrl, weatherType) => {
     //   addItem(name, imageUrl, weatherType)
     //     .then((item) => {
@@ -86,7 +87,7 @@ function App() {
         setTemp(temperature);
       })
       .catch((err) => {
-        // console.log(err);
+        console.log(err);
       });
     // here we request items from server
     getItems();
@@ -98,8 +99,10 @@ function App() {
     // .then((response) => {
     //   setClothingItems(response);
     // });
+    // addItem();/
   }, []);
 
+  console.log(getItems());
   console.log("=====");
   console.log(clothingItems);
 

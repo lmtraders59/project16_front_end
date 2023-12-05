@@ -41,6 +41,7 @@
   line-height: 24px;
   font-weight: 700;
   margin-right: 68px;
+  width: max-content;
 }
 
 .profile__items {
