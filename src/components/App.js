@@ -8,12 +8,12 @@ import { getForecastWeather, parseWeatherData } from "../utils/weatherApi";
 import { CurrentTemperatureUnitContext } from "./contexts/CurrentTemperatureUnitContext";
 import { Switch, Route } from "react-router-dom/cjs/react-router-dom";
 import AddItemModal from "./AddItemModal/AddItemModal";
-import { addItem } from "../utils/api";
+import { addItem } from "../utils/api.js";
 
 import "./Profile/Profile.css";
 // import { defaultClothingItems } from "../utils/constants";
 import Profile from "./Profile/Profile";
-import { getItems } from "../utils/api";
+import { getItems } from "../utils/api.js";
 // import { getItems, addItem, deleteItem, baseUrl, handleServerResponse } from "../utils/api";
 
 function App() {
@@ -53,10 +53,12 @@ function App() {
   const onAddItem = ({ name, link, weatherType }) => {
     addItem(name, link, weatherType)
       .then((item) => {
-        const items = [...clothingItems, item.data];
+        console.log(">>> ITEM", item);
+
+        const items = [...clothingItems, item];
         setClothingItems(items);
         // closeModal();
-        // handleCloseModal();
+        handleCloseModal();
       })
       .catch((err) => console.log(err));
     console.log(addItem);
@@ -90,20 +92,19 @@ function App() {
         console.log(err);
       });
     // here we request items from server
-    getItems();
+    getItems().then((response) => {
+      setClothingItems(response);
+    });
     // .then((response) => {
     //   console.log(123);
     //   console.log(response);
     //   return response;
     // })
-    // .then((response) => {
-    //   setClothingItems(response);
-    // });
+
     // addItem();/
   }, []);
 
   console.log(getItems());
-  console.log("=====");
   console.log(clothingItems);
 
   return (
@@ -114,7 +115,11 @@ function App() {
         <Header onCreateModal={handleCreateModal} />
         <Switch>
           <Route exact path="/">
-            <Main weatherTemp={temperature} onSelectCard={handleSelectedCard} />
+            <Main
+              weatherTemp={temperature}
+              onSelectCard={handleSelectedCard}
+              clothingItems={clothingItems}
+            />
           </Route>
           <Route path="/profile">
             <Profile

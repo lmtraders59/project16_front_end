@@ -53,7 +53,7 @@ const AddItemModal = ({ handleCloseModal, onAddItem, isOpen }) => {
           placeholder="Image URL"
           name="link"
           minLength={1}
-          maxLength={30}
+          // maxLength={30}
           value={link}
           onChange={handleUrlChange}
         />

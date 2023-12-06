@@ -1,9 +1,9 @@
-import { defaultClothingItems } from "../../utils/constants";
+// import { defaultClothingItems } from "../../utils/constants";
 import ItemCard from "../ItemCard/ItemCard";
 import avatar from "../../images/Avatar.svg";
 import "./Profile.css";
 
-const Profile = ({ onSelectCard, onCreateModal }) => {
+const Profile = ({ onSelectCard, onCreateModal, clothingItems }) => {
   return (
     <div className="profile">
       <div className="profile__sidebar">
@@ -24,7 +24,7 @@ const Profile = ({ onSelectCard, onCreateModal }) => {
             </div>
           </div>
           <div className="profile__clothes-section">
-            {defaultClothingItems.map((item) => (
+            {clothingItems.map((item) => (
               <ItemCard item={item} onSelectCard={onSelectCard} />
             ))}
           </div>
