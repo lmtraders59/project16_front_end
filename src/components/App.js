@@ -13,7 +13,7 @@ import { addItem } from "../utils/api.js";
 import "./Profile/Profile.css";
 // import { defaultClothingItems } from "../utils/constants";
 import Profile from "./Profile/Profile";
-import { getItems } from "../utils/api.js";
+import { getItems, } from "../utils/api.js";
 // import { getItems, addItem, deleteItem, baseUrl, handleServerResponse } from "../utils/api";
 
 function App() {
@@ -49,6 +49,18 @@ function App() {
     setActiveModal("preview");
     setSelectedCard(card);
   };
+
+  // const handleCardDelete = () => {
+  //   deleteItem(selectedCard._id)
+  //     .then(() => {
+  //       setClothingItems(
+  //         clothingItems.filter((item) => item._id !== selectedCard._id)
+  //       );
+  //       setSelectedCard({});
+  //       handleCloseModal();
+  //     })
+  //     .catch((err) => console.log(err));
+  // };
 
   const onAddItem = ({ name, link, weatherType }) => {
     addItem(name, link, weatherType)
@@ -95,6 +107,7 @@ function App() {
     getItems().then((response) => {
       setClothingItems(response);
     });
+
     // .then((response) => {
     //   console.log(123);
     //   console.log(response);
@@ -140,6 +153,18 @@ function App() {
         {activeModal === "preview" && (
           <ItemModal selectedCard={selectedCard} onClose={handleCloseModal} />
         )}
+        {/* {activeModal === "delete" && (
+              <
+                isOpen
+                name="delete"
+                onClose={handleCloseModal()}
+                handleConfirm={() => handleCardDelete(selectedCard)}
+                handleCancel={() => {
+                  setActiveModal("preview");
+                }}
+          
+              />
+            )} */}
       </CurrentTemperatureUnitContext.Provider>
     </div>
   );
