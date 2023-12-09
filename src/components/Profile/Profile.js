@@ -7,7 +7,7 @@ const Profile = ({ onSelectCard, onCreateModal, clothingItems }) => {
   return (
     <div className="profile">
       <div className="profile__sidebar">
-        <img src={avatar} alt="avatar" />
+        <img class="profile__avatar-logo" src={avatar} alt="avatar" />
         <div className="profile__name-person" type="text">
           Terrence Tegegne
         </div>
