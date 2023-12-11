@@ -113,6 +113,12 @@
       "imageUrl": "https://code.s3.yandex.net/web-code/latemar.jpg",
       "weather": "Cold",
       "_id": 19
-    } 
+    },
+    {
+      "name": "Gold Buffalo",
+      "imageUrl": "https://www.images-apmex.com/images/products/2021-w-1-oz-proof-gold-buffalo-w-box-coa_232154_slab.jpg?v=20210727041938&width=900&height=900",
+      "weather": "Cold",
+      "_id": 20
+    }
   ]
 }
