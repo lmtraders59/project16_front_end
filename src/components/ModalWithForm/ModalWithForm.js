@@ -10,6 +10,7 @@ const ModalWithForm = ({
   onSubmit,
 }) => {
   // console.log("ModalWithForm");
+  console.log("title",title)
   return (
     <div className={`modal modal_type_${name}`}>
       <div className="modal__content">
@@ -19,6 +20,7 @@ const ModalWithForm = ({
         <h3>{title}</h3>
         <form onSubmit={onSubmit}>
           {children}
+          isOpen={isOpen}
           <button type="submit"> {buttonText}</button>
         </form>
       </div>

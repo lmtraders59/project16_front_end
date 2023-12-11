@@ -1,4 +1,5 @@
 const ItemCard = ({ item, onSelectCard }) => {
+  console.log("item-ItemCard", item);
   return (
     <div className="card">
       <img

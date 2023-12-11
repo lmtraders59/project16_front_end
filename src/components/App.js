@@ -11,31 +11,28 @@ import AddItemModal from "./AddItemModal/AddItemModal";
 import { addItem } from "../utils/api.js";
 
 import "./Profile/Profile.css";
-// import { defaultClothingItems } from "../utils/constants";
 import Profile from "./Profile/Profile";
-import { getItems, } from "../utils/api.js";
-// import { getItems, addItem, deleteItem, baseUrl, handleServerResponse } from "../utils/api";
+import { getItems } from "../utils/api.js";
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
+  console.log("selectedCard", selectedCard);
   const [temperature, setTemp] = useState(0);
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
   // storage for my cards
   const [clothingItems, setClothingItems] = useState([]);
 
-  //   useEffect(() => {
-  //     getForecastWeather()
-  //       .then((data) => {
-  //         const temperature = parseWeatherData(data);
-  //         setTemp(temperature);
-  //       })
-  //       .catch((err) => {
-  //         console.log(err);
-  //       )};
-  //       getItems().then((response => {
-  //   setClothingItems(response)})
-  //  }, []);
+  // const handleCardDelete = () => {
+  // 	deleteCard(selectedCard._id)
+  // 		.then(() => {
+  // 			setClothingItems(
+  // 				clothingItems.filter((item) => item._id !== selectedCard._id)
+  // 			);
+  // 			handleCloseModal();
+  // 		})
+  // 		.catch((err) => console.log(err));
+  // };
 
   const handleCreateModal = () => {
     setActiveModal("create");
@@ -69,24 +66,11 @@ function App() {
 
         const items = [...clothingItems, item];
         setClothingItems(items);
-        // closeModal();
+        // close Modal
         handleCloseModal();
       })
       .catch((err) => console.log(err));
     console.log(addItem);
-    // const handleAddItemSubmit = (name, imageUrl, weatherType) => {
-    //   addItem(name, imageUrl, weatherType)
-    //     .then((item) => {
-    //       const items = [...clothingItems, item.data];
-    //       setClothingItems(items);
-    //       closeModal();
-    //     })
-    //     .catch((err) => console.log(err));
-    // };
-    // here should be an API request
-    // fetch(URL).then.apply...
-    // /items POST {id: string}
-    // console.log(values);
   };
 
   const handleToggleSwitchChange = () => {
@@ -107,14 +91,6 @@ function App() {
     getItems().then((response) => {
       setClothingItems(response);
     });
-
-    // .then((response) => {
-    //   console.log(123);
-    //   console.log(response);
-    //   return response;
-    // })
-
-    // addItem();/
   }, []);
 
   console.log(getItems());
@@ -165,6 +141,25 @@ function App() {
           
               />
             )} */}
+
+        {/* {activeModal === 'preview' && (
+					<ItemModal
+						setActiveModal={activeModal === 'preview'}
+						selectedCard={selectedCard}
+						onClose={handleCloseModal}
+						openModal={openConfirmationModal}
+						onSubmit={handleCardDelete}
+						buttonText={!isLoading ? 'Delete Item' : 'Deleting...'}
+					/>
+				)}
+				{activeModal === 'delete' && (
+					<ModalWithConfirmation
+						isOpen={activeModal === 'delete'}
+						onClose={handleCloseModal}
+						onSubmit={handleCardDelete}
+						buttonText={!isLoading ? 'Yes, delete item' : 'Deleting...'}
+					/>
+				)}      */}
       </CurrentTemperatureUnitContext.Provider>
     </div>
   );

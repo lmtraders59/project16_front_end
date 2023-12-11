@@ -12,9 +12,7 @@
   width: 100%;
   min-height: 70px;
 }
-.main {
-  padding: 0 20px;
-}
+
 .card_section {
   margin-top: 20px;
   display: flex;
@@ -35,20 +33,21 @@
   margin-left: 120px;
 }
 .card_image {
-  /* width: 365px;
-  height: 369px; */
   width: 325px;
   height: 328px;
-  /* height: 300px; */
   border-radius: 20px;
+}
+
+.card {
+  position: relative;
+}
+
+.main {
+  padding: 0 20px;
 }
 
 .main_subheading {
   font-size: 20px;
   line-height: 24px;
   font-weight: 700;
-}
-
-.card {
-  position: relative;
 }

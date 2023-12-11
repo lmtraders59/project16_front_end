@@ -4,6 +4,7 @@ import avatar from "../../images/Avatar.svg";
 import "./Profile.css";
 
 const Profile = ({ onSelectCard, onCreateModal, clothingItems }) => {
+  console.log("clothingItems-Profile", clothingItems);
   return (
     <div className="profile">
       <div className="profile__sidebar">

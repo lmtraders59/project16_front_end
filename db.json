@@ -103,10 +103,16 @@
       "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/T-Shirt.png?etag=44ed1963c44ab19cd2f5011522c5fc09"
     },
     {
-      "name": "Test does not close",
-      "imageUrl": "https://code.s3.yandex.net/web-code/lake-louise.jpg",
-      "weather": "hot",
-      "_id": 17
-    }
+      "name": "v",
+      "imageUrl": "\thttps://code.s3.yandex.net/web-code/lake-louise.jpg",
+      "weather": "Cold",
+      "_id": 18
+    },
+    {
+      "name": "bogie",
+      "imageUrl": "https://code.s3.yandex.net/web-code/latemar.jpg",
+      "weather": "Cold",
+      "_id": 19
+    } 
   ]
 }
