@@ -1,17 +1,28 @@
 import "./ItemModal.css";
 import closeButton from "../../images/close_button.svg";
 
-const ItemModal = ({ selectedCard, onClose, itemDeleteButton, handleDeleteModal }) => {
+const ItemModal = ({
+  selectedCard,
+  onClose,
+  itemDeleteButton,
+  handleDeleteModal,
+}) => {
   console.log("selectedCard-ItemModal", selectedCard);
   return (
-    <div className={`modal`}>
-      <div className="modal__content modal__content_type_image">
-        <button className="modal__close" type="button" onClick={onClose}>
+    <div className={`item__modal`}>
+      <div className="item__content item__content_type_image">
+        <button className="item__close" type="button" onClick={onClose}>
           <img src={closeButton} alt="close button" />
         </button>
-        <img src={selectedCard.imageUrl} alt={selectedCard.name} />
-        <div className="modal__selected-card">{selectedCard.name}</div>
-        <div className="modal__weather-type">
+        <div className="item__container">
+          <img
+            className="item__image"
+            src={selectedCard.imageUrl}
+            alt={selectedCard.name}
+          />
+        </div>
+        <div className="item__selected-card">{selectedCard.name}</div>
+        <div className="item__weather-type">
           Weather: {selectedCard.weather}
         </div>
         <button
@@ -19,8 +30,8 @@ const ItemModal = ({ selectedCard, onClose, itemDeleteButton, handleDeleteModal 
           className={itemDeleteButton}
           onClick={handleDeleteModal}
         >
-          Delete Item
-      </button>
+          <div className="item__delete-button">Delete Item</div>
+        </button>
       </div>
     </div>
   );
