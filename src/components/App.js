@@ -8,7 +8,8 @@ import { getForecastWeather, parseWeatherData } from "../utils/weatherApi";
 import { CurrentTemperatureUnitContext } from "./contexts/CurrentTemperatureUnitContext";
 import { Switch, Route } from "react-router-dom/cjs/react-router-dom";
 import AddItemModal from "./AddItemModal/AddItemModal";
-import { addItem } from "../utils/api.js";
+import { addItem, deleteItem } from "../utils/api.js";
+import DeleteModal from "./DeleteModal/DeleteModal.js";
 
 import "./Profile/Profile.css";
 import Profile from "./Profile/Profile";
@@ -23,17 +24,6 @@ function App() {
   // storage for my cards
   const [clothingItems, setClothingItems] = useState([]);
 
-  // const handleCardDelete = () => {
-  // 	deleteCard(selectedCard._id)
-  // 		.then(() => {
-  // 			setClothingItems(
-  // 				clothingItems.filter((item) => item._id !== selectedCard._id)
-  // 			);
-  // 			handleCloseModal();
-  // 		})
-  // 		.catch((err) => console.log(err));
-  // };
-
   const handleCreateModal = () => {
     setActiveModal("create");
   };
@@ -47,17 +37,21 @@ function App() {
     setSelectedCard(card);
   };
 
-  // const handleCardDelete = () => {
-  //   deleteItem(selectedCard._id)
-  //     .then(() => {
-  //       setClothingItems(
-  //         clothingItems.filter((item) => item._id !== selectedCard._id)
-  //       );
-  //       setSelectedCard({});
-  //       handleCloseModal();
-  //     })
-  //     .catch((err) => console.log(err));
-  // };
+  const handleDeleteModal = () => {
+    setActiveModal("delete");
+  };
+
+  const handleCardDelete = () => {
+    deleteItem(selectedCard._id)
+      .then(() => {
+        setClothingItems(
+          clothingItems.filter((item) => item._id !== selectedCard._id)
+        );
+        setSelectedCard({});
+        handleCloseModal();
+      })
+      .catch((err) => console.log(err));
+  };
 
   const onAddItem = ({ name, link, weatherType }) => {
     addItem(name, link, weatherType)
@@ -87,7 +81,7 @@ function App() {
       .catch((err) => {
         console.log(err);
       });
-    // here we request items from server
+    // request items from server
     getItems().then((response) => {
       setClothingItems(response);
     });
@@ -127,39 +121,24 @@ function App() {
           />
         )}
         {activeModal === "preview" && (
-          <ItemModal selectedCard={selectedCard} onClose={handleCloseModal} />
+          <ItemModal
+            selectedCard={selectedCard}
+            onClose={handleCloseModal}
+            handleDeleteModal={handleDeleteModal}
+          />
         )}
-        {/* {activeModal === "delete" && (
-              <
-                isOpen
-                name="delete"
-                onClose={handleCloseModal()}
-                handleConfirm={() => handleCardDelete(selectedCard)}
-                handleCancel={() => {
-                  setActiveModal("preview");
-                }}
-          
-              />
-            )} */}
 
-        {/* {activeModal === 'preview' && (
-					<ItemModal
-						setActiveModal={activeModal === 'preview'}
-						selectedCard={selectedCard}
-						onClose={handleCloseModal}
-						openModal={openConfirmationModal}
-						onSubmit={handleCardDelete}
-						buttonText={!isLoading ? 'Delete Item' : 'Deleting...'}
-					/>
-				)}
-				{activeModal === 'delete' && (
-					<ModalWithConfirmation
-						isOpen={activeModal === 'delete'}
-						onClose={handleCloseModal}
-						onSubmit={handleCardDelete}
-						buttonText={!isLoading ? 'Yes, delete item' : 'Deleting...'}
-					/>
-				)}      */}
+        {activeModal === "delete" && (
+          <DeleteModal
+            isOpen={activeModal === "delete"}
+            buttonText={"Delete"}
+            onClose={handleCloseModal}
+            handleConfirm={handleCardDelete}
+            // handleCancel={() => {
+            //   setActiveModal("preview");
+            // }}
+          />
+        )}
       </CurrentTemperatureUnitContext.Provider>
     </div>
   );

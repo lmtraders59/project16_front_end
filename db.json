@@ -125,24 +125,6 @@
       "imageUrl": "https://code.s3.yandex.net/web-code/lake-louise.jpg",
       "weather": "hot",
       "_id": 21
-    },
-    {
-      "name": "NEW CARD",
-      "imageUrl": "https://code.s3.yandex.net/web-code/latemar.jpg",
-      "weather": "Cold",
-      "_id": 22
-    },
-    {
-      "name": "test",
-      "imageUrl": "https://code.s3.yandex.net/web-code/lake-louise.jpg",
-      "weather": "Cold",
-      "_id": 23
-    },
-    {
-      "name": "ddd",
-      "imageUrl": "https://code.s3.yandex.net/web-code/latemar.jpg",
-      "weather": "Cold",
-      "_id": 24
     }
   ]
 }

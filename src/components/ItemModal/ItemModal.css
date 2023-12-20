@@ -31,9 +31,8 @@
   padding-bottom: 20px;
   overflow: hidden;
   padding-left: 0;
-  /* object-fit: cover; */
 }
-/* .item-modal__delete {
+/* .item__modal-delete {
   border-style: none;
   background-color: rgba(0, 0, 0, 0);
   color: #ff4d00;
@@ -57,11 +56,11 @@
   object-fit: cover;
 }
 
-.item-modal__delete_hidden {
+/* .item__modal-delete_hidden {
   display: none;
-}
+} */
 
-.item__delete-button {
+.item__modal-delete {
   position: absolute;
   bottom: 55px;
   right: 30px;
