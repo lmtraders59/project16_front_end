@@ -5,6 +5,7 @@
   background: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 20px;
+  position: relative;
 }
 
 .modal__delete {
@@ -23,15 +24,15 @@
   text-align: center;
   width: 367px;
   height: 48px;
-  margin: 60px auto 172px auto;
+  margin: 60px auto 0 auto;
 }
 
 .modal__confirmation {
   border-style: none;
   background-color: rgba(0, 0, 0, 0);
   color: #ff4d00;
-  position: absolute;
-  top: 148px;
+  margin-top: 30px;
+  margin-left: 80px;
   font-size: 20px;
   line-height: 24px;
   cursor: pointer;
@@ -42,9 +43,9 @@
   border-style: none;
   background-color: rgba(0, 0, 0, 0);
   color: #000;
-  position: absolute;
-  left: 215px;
-  bottom: 60px;
+  display: flex;
+  margin-left: 280px;
+  margin-top: 20px;
   font-size: 20px;
   line-height: 24px;
   cursor: pointer;
@@ -53,6 +54,6 @@
   width: 14px;
   height: 14px;
   position: absolute;
-  left: 451px;
+  right: 30px;
   top: 23px;
 }

@@ -134,9 +134,9 @@ function App() {
             buttonText={"Delete"}
             onClose={handleCloseModal}
             handleConfirm={handleCardDelete}
-            // handleCancel={() => {
-            //   setActiveModal("preview");
-            // }}
+            handleCancel={() => {
+              setActiveModal("preview");
+            }}
           />
         )}
       </CurrentTemperatureUnitContext.Provider>

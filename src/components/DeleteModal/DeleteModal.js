@@ -1,5 +1,6 @@
 import "./DeleteModal.css";
 import "../ModalWithForm/ModalWithForm.css";
+import closeButton from "../../images/close_button.svg";
 
 function DeleteModal({
   isOpen,
@@ -35,6 +36,9 @@ function DeleteModal({
         </button>
         <button type="button" className="modal__cancel" onClick={handleCancel}>
           Cancel
+        </button>
+        <button className="item__close" type="button" onClick={onClose}>
+          <img src={closeButton} alt="close button" />
         </button>
       </div>
     </div>
