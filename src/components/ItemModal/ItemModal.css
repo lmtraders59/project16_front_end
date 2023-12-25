@@ -62,7 +62,7 @@
 
 .item__modal-delete {
   position: absolute;
-  bottom: 55px;
+  bottom: 35px;
   right: 30px;
   border-style: none;
   background-color: rgba(0, 0, 0, 0);
@@ -78,7 +78,6 @@
   right: 30px;
   border: none;
   background-color: white;
-  background: transparent;
 }
 
 .item__selected-card {
