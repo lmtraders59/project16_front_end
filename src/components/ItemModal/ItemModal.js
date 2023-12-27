@@ -25,7 +25,6 @@ const ItemModal = ({ selectedCard, onClose, handleDeleteModal }) => {
           type="button"
           onClick={handleDeleteModal}
         >
-          {/* <div className="item__modal-delete">Delete Item</div> */}
           Delete Item
         </button>
       </div>

@@ -1,4 +1,4 @@
-// import { defaultClothingItems } from "../../utils/constants";
+
 import ItemCard from "../ItemCard/ItemCard";
 import avatar from "../../images/Avatar.svg";
 import "./Profile.css";
@@ -21,7 +21,6 @@ const Profile = ({ onSelectCard, onCreateModal, clothingItems }) => {
               <button className="profile__add-button" onClick={onCreateModal}>
                 + Add New
               </button>
-              {/*  card add should be added / add card delete */}
             </div>
           </div>
           <div className="profile__clothes-section">

@@ -32,17 +32,6 @@
   overflow: hidden;
   padding-left: 0;
 }
-/* .item__modal-delete {
-  border-style: none;
-  background-color: rgba(0, 0, 0, 0);
-  color: #ff4d00;
-  position: absolute;
-  bottom: 68px;
-  right: 32px;
-  font-size: 20px;
-  line-height: 24px;
-  cursor: pointer;
-} */
 
 .item__container {
   max-height: 400px;
@@ -55,10 +44,6 @@
 .item__image {
   object-fit: cover;
 }
-
-/* .item__modal-delete_hidden {
-  display: none;
-} */
 
 .item__modal-delete {
   position: absolute;

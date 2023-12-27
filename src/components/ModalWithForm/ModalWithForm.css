@@ -12,7 +12,7 @@
 
 .modal__content {
   background-color: white;
-  max-width: 498px;
+  max-width: 496px;
   width: 100%;
   border-radius: 20px;
   position: relative;
@@ -20,7 +20,7 @@
   padding-left: 0px;
   overflow: hidden;
   padding-left: 20px;
-  height: 545px;
+  height: 400px;
 }
 
 .modal__content_type_image {
