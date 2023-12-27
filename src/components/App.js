@@ -5,7 +5,7 @@ import Footer from "./Footer/Footer.js";
 import { useState, useEffect } from "react";
 import ItemModal from "./ItemModal/ItemModal";
 import { getForecastWeather, parseWeatherData } from "../utils/weatherApi";
-import { CurrentTemperatureUnitContext } from "./contexts/CurrentTemperatureUnitContext";
+import { CurrentTemperatureUnitContext } from "../contexts/CurrentTemperatureUnitContext.js";
 import { Switch, Route } from "react-router-dom/cjs/react-router-dom";
 import AddItemModal from "./AddItemModal/AddItemModal";
 import { addItem, deleteItem } from "../utils/api.js";
