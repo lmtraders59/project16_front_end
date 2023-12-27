@@ -18,7 +18,6 @@ import { getItems } from "../utils/api.js";
 function App() {
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
-  console.log("selectedCard", selectedCard);
   const [temperature, setTemp] = useState(0);
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
   // storage for my cards
@@ -64,7 +63,6 @@ function App() {
         handleCloseModal();
       })
       .catch((err) => console.log(err));
-    console.log(addItem);
   };
 
   const handleToggleSwitchChange = () => {
@@ -86,9 +84,6 @@ function App() {
       setClothingItems(response);
     });
   }, []);
-
-  console.log(getItems());
-  console.log(clothingItems);
 
   return (
     <div>

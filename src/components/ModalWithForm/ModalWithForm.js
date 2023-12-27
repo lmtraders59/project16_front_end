@@ -6,10 +6,8 @@ const ModalWithForm = ({
   title,
   onClose,
   name,
-  isOpen,
   onSubmit,
 }) => {
-  console.log("title", title);
   return (
     <div className={`modal modal_type_${name}`}>
       <div className="modal__content">

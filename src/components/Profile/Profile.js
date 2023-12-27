@@ -1,18 +1,18 @@
-
 import ItemCard from "../ItemCard/ItemCard";
-import avatar from "../../images/Avatar.svg";
+// import avatar from "../../images/Avatar.svg";
 import "./Profile.css";
+import { SideBar } from "../SideBar/SideBar";
 
 const Profile = ({ onSelectCard, onCreateModal, clothingItems }) => {
-  console.log("clothingItems-Profile", clothingItems);
   return (
     <div className="profile">
-      <div className="profile__sidebar">
+      {/* <div className="profile__sidebar">
         <img class="profile__avatar-logo" src={avatar} alt="avatar" />
         <div className="profile__name-person" type="text">
           Terrence Tegegne
         </div>
-      </div>
+      </div> */}
+      < SideBar />
       <div className="profile__items">
         <div className="profile__add-clothes" type="text">
           <div className="profile__add-new">

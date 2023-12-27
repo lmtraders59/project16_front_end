@@ -2,7 +2,6 @@ import "./ItemModal.css";
 import closeButton from "../../images/close_button.svg";
 
 const ItemModal = ({ selectedCard, onClose, handleDeleteModal }) => {
-  console.log("selectedCard-ItemModal", selectedCard);
   return (
     <div className={`item__modal`}>
       <div className="item__content item__content_type_image">
