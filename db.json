@@ -97,12 +97,6 @@
       "_id": 18
     },
     {
-      "name": "bogie",
-      "imageUrl": "https://code.s3.yandex.net/web-code/latemar.jpg",
-      "weather": "Cold",
-      "_id": 19
-    },
-    {
       "name": "Gold Buffalo",
       "imageUrl": "https://www.images-apmex.com/images/products/2021-w-1-oz-proof-gold-buffalo-w-box-coa_232154_slab.jpg?v=20210727041938&width=900&height=900",
       "weather": "Cold",
@@ -119,6 +113,36 @@
       "imageUrl": "https://code.s3.yandex.net/web-code/latemar.jpg",
       "weather": "hot",
       "_id": 22
+    },
+    {
+      "name": "bogie",
+      "imageUrl": "https://code.s3.yandex.net/web-code/latemar.jpg",
+      "weather": "hot",
+      "_id": 23
+    },
+    {
+      "name": "stinky",
+      "imageUrl": "https://code.s3.yandex.net/web-code/lake-louise.jpg",
+      "weather": "warm",
+      "_id": 24
+    },
+    {
+      "name": "stinky",
+      "imageUrl": "https://code.s3.yandex.net/web-code/lake-louise.jpg",
+      "weather": "warm",
+      "_id": 25
+    },
+    {
+      "name": "stinky",
+      "imageUrl": "https://code.s3.yandex.net/web-code/lake-louise.jpg",
+      "weather": "warm",
+      "_id": 26
+    },
+    {
+      "name": "bogie",
+      "imageUrl": "https://code.s3.yandex.net/web-code/lake-louise.jpg",
+      "weather": "Cold",
+      "_id": 27
     }
   ]
 }

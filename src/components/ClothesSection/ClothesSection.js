@@ -15,12 +15,12 @@ const ClothesSection = ({ onSelectCard, onCreateModal, clothingItems }) => {
         </div>
         <div className="profile__clothes-section">
           {clothingItems.map((item) => (
-            <ItemCard item={item} onSelectCard={onSelectCard} />
+            <ItemCard key={item._id} item={item} onSelectCard={onSelectCard} />
           ))}
         </div>
       </div>
     </div>
   );
-}
-    
+};
+
 export default ClothesSection;
