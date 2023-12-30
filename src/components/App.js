@@ -81,8 +81,9 @@ function App() {
       });
     // request items from server
     getItems().then((response) => {
-      setClothingItems(response);
+      setClothingItems(response.reverse());
     });
+    
   }, []);
 
   return (

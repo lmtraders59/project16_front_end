@@ -91,12 +91,6 @@
       "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/T-Shirt.png?etag=44ed1963c44ab19cd2f5011522c5fc09"
     },
     {
-      "name": "v",
-      "imageUrl": "\thttps://code.s3.yandex.net/web-code/lake-louise.jpg",
-      "weather": "Cold",
-      "_id": 18
-    },
-    {
       "name": "Gold Buffalo",
       "imageUrl": "https://www.images-apmex.com/images/products/2021-w-1-oz-proof-gold-buffalo-w-box-coa_232154_slab.jpg?v=20210727041938&width=900&height=900",
       "weather": "Cold",
@@ -109,40 +103,10 @@
       "_id": 21
     },
     {
-      "name": "Lou Who",
+      "name": "stinky",
       "imageUrl": "https://code.s3.yandex.net/web-code/latemar.jpg",
-      "weather": "hot",
-      "_id": 22
-    },
-    {
-      "name": "bogie",
-      "imageUrl": "https://code.s3.yandex.net/web-code/latemar.jpg",
-      "weather": "hot",
-      "_id": 23
-    },
-    {
-      "name": "stinky",
-      "imageUrl": "https://code.s3.yandex.net/web-code/lake-louise.jpg",
-      "weather": "warm",
-      "_id": 24
-    },
-    {
-      "name": "stinky",
-      "imageUrl": "https://code.s3.yandex.net/web-code/lake-louise.jpg",
-      "weather": "warm",
-      "_id": 25
-    },
-    {
-      "name": "stinky",
-      "imageUrl": "https://code.s3.yandex.net/web-code/lake-louise.jpg",
-      "weather": "warm",
-      "_id": 26
-    },
-    {
-      "name": "bogie",
-      "imageUrl": "https://code.s3.yandex.net/web-code/lake-louise.jpg",
       "weather": "Cold",
-      "_id": 27
+      "_id": 22
     }
   ]
 }
