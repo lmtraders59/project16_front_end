@@ -57,7 +57,7 @@ function App() {
       .then((item) => {
         console.log(">>> ITEM", item);
 
-        const items = [...clothingItems, item];
+        const items = [item, ...clothingItems];
         setClothingItems(items);
         // close Modal
         handleCloseModal();
