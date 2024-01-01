@@ -3,12 +3,12 @@ import closeButton from "../../images/close_button.svg";
 
 const ItemModal = ({ selectedCard, onClose, handleDeleteModal }) => {
   return (
-    <div className={`item__modal`}>
+    <div className={`modal item__modal`}>
       <div className="item__content item__content_type_image">
         <button className="item__close" type="button" onClick={onClose}>
           <img src={closeButton} alt="close button" />
         </button>
-        <div className="item__container">
+        <div className="item item__container">
           <img
             className="item__image"
             src={selectedCard.imageUrl}

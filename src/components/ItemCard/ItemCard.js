@@ -10,7 +10,7 @@ const ItemCard = ({ item, onSelectCard }) => {
         onClick={() => onSelectCard(item)}
         alt={item.name}
       />
-      <div className="card_name">{item.name}</div>
+      <h3 className="card_name">{item.name}</h3>
     </div>
   );
 };
