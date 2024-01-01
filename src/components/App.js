@@ -90,7 +90,7 @@ function App() {
   }, []);
 
   return (
-    <div>
+    <>
       <CurrentTemperatureUnitContext.Provider
         value={{ currentTemperatureUnit, handleToggleSwitchChange }}
       >
@@ -139,7 +139,7 @@ function App() {
           />
         )}
       </CurrentTemperatureUnitContext.Provider>
-    </div>
+    </>
   );
 }
 
