@@ -27,4 +27,3 @@ export const parseWeatherData = (data) => {
   };
   return weather;
 };
-

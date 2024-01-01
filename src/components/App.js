@@ -82,6 +82,9 @@ function App() {
     // request items from server
     getItems().then((response) => {
       setClothingItems(response.reverse());
+    }) 
+    .catch((err) => { 
+      console.log(err); 
     });
     
   }, []);
