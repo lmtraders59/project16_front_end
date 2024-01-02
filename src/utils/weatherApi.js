@@ -4,12 +4,13 @@ const latitude = 40.713051;
 const longitude = -74.007233;
 
 const APIkey = "2ddacdfd9cc9f65a43c686f0974d87d8";
+const handleResponse = (handleServerResponse);
 
 export const getForecastWeather = () => {
   const weatherApi = fetch(
     `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=${APIkey}`
   ).then((res) => {
-    if (handleServerResponse) {
+    if (handleResponse) {
       return res.json();
     } else {
       return Promise.reject(`Error: ${res.status}`);

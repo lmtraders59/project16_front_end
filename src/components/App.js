@@ -80,66 +80,64 @@ function App() {
         console.log(err);
       });
     // request items from server
-    getItems().then((response) => {
-      setClothingItems(response.reverse());
-    }) 
-    .catch((err) => { 
-      console.log(err); 
-    });
-    
+    getItems()
+      .then((response) => {
+        setClothingItems(response.reverse());
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }, []);
 
   return (
-    <>
-      <CurrentTemperatureUnitContext.Provider
-        value={{ currentTemperatureUnit, handleToggleSwitchChange }}
-      >
-        <Header onCreateModal={handleCreateModal} />
-        <Switch>
-          <Route exact path="/">
-            <Main
-              weatherTemp={temperature}
-              onSelectCard={handleSelectedCard}
-              clothingItems={clothingItems}
-            />
-          </Route>
-          <Route path="/profile">
-            <Profile
-              onSelectCard={handleSelectedCard}
-              onCreateModal={handleCreateModal}
-              clothingItems={clothingItems}
-            />
-          </Route>
-        </Switch>
-        <Footer />
-        {activeModal === "create" && (
-          <AddItemModal
-            handleCloseModal={handleCloseModal}
-            isOpen={activeModal === "create"}
-            onAddItem={onAddItem}
+    <CurrentTemperatureUnitContext.Provider
+      value={{ currentTemperatureUnit, handleToggleSwitchChange }}
+    >
+      <Header onCreateModal={handleCreateModal} />
+      <Switch>
+        <Route exact path="/">
+          <Main
+            weatherTemp={temperature}
+            onSelectCard={handleSelectedCard}
+            clothingItems={clothingItems}
           />
-        )}
-        {activeModal === "preview" && (
-          <ItemModal
-            selectedCard={selectedCard}
-            onClose={handleCloseModal}
-            handleDeleteModal={handleDeleteModal}
+        </Route>
+        <Route path="/profile">
+          <Profile
+            onSelectCard={handleSelectedCard}
+            onCreateModal={handleCreateModal}
+            clothingItems={clothingItems}
           />
-        )}
+        </Route>
+      </Switch>
+      <Footer />
+      {activeModal === "create" && (
+        <AddItemModal
+          handleCloseModal={handleCloseModal}
+          isOpen={activeModal === "create"}
+          onAddItem={onAddItem}
+        />
+      )}
+      {activeModal === "preview" && (
+        <ItemModal
+          selectedCard={selectedCard}
+          onClose={handleCloseModal}
+          handleDeleteModal={handleDeleteModal}
+        />
+      )}
 
-        {activeModal === "delete" && (
-          <DeleteModal
-            isOpen={activeModal === "delete"}
-            buttonText={"Delete"}
-            onClose={handleCloseModal}
-            handleConfirm={handleCardDelete}
-            handleCancel={() => {
-              setActiveModal("preview");
-            }}
-          />
-        )}
-      </CurrentTemperatureUnitContext.Provider>
-    </>
+      {activeModal === "delete" && (
+        <DeleteModal
+          isOpen={activeModal === "delete"}
+          buttonText={"Delete"}
+          onClose={handleCloseModal}
+          handleConfirm={handleCardDelete}
+          handleCancel={() => {
+            setActiveModal("preview");
+          }}
+        />
+      )}
+    </CurrentTemperatureUnitContext.Provider>
   );
 }
 
