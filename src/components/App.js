@@ -28,6 +28,7 @@ import { checkToken, signIn, signUp } from "../utils/auth.js";
 import EditProfileModal from "../components/EditProfileModal/EditProfileModal.js";
 import RegisterModal from "../components/RegisterModal/RegisterModal.js";
 import LoginModal from "../components/LoginModal/LoginModal.js";
+// import ProtectedRoute from "../components/ProtectedRoute/ProtectedRoute.js";
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
@@ -204,15 +205,18 @@ function App() {
       <HashRouter>
         <Header
           onCreateModal={handleCreateModal}
-          isLoggedIn={isLoggedIn}
-          handleRegister={() => {
-            setActiveModal("signup");
-          }}
-          handleLogin={() => {
-            setActiveModal("login");
-          }}
+          // isLoggedIn={isLoggedIn}
+          // handleRegister={() => {
+          //   setActiveModal("signup");
+          // }}
+          // handleLogin={() => {
+          //   setActiveModal("login");
+          // }}
         />
         <Switch>
+         {/* path="/profile" children={Profile}
+          isLoggedIn={isLoggedIn}
+          currentUser={currentUser} */}
           <Route exact path="/">
             <Main
               weatherTemp={temperature}
