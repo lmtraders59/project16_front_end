@@ -48,4 +48,43 @@ const deleteItem = async (id) => {
   return handleServerResponse(res);
 };
 
-export { getItems, addItem, deleteItem, baseUrl, handleServerResponse };
+const editUserInfo = async (name, avatar) => {
+  const res = await fetch(`${baseUrl}/users/me`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+      authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
+    body: JSON.stringify({
+      name,
+      avatar,
+    }),
+  });
+  return handleServerResponse(res);
+};
+
+const addLike = async (id) => {
+  const res = await fetch(`${baseUrl}/items/${id}/likes`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+      authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
+  });
+  return handleServerResponse(res);
+};
+
+const removeLike = async (id) => {
+  const res = await fetch(`${baseUrl}/items/${id}/likes`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+      authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
+  });
+  return handleServerResponse(res);
+};
+
+export { getItems, addItem, deleteItem, baseUrl, editUserInfo, addLike, removeLike, handleServerResponse };
+
+ 

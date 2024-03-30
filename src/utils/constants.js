@@ -1,3 +1,5 @@
+// Clothing items array
+
 export const defaultClothingItems = [
   {
     _id: 0,

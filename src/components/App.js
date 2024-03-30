@@ -8,18 +8,25 @@ import { getForecastWeather, parseWeatherData } from "../utils/weatherApi";
 import { CurrentTemperatureUnitContext } from "../contexts/CurrentTemperatureUnitContext.js";
 import { Switch, Route } from "react-router-dom/cjs/react-router-dom";
 import AddItemModal from "./AddItemModal/AddItemModal";
-import { addItem, deleteItem } from "../utils/api.js";
+import {
+  addItem,
+  deleteItem,
+  getItems,
+  editUserInfo,
+  addLike,
+  removeLike,
+} from "../utils/api.js";
 import DeleteModal from "./DeleteModal/DeleteModal.js";
 
 import "./Profile/Profile.css";
 import Profile from "./Profile/Profile";
-import { getItems } from "../utils/api.js";
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
   const [temperature, setTemp] = useState(0);
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
+
   // storage for my cards
   const [clothingItems, setClothingItems] = useState([]);
 
