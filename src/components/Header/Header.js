@@ -11,6 +11,15 @@ const currentDate = new Date().toLocaleString("default", {
   day: "numeric",
 });
 
+function Header({
+  openModal,
+  isLoggedIn,
+  handleRegister,
+  handleLogin,
+})  
+ 
+
+
 const Header = ({ onCreateModal }) => {
   return (
     <header className="header">
@@ -26,23 +35,43 @@ const Header = ({ onCreateModal }) => {
           </div>
         </div>
       </div>
-
-      {/* {isLoggedIn ? ( <button
+      {isLoggedIn ? (
+          <>
+            <button
               type="button"
               className="header__button"
               onClick={openModal}
             >
               + Add clothes
-            </button>   
-            // link to /profile       
-            // avatar   
-            ) : (  
-            // button to handleRegister   
-             signup  
-             // button to handle login 
-             login  
-             )                                                                                                     ) : (                                                                                                           // button to handleRegister                                                               signup                                                                                                       // button to handle login                                                                     login                                                                                                           )
- */}
+            </button>
+            <NavLink to="/profile" activeClassName="menu__item-active">
+              <p className="header__user">{currentUser.name}</p>
+            </NavLink>
+            <img
+              className="header__avatar"
+              src={currentUser.avatar}
+              alt="User avatar"
+            />
+          </>
+        ) : (
+          <>
+            <button
+              className="nav__register-button"
+              type="button"
+              onClick={handleRegister}
+            >
+              Sign up
+            </button>
+            <button
+              className="nav__login-button"
+              type="button"
+              onClick={handleLogin}
+            >
+              Log in
+            </button>
+          </>
+        )}
+      </div>
 
       <div className="header__avatar-logo">
         <ToggleSwitch />
@@ -65,25 +94,5 @@ const Header = ({ onCreateModal }) => {
     </header>
   );
 };
-
-// const Header = ({ isAuthenticated }) => {
-//     return (
-//         <header className="header">
-//             <div className="logo">Your Logo</div>
-//             <nav>
-//                 <Link to="/">Home</Link>
-//                 <Link to="/about">About</Link>
-//                 {isAuthenticated ? (
-//                     <Link to="/profile">Profile</Link>
-//                 ) : (
-//                     <>
-//                         <Link to="/signup">Sign Up</Link>
-//                         <Link to="/login">Login</Link>
-//                     </>
-//                 )}
-//             </nav>
-//         </header>
-//     );
-// };
 
 export default Header;
