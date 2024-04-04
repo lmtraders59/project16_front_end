@@ -4,6 +4,10 @@ import avatar from "../../images/Avatar.svg";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 import { Link } from "react-router-dom/cjs/react-router-dom";
 // import { CurrentUserContext } from "../../contexts/CurrentUserContext";
+import { NavLink } from 'react-router-dom';
+import currentUser from "../EditProfileModal/EditProfileModal";
+
+
 
 const WeatherCity = "New York City";
 const currentDate = new Date().toLocaleString("default", {
@@ -11,14 +15,14 @@ const currentDate = new Date().toLocaleString("default", {
   day: "numeric",
 });
 
-function Header({
-  openModal,
-  isLoggedIn,
-  handleRegister,
-  handleLogin,
-})
+// function Header({
+//   openModal,
+//   isLoggedIn,
+//   handleRegister,
+//   handleLogin,
+// })
 
-const Header = ({ onCreateModal }) => {
+const Header = ({ onCreateModal,  openModal, isLoggedIn, handleRegister,  handleLogin}) => {
   return (
     <header className="header">
       <div className="header__logo">
