@@ -27,15 +27,23 @@ const Header = ({ onCreateModal }) => {
         </div>
       </div>
 
-      {/* Implement {isLoggedIn ?  in here */}
-       {/* {isLoggedIn ? ( <button
+      {/* {isLoggedIn ? ( <button
               type="button"
               className="header__button"
               onClick={openModal}
             >
               + Add clothes
-            </button>                                                                                                  // link to /profile                                                                                    // avatar                                                                                                        ) : (                                                                                                           // button to handleRegister                                                               signup                                                                                                       // button to handle login                                                                     login                                                                                                           )
+            </button>   
+            // link to /profile       
+            // avatar   
+            ) : (  
+            // button to handleRegister   
+             signup  
+             // button to handle login 
+             login  
+             )                                                                                                     ) : (                                                                                                           // button to handleRegister                                                               signup                                                                                                       // button to handle login                                                                     login                                                                                                           )
  */}
+
       <div className="header__avatar-logo">
         <ToggleSwitch />
         <div>
