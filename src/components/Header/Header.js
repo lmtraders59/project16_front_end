@@ -16,9 +16,7 @@ function Header({
   isLoggedIn,
   handleRegister,
   handleLogin,
-})  
- 
-
+})
 
 const Header = ({ onCreateModal }) => {
   return (
@@ -36,42 +34,37 @@ const Header = ({ onCreateModal }) => {
         </div>
       </div>
       {isLoggedIn ? (
-          <>
-            <button
-              type="button"
-              className="header__button"
-              onClick={openModal}
-            >
-              + Add clothes
-            </button>
-            <NavLink to="/profile" activeClassName="menu__item-active">
-              <p className="header__user">{currentUser.name}</p>
-            </NavLink>
-            <img
-              className="header__avatar"
-              src={currentUser.avatar}
-              alt="User avatar"
-            />
-          </>
-        ) : (
-          <>
-            <button
-              className="nav__register-button"
-              type="button"
-              onClick={handleRegister}
-            >
-              Sign up
-            </button>
-            <button
-              className="nav__login-button"
-              type="button"
-              onClick={handleLogin}
-            >
-              Log in
-            </button>
-          </>
-        )}
-      </div>
+        <>
+          <button type="button" className="header__button" onClick={openModal}>
+            + Add clothes
+          </button>
+          <NavLink to="/profile" activeClassName="menu__item-active">
+            <p className="header__user">{currentUser.name}</p>
+          </NavLink>
+          <img
+            className="header__avatar"
+            src={currentUser.avatar}
+            alt="User avatar"
+          />
+        </>
+      ) : (
+        <>
+          <button
+            className="nav__register-button"
+            type="button"
+            onClick={handleRegister}
+          >
+            Sign up
+          </button>
+          <button
+            className="nav__login-button"
+            type="button"
+            onClick={handleLogin}
+          >
+            Log in
+          </button>
+        </>
+      )}
 
       <div className="header__avatar-logo">
         <ToggleSwitch />
