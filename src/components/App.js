@@ -214,7 +214,7 @@ function App() {
           // }}
         />
         <Switch>
-         {/* path="/profile" children={Profile}
+          {/* path="/profile" children={Profile}
           isLoggedIn={isLoggedIn}
           currentUser={currentUser} */}
           <Route exact path="/">

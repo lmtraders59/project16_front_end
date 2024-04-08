@@ -4,10 +4,8 @@ import avatar from "../../images/Avatar.svg";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 import { Link } from "react-router-dom/cjs/react-router-dom";
 // import { CurrentUserContext } from "../../contexts/CurrentUserContext";
-import { NavLink } from 'react-router-dom';
-import currentUser from "../EditProfileModal/EditProfileModal";
-
-
+import { NavLink } from "react-router-dom";
+// import currentUser from "../EditProfileModal/EditProfileModal";
 
 const WeatherCity = "New York City";
 const currentDate = new Date().toLocaleString("default", {
@@ -22,7 +20,13 @@ const currentDate = new Date().toLocaleString("default", {
 //   handleLogin,
 // })
 
-const Header = ({ onCreateModal,  openModal, isLoggedIn, handleRegister,  handleLogin}) => {
+const Header = ({
+  onCreateModal,
+  openModal,
+  isLoggedIn,
+  handleRegister,
+  handleLogin,
+}) => {
   return (
     <header className="header">
       <div className="header__logo">
@@ -37,9 +41,11 @@ const Header = ({ onCreateModal,  openModal, isLoggedIn, handleRegister,  handle
           </div>
         </div>
       </div>
-      {isLoggedIn ? (
-        <>
-          <button type="button" className="header__button" onClick={openModal}>
+      <div className="header__container_user">
+        <ToggleSwitch />
+        {isLoggedIn ? (
+          <>
+            {/* <button type="button" className="header__button" onClick={openModal}>
             + Add clothes
           </button>
           <NavLink to="/profile" activeClassName="menu__item-active">
@@ -49,44 +55,46 @@ const Header = ({ onCreateModal,  openModal, isLoggedIn, handleRegister,  handle
             className="header__avatar"
             src={currentUser.avatar}
             alt="User avatar"
-          />
-        </>
-      ) : (
-        <>
-          <button
-            className="nav__register-button"
-            type="button"
-            onClick={handleRegister}
-          >
-            Sign up
-          </button>
-          <button
-            className="nav__login-button"
-            type="button"
-            onClick={handleLogin}
-          >
-            Log in
-          </button>
-        </>
-      )}
+          /> */}
+            <div>
+              <div
+                className="header__add-clothes"
+                type="text"
+                onClick={onCreateModal}
+              >
+                + Add New Clothes
+              </div>
+            </div>
+            <NavLink to="/profile">
+              <div className="header__name-person">Terrence Tegegne</div>
+            </NavLink>
+            <div>
+              <img src={avatar} alt="avatar" />
+            </div>
+          </>
+        ) : (
+          <>
+            <button
+              className="nav__register-button"
+              type="button"
+              onClick={handleRegister}
+            >
+              <div className="header__sign-up">Sign up</div>
+            </button>
+            <button
+              className="nav__login-button"
+              type="button"
+              onClick={handleLogin}
+            >
+              <div className="header__log-in">Log in</div>
+              
+            </button>
+          </>
+        )}
 
-      <div className="header__avatar-logo">
-        <ToggleSwitch />
-        <div>
-          <div
-            className="header__add-clothes"
-            type="text"
-            onClick={onCreateModal}
-          >
-            + Add New Clothes
-          </div>
-        </div>
-        <Link to="/profile">
-          <div className="header__name-person">Terrence Tegegne</div>
-        </Link>
-        <div>
-          <img src={avatar} alt="avatar" />
-        </div>
+        {/* <div className="header__avatar-logo">
+          <ToggleSwitch />
+        </div> */}
       </div>
     </header>
   );
