@@ -205,13 +205,13 @@ function App() {
       <HashRouter>
         <Header
           onCreateModal={handleCreateModal}
-          // isLoggedIn={isLoggedIn}
-          // handleRegister={() => {
-          //   setActiveModal("signup");
-          // }}
-          // handleLogin={() => {
-          //   setActiveModal("login");
-          // }}
+          isLoggedIn={isLoggedIn}
+          handleRegister={() => {
+            setActiveModal("signup");
+          }}
+          handleLogin={() => {
+            setActiveModal("login");
+          }}
         />
         <Switch>
           {/* path="/profile" children={Profile}
