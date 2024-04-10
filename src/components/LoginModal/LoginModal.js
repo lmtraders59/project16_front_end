@@ -47,7 +47,7 @@ const LoginModal = ({
         maxLength={35}
       />
       <p className="form__switch" onClick={switchToRegister}>
-        or Register
+        or Sign up
       </p>
     </ModalWithForm>
   );

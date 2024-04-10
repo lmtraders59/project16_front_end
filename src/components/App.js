@@ -135,7 +135,7 @@ function App() {
           localStorage.setItem("token", res.token);
           setIsLoggedIn(true);
           handleCloseModal();
-          setCurrentUser(res);
+          setCurrentUser();
         }
         checkToken(res.token)
           .then((data) => {

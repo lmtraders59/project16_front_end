@@ -5,7 +5,7 @@ import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 import { Link } from "react-router-dom/cjs/react-router-dom";
 // import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import { NavLink } from "react-router-dom";
-// import currentUser from "../EditProfileModal/EditProfileModal";
+import currentUser from "../EditProfileModal/EditProfileModal";
 
 const WeatherCity = "New York City";
 const currentDate = new Date().toLocaleString("default", {
@@ -45,7 +45,7 @@ const Header = ({
         <ToggleSwitch />
         {isLoggedIn ? (
           <>
-            {/* <button type="button" className="header__button" onClick={openModal}>
+            <button type="button" className="header__button" onClick={openModal}>
             + Add clothes
           </button>
           <NavLink to="/profile" activeClassName="menu__item-active">
@@ -55,7 +55,7 @@ const Header = ({
             className="header__avatar"
             src={currentUser.avatar}
             alt="User avatar"
-          /> */}
+          />
             <div>
               <div
                 className="header__add-clothes"
