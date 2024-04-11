@@ -78,6 +78,9 @@
 
 .sidebar__logout {
   margin: 0;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
   cursor: pointer;
 }
 .sidebar__logout:hover {

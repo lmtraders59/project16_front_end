@@ -64,7 +64,6 @@ const Header = ({
             >
               + Add New Clothes
             </div>
-            {/* </div> */}
             <NavLink to="/profile">
               <div className="header__name-person">Terrence Tegegne</div>
             </NavLink>
@@ -90,10 +89,6 @@ const Header = ({
             </button>
           </>
         )}
-
-        {/* <div className="header__avatar-logo">
-          <ToggleSwitch />
-        </div> */}
       </div>
     </header>
   );
