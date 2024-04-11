@@ -3,6 +3,7 @@ import logo from "../../images/wtwr.svg";
 import avatar from "../../images/Avatar.svg";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 import { Link } from "react-router-dom/cjs/react-router-dom";
+// import { useContext } from "react";
 // import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import { NavLink } from "react-router-dom";
 import currentUser from "../EditProfileModal/EditProfileModal";
@@ -13,12 +14,7 @@ const currentDate = new Date().toLocaleString("default", {
   day: "numeric",
 });
 
-// function Header({
-//   openModal,
-//   isLoggedIn,
-//   handleRegister,
-//   handleLogin,
-// })
+// const currentUser = useContext(CurrentUserContext);
 
 const Header = ({
   onCreateModal,
@@ -45,26 +41,30 @@ const Header = ({
         <ToggleSwitch />
         {isLoggedIn ? (
           <>
-            <button type="button" className="header__button" onClick={openModal}>
-            + Add clothes
-          </button>
-          <NavLink to="/profile" activeClassName="menu__item-active">
-            <p className="header__user">{currentUser.name}</p>
-          </NavLink>
-          <img
-            className="header__avatar"
-            src={currentUser.avatar}
-            alt="User avatar"
-          />
-            <div>
-              <div
-                className="header__add-clothes"
-                type="text"
-                onClick={onCreateModal}
-              >
-                + Add New Clothes
-              </div>
+            {/* <button
+              type="button"
+              className="header__button"
+              onClick={openModal}
+            >
+              + Add clothes
+            </button> */}
+            <NavLink to="/profile" activeClassName="menu__item-active">
+              <p className="header__user">{currentUser.name}</p>
+            </NavLink>
+            {/* <img
+              className="header__avatar"
+              src={currentUser.avatar}
+              alt="User avatar"
+            /> */}
+            {/* <div> */}
+            <div
+              className="header__add-clothes"
+              type="text"
+              onClick={onCreateModal}
+            >
+              + Add New Clothes
             </div>
+            {/* </div> */}
             <NavLink to="/profile">
               <div className="header__name-person">Terrence Tegegne</div>
             </NavLink>
@@ -87,7 +87,6 @@ const Header = ({
               onClick={handleLogin}
             >
               <div className="header__log-in">Log in</div>
-              
             </button>
           </>
         )}

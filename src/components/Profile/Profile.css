@@ -75,3 +75,11 @@
   align-items: center;
   margin-left: 100px;
 }
+
+.sidebar__logout {
+  margin: 0;
+  cursor: pointer;
+}
+.sidebar__logout:hover {
+  opacity: 0.5;
+}
