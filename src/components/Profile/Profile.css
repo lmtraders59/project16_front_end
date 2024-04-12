@@ -7,11 +7,6 @@
   position: relative;
 }
 
-/* .profile__name-avatar {
-  display: flexbox;
-  flex-direction: row;
-} */
-
 .profile__sidebar {
   display: flex;
   flex-direction: row;
@@ -79,7 +74,7 @@
 .profile__add-new {
   display: flex;
   align-items: center;
-  margin-left: 100px;
+  margin-left: 5px;
 }
 .sidebar__profile-data {
   margin: 0 0 8px 0;
