@@ -14,7 +14,7 @@ const currentDate = new Date().toLocaleString("default", {
   day: "numeric",
 });
 
-// const currentUser = useContext(CurrentUserContext);
+const currentUser = useContext(CurrentUserContext);
 
 const Header = ({
   onCreateModal,
