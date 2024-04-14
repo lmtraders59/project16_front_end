@@ -153,9 +153,8 @@ function App() {
     addItem(name, link, weatherType)
       .then((item) => {
         console.log(">>> ITEM", item);
-        const items = [item, ...clothingItems];
+        const items = [item.data, ...clothingItems];
         setClothingItems(items);
-        // close Modal
         handleCloseModal();
       })
       .catch((err) => console.log(err));

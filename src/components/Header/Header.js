@@ -82,8 +82,8 @@ const Header = ({
             </button>
             <button
               className="nav__login-button"
-              type="button"
-              onClick={handleLogin}
+              // type="button"
+              // onClick={handleLogin}
             >
               <div className="header__log-in">Log in</div>
             </button>

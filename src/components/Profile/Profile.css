@@ -9,7 +9,7 @@
 
 .profile__sidebar {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 20px;
   align-items: center;
   height: 40px;
@@ -30,7 +30,6 @@
 }
 
 .profile__avatar-logo {
-  display: flexbox;
   gap: 20px;
   align-items: center;
   height: 56px;
@@ -43,6 +42,11 @@
   font-weight: 700;
   margin-right: 68px;
   width: max-content;
+}
+
+.profile__name_avatar-section {
+  /* display: flex; */
+  flex-direction: column;
 }
 
 .profile__items {
@@ -93,8 +97,7 @@
   font-weight: 700;
   cursor: pointer;
   top: 100px;
-  position: absolute;
-  /* display: flexbox; */
+  flex-direction: row;
 }
 .sidebar__logout:hover {
   opacity: 0.5;
