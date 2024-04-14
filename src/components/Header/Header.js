@@ -1,10 +1,10 @@
 import "./Header.css";
 import logo from "../../images/wtwr.svg";
-import avatar from "../../images/Avatar.svg";
+// import avatar from "../../images/Avatar.svg";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 import { Link } from "react-router-dom/cjs/react-router-dom";
-// import { useContext } from "react";
-// import { CurrentUserContext } from "../../contexts/CurrentUserContext";
+import { useContext } from "react";
+import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import { NavLink } from "react-router-dom";
 import currentUser from "../EditProfileModal/EditProfileModal";
 
@@ -65,10 +65,10 @@ const Header = ({
               + Add New Clothes
             </div>
             <NavLink to="/profile">
-              <div className="header__name-person">Terrence Tegegne</div>
+              <p className="header__name-person">{currentUser.name}</p>
             </NavLink>
             <div>
-              <img src={avatar} alt="avatar" />
+              <img src={currentUser.avatar} alt="avatar" />
             </div>
           </>
         ) : (
@@ -82,8 +82,8 @@ const Header = ({
             </button>
             <button
               className="nav__login-button"
-              // type="button"
-              // onClick={handleLogin}
+              type="button"
+              onClick={handleLogin}
             >
               <div className="header__log-in">Log in</div>
             </button>

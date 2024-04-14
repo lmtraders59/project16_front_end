@@ -1,3 +1,4 @@
+// Imports
 import "./App.css";
 import Header from "./Header/Header";
 import Main from "./Main/Main";
@@ -6,6 +7,7 @@ import { useState, useEffect } from "react";
 import ItemModal from "./ItemModal/ItemModal";
 import { getForecastWeather, parseWeatherData } from "../utils/weatherApi";
 import { CurrentTemperatureUnitContext } from "../contexts/CurrentTemperatureUnitContext.js";
+// import { APIkey, latitude, longitude } from "../../utils/constants";
 import {
   Switch,
   Route,
