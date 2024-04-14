@@ -48,9 +48,9 @@ const Header = ({
             >
               + Add clothes
             </button> */}
-            <NavLink to="/profile" activeClassName="menu__item-active">
+            {/* <NavLink to="/profile" activeClassName="menu__item-active">
               <p className="header__user">{currentUser.name}</p>
-            </NavLink>
+            </NavLink> */}
             {/* <img
               className="header__avatar"
               src={currentUser.avatar}
