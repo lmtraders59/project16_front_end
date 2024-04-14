@@ -90,7 +90,7 @@ const AddItemModal = ({ handleCloseModal, onAddItem, isOpen }) => {
               className="modal__cold"
               type="radio"
               id="cold"
-              value="Cold"
+              value="cold"
               onChange={handleWeatherTypeChange}
               name="name"
             />
