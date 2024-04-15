@@ -52,6 +52,21 @@ function App() {
     setActiveModal("");
   };
 
+  useEffect(() => {
+    const closeByEsc = (e) => {
+      if (e.key === "Escape") {
+        handleCloseModal();
+      }
+    };
+    window.addEventListener("keydown", closeByEsc);
+    return () => window.removeEventListener("keydown", closeByEsc);
+  }, []);
+
+  const handleOverlayClick = (e) => {
+    if (e.target === e.currentTarget) {
+      handleCloseModal();
+    }
+  };
   const handleSelectedCard = (card) => {
     setActiveModal("preview");
     setSelectedCard(card);
@@ -220,12 +235,14 @@ function App() {
           currentUser={currentUser} */}
           <Route exact path="/">
             <Main
+              isLoggedIn={isLoggedIn}
+              currentUser={currentUser}
               weatherTemp={temperature}
               onSelectCard={handleSelectedCard}
               clothingItems={clothingItems}
             />
           </Route>
-          <Route path="/profile">
+          <Route path="/profile" children={Profile}>
             <Profile
               onSelectCard={handleSelectedCard}
               onCreateModal={handleCreateModal}
@@ -250,6 +267,8 @@ function App() {
             selectedCard={selectedCard}
             onClose={handleCloseModal}
             handleDeleteModal={handleDeleteModal}
+            onClick={handleOverlayClick}
+            currentUser={currentUser}
           />
         )}
         {activeModal === "delete" && (

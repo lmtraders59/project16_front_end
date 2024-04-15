@@ -1,9 +1,9 @@
 import "./Header.css";
 import logo from "../../images/wtwr.svg";
-// import avatar from "../../images/Avatar.svg";
+import avatar from "../../images/Avatar.svg";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 import { Link } from "react-router-dom/cjs/react-router-dom";
-import { useContext } from "react";
+// import { useContext } from "react";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import { NavLink } from "react-router-dom";
 import currentUser from "../EditProfileModal/EditProfileModal";
@@ -14,16 +14,11 @@ const currentDate = new Date().toLocaleString("default", {
   day: "numeric",
 });
 
-const currentUser = useContext(CurrentUserContext);
+// const currentUser = useContext(CurrentUserContext);
 
-const Header = ({
-  onCreateModal,
-  openModal,
-  isLoggedIn,
-  handleRegister,
-  handleLogin,
-}) => {
+const Header = ({ onCreateModal, isLoggedIn, handleRegister, handleLogin }) => {
   return (
+    <CurrentUserContext.Provider value={currentUser}>
     <header className="header">
       <div className="header__logo">
         <div>
@@ -68,7 +63,7 @@ const Header = ({
               <p className="header__name-person">{currentUser.name}</p>
             </NavLink>
             <div>
-              <img src={currentUser.avatar} alt="avatar" />
+              <img src={avatar} alt="User avatar" />
             </div>
           </>
         ) : (
@@ -91,6 +86,7 @@ const Header = ({
         )}
       </div>
     </header>
+    </CurrentUserContext.Provider>
   );
 };
 
