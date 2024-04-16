@@ -1,12 +1,14 @@
+import { useContext } from "react";
+
 import "./Header.css";
 import logo from "../../images/wtwr.svg";
-import avatar from "../../images/Avatar.svg";
+// import avatar from "../../images/Avatar.svg";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 import { Link } from "react-router-dom/cjs/react-router-dom";
-// import { useContext } from "react";
+
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import { NavLink } from "react-router-dom";
-import currentUser from "../EditProfileModal/EditProfileModal";
+// import currentUser from "../EditProfileModal/EditProfileModal";
 
 const WeatherCity = "New York City";
 const currentDate = new Date().toLocaleString("default", {
@@ -14,11 +16,9 @@ const currentDate = new Date().toLocaleString("default", {
   day: "numeric",
 });
 
-// const currentUser = useContext(CurrentUserContext);
-
 const Header = ({ onCreateModal, isLoggedIn, handleRegister, handleLogin }) => {
+  const { currentUser } = useContext(CurrentUserContext);
   return (
-    <CurrentUserContext.Provider value={currentUser}>
     <header className="header">
       <div className="header__logo">
         <div>
@@ -60,10 +60,11 @@ const Header = ({ onCreateModal, isLoggedIn, handleRegister, handleLogin }) => {
               + Add New Clothes
             </div>
             <NavLink to="/profile">
+              {/* <p className="header__name-person">{currentUser.name}</p> */}
               <p className="header__name-person">{currentUser.name}</p>
             </NavLink>
             <div>
-              <img src={avatar} alt="User avatar" />
+              <img src={currentUser.avatar} alt="User avatar" />
             </div>
           </>
         ) : (
@@ -86,7 +87,6 @@ const Header = ({ onCreateModal, isLoggedIn, handleRegister, handleLogin }) => {
         )}
       </div>
     </header>
-    </CurrentUserContext.Provider>
   );
 };
 

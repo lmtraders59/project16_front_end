@@ -1,6 +1,3 @@
-
-
-
 const ItemCard = ({ item, onSelectCard }) => {
   return (
     <div className="card">

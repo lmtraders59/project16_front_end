@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 import ItemModal from "./ItemModal/ItemModal";
 import { getForecastWeather, parseWeatherData } from "../utils/weatherApi";
 import { CurrentTemperatureUnitContext } from "../contexts/CurrentTemperatureUnitContext.js";
+import { CurrentUserContext } from "../contexts/CurrentUserContext.js";
 // import { APIkey, latitude, longitude } from "../../utils/constants";
 import {
   Switch,
@@ -188,6 +189,7 @@ function App() {
       checkToken(token)
         .then((res) => {
           setCurrentUser(res);
+          console.log(currentUser);
           setIsLoggedIn(true);
         })
         .catch((err) => console.log(err.message));
@@ -215,107 +217,113 @@ function App() {
   }, []);
 
   return (
-    <CurrentTemperatureUnitContext.Provider
-      value={{ currentTemperatureUnit, handleToggleSwitchChange, currentUser }}
-    >
-      <HashRouter>
-        <Header
-          onCreateModal={handleCreateModal}
-          isLoggedIn={isLoggedIn}
-          handleRegister={() => {
-            setActiveModal("signup");
-          }}
-          handleLogin={() => {
-            setActiveModal("login");
-          }}
-        />
-        <Switch>
-          {/* path="/profile" children={Profile}
-          isLoggedIn={isLoggedIn}
-          currentUser={currentUser} */}
-          <Route exact path="/">
-            <Main
-              isLoggedIn={isLoggedIn}
-              currentUser={currentUser}
-              weatherTemp={temperature}
-              onSelectCard={handleSelectedCard}
-              clothingItems={clothingItems}
-            />
-          </Route>
-          <Route path="/profile" children={Profile}>
-            <Profile
-              onSelectCard={handleSelectedCard}
-              onCreateModal={handleCreateModal}
-              clothingItems={clothingItems}
-              currentUser={currentUser}
-              handleLogout={handleLogout}
-              isLoggedIn={isLoggedIn}
-              handleLikeClick={handleLike}
-            />
-          </Route>
-        </Switch>
-        <Footer />
-        {activeModal === "create" && (
-          <AddItemModal
-            handleCloseModal={handleCloseModal}
-            isOpen={activeModal === "create"}
-            onAddItem={onAddItem}
-          />
-        )}
-        {activeModal === "preview" && (
-          <ItemModal
-            selectedCard={selectedCard}
-            onClose={handleCloseModal}
-            handleDeleteModal={handleDeleteModal}
-            onClick={handleOverlayClick}
-            currentUser={currentUser}
-          />
-        )}
-        {activeModal === "delete" && (
-          <DeleteModal
-            isOpen={activeModal === "delete"}
-            buttonText={"Delete"}
-            onClose={handleCloseModal}
-            handleConfirm={handleCardDelete}
-            handleCancel={() => {
-              setActiveModal("preview");
+    <CurrentUserContext.Provider value={currentUser}>
+      <CurrentTemperatureUnitContext.Provider
+        value={{
+          currentTemperatureUnit,
+          handleToggleSwitchChange,
+          currentUser,
+        }}
+      >
+        <HashRouter>
+          <Header
+            onCreateModal={handleCreateModal}
+            isLoggedIn={isLoggedIn}
+            handleRegister={() => {
+              setActiveModal("signup");
+            }}
+            handleLogin={() => {
+              setActiveModal("login");
             }}
           />
-        )}
-        {activeModal === "signup" && (
-          <RegisterModal
-            isOpen
-            name={"register"}
-            onClose={handleCloseModal}
-            onRegister={handleRegister}
-            switchToLogin={handleRedirect}
-            isLoading={isLoading}
-          />
-        )}
-        {activeModal === "login" && (
-          <LoginModal
-            isOpen
-            name={"login"}
-            title={"Login"}
-            onClose={handleCloseModal}
-            onLogin={handleSignIn}
-            switchToRegister={handleRedirect}
-            isLoading={isLoading}
-          />
-        )}
-        {activeModal === "edit" && (
-          <EditProfileModal
-            isOpen
-            name={"edit"}
-            onClose={handleCloseModal}
-            onRegister={handleRegister}
-            currentUser={currentUser}
-            handleEditProfile={handleEditProfile}
-            isLoading={isLoading}
-          />
-        )}
-      </HashRouter>
-    </CurrentTemperatureUnitContext.Provider>
+          <Switch>
+            {/* path="/profile" children={Profile}
+          isLoggedIn={isLoggedIn}
+          currentUser={currentUser} */}
+            <Route exact path="/">
+              <Main
+                isLoggedIn={isLoggedIn}
+                currentUser={currentUser}
+                weatherTemp={temperature}
+                onSelectCard={handleSelectedCard}
+                clothingItems={clothingItems}
+              />
+            </Route>
+            <Route path="/profile" children={Profile}>
+              <Profile
+                onSelectCard={handleSelectedCard}
+                onCreateModal={handleCreateModal}
+                clothingItems={clothingItems}
+                currentUser={currentUser}
+                handleLogout={handleLogout}
+                isLoggedIn={isLoggedIn}
+                handleLikeClick={handleLike}
+              />
+            </Route>
+          </Switch>
+          <Footer />
+          {activeModal === "create" && (
+            <AddItemModal
+              handleCloseModal={handleCloseModal}
+              isOpen={activeModal === "create"}
+              onAddItem={onAddItem}
+            />
+          )}
+          {activeModal === "preview" && (
+            <ItemModal
+              selectedCard={selectedCard}
+              onClose={handleCloseModal}
+              handleDeleteModal={handleDeleteModal}
+              onClick={handleOverlayClick}
+              currentUser={currentUser}
+            />
+          )}
+          {activeModal === "delete" && (
+            <DeleteModal
+              isOpen={activeModal === "delete"}
+              buttonText={"Delete"}
+              onClose={handleCloseModal}
+              handleConfirm={handleCardDelete}
+              handleCancel={() => {
+                setActiveModal("preview");
+              }}
+            />
+          )}
+          {activeModal === "signup" && (
+            <RegisterModal
+              isOpen
+              name={"register"}
+              onClose={handleCloseModal}
+              onRegister={handleRegister}
+              switchToLogin={handleRedirect}
+              isLoading={isLoading}
+            />
+          )}
+          {activeModal === "login" && (
+            <LoginModal
+              isOpen
+              name={"login"}
+              title={"Login"}
+              onClose={handleCloseModal}
+              onLogin={handleSignIn}
+              switchToRegister={handleRedirect}
+              isLoading={isLoading}
+            />
+          )}
+          {activeModal === "edit" && (
+            <EditProfileModal
+              isOpen
+              name={"edit"}
+              onClose={handleCloseModal}
+              onRegister={handleRegister}
+              currentUser={currentUser}
+              handleEditProfile={handleEditProfile}
+              isLoading={isLoading}
+            />
+          )}
+        </HashRouter>
+      </CurrentTemperatureUnitContext.Provider>
+    </CurrentUserContext.Provider>
   );
 }
 
