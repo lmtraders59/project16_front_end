@@ -189,7 +189,6 @@ function App() {
       checkToken(token)
         .then((res) => {
           setCurrentUser(res);
-          console.log(currentUser);
           setIsLoggedIn(true);
         })
         .catch((err) => console.log(err.message));
@@ -217,7 +216,7 @@ function App() {
   }, []);
 
   return (
-    <CurrentUserContext.Provider value={currentUser}>
+    <CurrentUserContext.Provider value={{ currentUser }}>
       <CurrentTemperatureUnitContext.Provider
         value={{
           currentTemperatureUnit,
