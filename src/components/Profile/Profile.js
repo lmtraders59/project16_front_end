@@ -7,14 +7,23 @@ const Profile = ({
   onCreateModal,
   clothingItems,
   handleLogout,
+  handleEditClick,
+  currentUser,
+  isLoggedIn,
 }) => {
   return (
     <div className="profile">
-      <SideBar handleLogout={handleLogout} />
+      <SideBar
+        handleLogout={handleLogout}
+        currentUser={currentUser}
+        handleEditClick={handleEditClick}
+      />
       <ClothesSection
         clothingItems={clothingItems}
         onCreateModal={onCreateModal}
         onSelectCard={onSelectCard}
+        currentUser={currentUser}
+        isLoggedIn={isLoggedIn}
       />
     </div>
   );

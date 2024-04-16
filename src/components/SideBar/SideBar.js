@@ -1,7 +1,7 @@
 import "../Profile/Profile.css";
 import avatar from "../../images/Avatar.svg";
 
-export function SideBar({ handleLogout }) {
+export function SideBar({ currentUser, handleLogout,  handleEditClick }) {
   return (
     <div className="profile__sidebar">
       <div className="profile__name_avatar-section">
@@ -13,9 +13,10 @@ export function SideBar({ handleLogout }) {
       {/* <div className="sidebar__profile-data"
         Change profile data
       </div> */}
-      <div className="sidebar__logout" onClick={handleLogout}>
+      <p className="sidebar__profile-data"  onClick={handleEditClick}>Change profile data</p>
+      <p className="sidebar__logout" onClick={handleLogout}>
         Log out
-      </div>
+      </p>
     </div>
   );
 }

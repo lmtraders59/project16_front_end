@@ -8,7 +8,6 @@ import { Link } from "react-router-dom/cjs/react-router-dom";
 
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import { NavLink } from "react-router-dom";
-// import currentUser from "../EditProfileModal/EditProfileModal";
 
 const WeatherCity = "New York City";
 const currentDate = new Date().toLocaleString("default", {
@@ -60,11 +59,14 @@ const Header = ({ onCreateModal, isLoggedIn, handleRegister, handleLogin }) => {
               + Add New Clothes
             </div>
             <NavLink to="/profile">
-              {/* <p className="header__name-person">{currentUser.name}</p> */}
               <p className="header__name-person">{currentUser.name}</p>
             </NavLink>
             <div>
-              <img src={currentUser.avatar} alt="User avatar" />
+              <img
+                className="header__avatar-logo"
+                src={currentUser.avatar}
+                alt="User avatar"
+              />
             </div>
           </>
         ) : (

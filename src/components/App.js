@@ -257,6 +257,9 @@ function App() {
                 handleLogout={handleLogout}
                 isLoggedIn={isLoggedIn}
                 handleLikeClick={handleLike}
+                handleEditClick={() => {
+                  setActiveModal("edit");
+                }}
               />
             </Route>
           </Switch>
