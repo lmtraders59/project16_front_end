@@ -250,6 +250,7 @@ function App() {
                 onSelectCard={handleSelectedCard}
                 clothingItems={clothingItems}
                 onCardLike={handleLike}
+                handleLikeClick={handleLike}
               />
             </Route>
             <Route path="/profile" children={Profile}>

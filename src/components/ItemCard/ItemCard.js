@@ -1,15 +1,9 @@
-// function ItemCard({
-//   clothing,
-//   onClick,
-//   handleLikeClick,
-//   isLoggedIn,
-//   currentUser,
-// }) {
-//   const isLiked = clothing.likes.some((user) => user === currentUser._id);
 
-//   const itemLikeButtonClassName = `card__like-button ${
-//     isLiked ? "card__like-button_liked" : "card__like-button"
-//   } `;
+// const isLiked = clothing.likes.some((user) => user === currentUser._id);
+
+// const itemLikeButtonClassName = `card__like-button ${
+//   isLiked ? "card__like-button_liked" : "card__like-button"
+// } `;
 
 const ItemCard = ({ item, onSelectCard, handleLikeClick, currentUser }) => {
   return (
