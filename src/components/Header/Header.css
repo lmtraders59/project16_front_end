@@ -60,6 +60,7 @@
   display: flex;
   gap: 20px;
   align-items: center;
+  border-radius: 30px;
 }
 
 .header__currentDate {

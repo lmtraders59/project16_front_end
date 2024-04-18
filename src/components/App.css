@@ -26,11 +26,14 @@
   padding: 2px 12px;
   width: max-content;
   text-align: center;
-  top: 20px;
+  top: 16px;
   position: absolute;
   color: black;
   background-color: white;
   margin-left: 120px;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 700;
 }
 .card_image {
   width: 325px;

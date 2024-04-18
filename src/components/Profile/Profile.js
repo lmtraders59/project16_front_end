@@ -10,6 +10,7 @@ const Profile = ({
   handleEditClick,
   currentUser,
   isLoggedIn,
+  handleLikeClick,
 }) => {
   return (
     <div className="profile">
@@ -24,6 +25,7 @@ const Profile = ({
         onSelectCard={onSelectCard}
         currentUser={currentUser}
         isLoggedIn={isLoggedIn}
+        handleLikeClick={handleLikeClick}
       />
     </div>
   );

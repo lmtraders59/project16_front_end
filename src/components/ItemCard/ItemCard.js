@@ -11,7 +11,7 @@
 //     isLiked ? "card__like-button_liked" : "card__like-button"
 //   } `;
 
-const ItemCard = ({ item, onSelectCard }) => {
+const ItemCard = ({ item, onSelectCard, handleLikeClick, currentUser }) => {
   return (
     <div className="card">
       <img

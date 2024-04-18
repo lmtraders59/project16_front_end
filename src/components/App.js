@@ -1,11 +1,14 @@
 // Imports
 import "./App.css";
-import Header from "./Header/Header";
-import Main from "./Main/Main";
+import Header from "./Header/Header.js";
+import Main from "./Main/Main.js";
 import Footer from "./Footer/Footer.js";
 import { useState, useEffect } from "react";
-import ItemModal from "./ItemModal/ItemModal";
-import { getForecastWeather, parseWeatherData } from "../utils/weatherApi";
+import ItemModal from "./ItemModal/ItemModal.js";
+import {
+  getForecastWeather,
+  parseWeatherData,
+} from "../utils/weatherApi.js";
 import { CurrentTemperatureUnitContext } from "../contexts/CurrentTemperatureUnitContext.js";
 import { CurrentUserContext } from "../contexts/CurrentUserContext.js";
 // import { APIkey, latitude, longitude } from "../../utils/constants";
@@ -14,7 +17,7 @@ import {
   Route,
   HashRouter,
 } from "react-router-dom/cjs/react-router-dom";
-import AddItemModal from "./AddItemModal/AddItemModal";
+import AddItemModal from "./AddItemModal/AddItemModal.js";
 import {
   addItem,
   deleteItem,
@@ -26,11 +29,11 @@ import {
 import DeleteModal from "./DeleteModal/DeleteModal.js";
 
 import "./Profile/Profile.css";
-import Profile from "./Profile/Profile";
+import Profile from "./Profile/Profile.js";
 import { checkToken, signIn, signUp } from "../utils/auth.js";
-import EditProfileModal from "../components/EditProfileModal/EditProfileModal.js";
-import RegisterModal from "../components/RegisterModal/RegisterModal.js";
-import LoginModal from "../components/LoginModal/LoginModal.js";
+import EditProfileModal from "./EditProfileModal/EditProfileModal.js";
+import RegisterModal from "./RegisterModal/RegisterModal.js";
+import LoginModal from "./LoginModal/LoginModal.js";
 // import ProtectedRoute from "../components/ProtectedRoute/ProtectedRoute.js";
 
 function App() {
@@ -246,6 +249,7 @@ function App() {
                 weatherTemp={temperature}
                 onSelectCard={handleSelectedCard}
                 clothingItems={clothingItems}
+                onCardLike={handleLike}
               />
             </Route>
             <Route path="/profile" children={Profile}>
@@ -260,6 +264,7 @@ function App() {
                 handleEditClick={() => {
                   setActiveModal("edit");
                 }}
+                onCardLike={handleLike}
               />
             </Route>
           </Switch>
