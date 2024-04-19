@@ -1,11 +1,17 @@
+import "../ItemCard/ItemCard.css";
 
-// const isLiked = clothing.likes.some((user) => user === currentUser._id);
+const ItemCard = ({
+  item,
+  onSelectCard,
+  handleLikeClick,
+  currentUser,
+  isLoggedIn,
+}) => {
+  const isLiked = item.likes.some((user) => user === currentUser._id);
 
-// const itemLikeButtonClassName = `card__like-button ${
-//   isLiked ? "card__like-button_liked" : "card__like-button"
-// } `;
-
-const ItemCard = ({ item, onSelectCard, handleLikeClick, currentUser }) => {
+  const itemLikeButtonClassName = `card__like-button ${
+    isLiked ? "card__like-button_liked" : "card__like-button"
+  } `;
   return (
     <div className="card">
       <img
@@ -15,6 +21,17 @@ const ItemCard = ({ item, onSelectCard, handleLikeClick, currentUser }) => {
         alt={item.name}
       />
       <h3 className="card_name">{item.name}</h3>
+      {isLoggedIn ? (
+        <button
+          type="button"
+          className={itemLikeButtonClassName}
+          onClick={() => {
+            handleLikeClick(item._id, !isLiked);
+          }}
+        ></button>
+      ) : (
+        <button type="button" className="card__like-button_hidden"></button>
+      )}
     </div>
   );
 };
