@@ -5,10 +5,7 @@ import Main from "./Main/Main.js";
 import Footer from "./Footer/Footer.js";
 import { useState, useEffect } from "react";
 import ItemModal from "./ItemModal/ItemModal.js";
-import {
-  getForecastWeather,
-  parseWeatherData,
-} from "../utils/weatherApi.js";
+import { getForecastWeather, parseWeatherData } from "../utils/weatherApi.js";
 import { CurrentTemperatureUnitContext } from "../contexts/CurrentTemperatureUnitContext.js";
 import { CurrentUserContext } from "../contexts/CurrentUserContext.js";
 // import { APIkey, latitude, longitude } from "../../utils/constants";
@@ -239,9 +236,6 @@ function App() {
             }}
           />
           <Switch>
-            {/* path="/profile" children={Profile}
-          isLoggedIn={isLoggedIn}
-          currentUser={currentUser} */}
             <Route exact path="/">
               <Main
                 isLoggedIn={isLoggedIn}

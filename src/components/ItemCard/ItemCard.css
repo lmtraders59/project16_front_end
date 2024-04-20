@@ -1,5 +1,5 @@
 .card__like-button {
-  background: transparent url("../../images/full-heart.png") center no-repeat;
+  background: transparent url("../../images/empty-heart.png") center no-repeat;
   width: 21px;
   height: 19px;
   border: none;

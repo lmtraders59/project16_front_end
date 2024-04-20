@@ -8,8 +8,8 @@ const ItemCard = ({
   isLoggedIn,
 }) => {
   const isLiked = item.likes.some((user) => user === currentUser._id);
-  console.log(item);
-  const itemLikeButtonClassName = `card__like-button ${
+  // console.log(item);
+  const itemLikeButtonClass = `card__like-button ${
     isLiked ? "card__like-button_liked" : "card__like-button"
   } `;
   return (
@@ -24,7 +24,7 @@ const ItemCard = ({
       {isLoggedIn ? (
         <button
           type="button"
-          className={itemLikeButtonClassName}
+          className={itemLikeButtonClass}
           onClick={() => {
             handleLikeClick(item._id, !isLiked);
           }}
