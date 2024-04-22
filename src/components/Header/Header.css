@@ -61,6 +61,8 @@
   gap: 20px;
   align-items: center;
   border-radius: 30px;
+  height: 56px;
+  width: 56px;
 }
 
 .header__currentDate {

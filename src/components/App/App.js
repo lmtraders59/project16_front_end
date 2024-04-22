@@ -1,20 +1,23 @@
-// Imports
+// Import
 import "./App.css";
-import Header from "./Header/Header.js";
-import Main from "./Main/Main.js";
-import Footer from "./Footer/Footer.js";
+import Header from "../Header/Header.js";
+import Main from "../Main/Main.js";
+import Footer from "../Footer/Footer.js";
 import { useState, useEffect } from "react";
-import ItemModal from "./ItemModal/ItemModal.js";
-import { getForecastWeather, parseWeatherData } from "../utils/weatherApi.js";
-import { CurrentTemperatureUnitContext } from "../contexts/CurrentTemperatureUnitContext.js";
-import { CurrentUserContext } from "../contexts/CurrentUserContext.js";
+import ItemModal from "../ItemModal/ItemModal.js";
+import {
+  getForecastWeather,
+  parseWeatherData,
+} from "../../utils/weatherApi.js";
+import { CurrentTemperatureUnitContext } from "../../contexts/CurrentTemperatureUnitContext.js";
+import { CurrentUserContext } from "../../contexts/CurrentUserContext.js";
 // import { APIkey, latitude, longitude } from "../../utils/constants";
 import {
   Switch,
   Route,
   HashRouter,
 } from "react-router-dom/cjs/react-router-dom";
-import AddItemModal from "./AddItemModal/AddItemModal.js";
+import AddItemModal from "../AddItemModal/AddItemModal.js";
 import {
   addItem,
   deleteItem,
@@ -22,16 +25,16 @@ import {
   editUserInfo,
   addLike,
   removeLike,
-} from "../utils/api.js";
-import DeleteModal from "./DeleteModal/DeleteModal.js";
+} from "../../utils/api.js";
+import DeleteModal from "../DeleteModal/DeleteModal.js";
 
-import "./Profile/Profile.css";
-import Profile from "./Profile/Profile.js";
-import { checkToken, signIn, signUp } from "../utils/auth.js";
-import EditProfileModal from "./EditProfileModal/EditProfileModal.js";
-import RegisterModal from "./RegisterModal/RegisterModal.js";
-import LoginModal from "./LoginModal/LoginModal.js";
-// import ProtectedRoute from "../components/ProtectedRoute/ProtectedRoute.js";
+import "../Profile/Profile.css";
+import Profile from "../Profile/Profile.js";
+import { checkToken, signIn, signUp } from "../../utils/auth.js";
+import EditProfileModal from "../EditProfileModal/EditProfileModal.js";
+import RegisterModal from "../RegisterModal/RegisterModal.js";
+import LoginModal from "../LoginModal/LoginModal.js";
+import ProtectedRoute from "../ProtectedRoute/ProtectedRoute.js";
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
@@ -170,7 +173,7 @@ function App() {
   const onAddItem = ({ name, link, weatherType }) => {
     addItem(name, link, weatherType)
       .then((item) => {
-        console.log(">>> ITEM", item);
+        // console.log(">>> ITEM", item);
         const items = [item.data, ...clothingItems];
         setClothingItems(items);
         handleCloseModal();
@@ -214,7 +217,6 @@ function App() {
         console.log(err);
       });
   }, []);
-
   return (
     <CurrentUserContext.Provider value={{ currentUser }}>
       <CurrentTemperatureUnitContext.Provider
@@ -247,21 +249,28 @@ function App() {
                 handleLikeClick={handleLike}
               />
             </Route>
-            <Route path="/profile" children={Profile}>
-              <Profile
-                onSelectCard={handleSelectedCard}
-                onCreateModal={handleCreateModal}
-                clothingItems={clothingItems}
-                currentUser={currentUser}
-                handleLogout={handleLogout}
-                isLoggedIn={isLoggedIn}
-                handleLikeClick={handleLike}
-                handleEditClick={() => {
-                  setActiveModal("edit");
-                }}
-                onCardLike={handleLike}
-              />
-            </Route>
+            <ProtectedRoute
+              path="/profile"
+              children={Profile}
+              isLoggedIn={isLoggedIn}
+              currentUser={currentUser}
+            >
+              <Route path="/profile" children={Profile}>
+                <Profile
+                  onSelectCard={handleSelectedCard}
+                  onCreateModal={handleCreateModal}
+                  clothingItems={clothingItems}
+                  currentUser={currentUser}
+                  handleLogout={handleLogout}
+                  isLoggedIn={isLoggedIn}
+                  handleLikeClick={handleLike}
+                  handleEditClick={() => {
+                    setActiveModal("edit");
+                  }}
+                  onCardLike={handleLike}
+                />
+              </Route>
+            </ProtectedRoute>
           </Switch>
           <Footer />
           {activeModal === "create" && (
