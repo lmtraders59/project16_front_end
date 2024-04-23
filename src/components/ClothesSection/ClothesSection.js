@@ -6,6 +6,7 @@ const ClothesSection = ({
   onCreateModal,
   clothingItems,
   currentUser,
+  isLoggedIn,
 }) => {
   return (
     <div className="profile__items">
@@ -28,7 +29,7 @@ const ClothesSection = ({
               item={item}
               onSelectCard={onSelectCard}
               currentUser={currentUser}
-              // isLoggedIn={isLoggedIn}
+              isLoggedIn={isLoggedIn}
             />
           ))}
         </div>

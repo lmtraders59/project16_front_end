@@ -1,12 +1,19 @@
 import "../ItemCard/ItemCard.css";
+import React from "react";
+import { useContext } from "react";
+import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 
-const ItemCard = ({
-  item,
-  onSelectCard,
-  handleLikeClick,
-  currentUser,
-  isLoggedIn,
-}) => {
+// function ItemCard({
+//   clothing,
+//   onClick,
+//   handleLikeClick,
+//   isLoggedIn,
+//   currentUser,
+// }) {
+
+const ItemCard = ({ item, onSelectCard, handleLikeClick, isLoggedIn }) => {
+  const { currentUser } = useContext(CurrentUserContext);
+
   const isLiked = item.likes.some((user) => user === currentUser._id);
   // console.log(item);
   const itemLikeButtonClass = `card__like-button ${
@@ -20,18 +27,20 @@ const ItemCard = ({
         onClick={() => onSelectCard(item)}
         alt={item.name}
       />
-      <h3 className="card_name">{item.name}</h3>
-      {isLoggedIn ? (
-        <button
-          type="button"
-          className={itemLikeButtonClass}
-          onClick={() => {
-            handleLikeClick(item._id, !isLiked);
-          }}
-        ></button>
-      ) : (
-        <button type="button" className="card__like-button_hidden"></button>
-      )}
+      <div className="card_content">
+        <h3 className="card_name">{item.name}</h3>
+        {isLoggedIn ? (
+          <button
+            type="button"
+            className={itemLikeButtonClass}
+            onClick={() => {
+              handleLikeClick(item._id, !isLiked);
+            }}
+          ></button>
+        ) : (
+          <button type="button" className="card__like-button_hidden"></button>
+        )}
+      </div>
     </div>
   );
 };

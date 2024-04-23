@@ -2,7 +2,7 @@ import "./Profile.css";
 import { SideBar } from "../SideBar/SideBar";
 import ClothesSection from "../ClothesSection/ClothesSection";
 
-const Profile = ({
+export function Profile({
   onSelectCard,
   onCreateModal,
   clothingItems,
@@ -11,7 +11,7 @@ const Profile = ({
   currentUser,
   isLoggedIn,
   handleLikeClick,
-}) => {
+}) {
   return (
     <div className="profile">
       <SideBar

@@ -1,5 +1,10 @@
-// Clothing items array
+// Local Weather
+// const latitude = 40.713051;
+// const longitude = -74.007233;
 
+// const APIkey = "2ddacdfd9cc9f65a43c686f0974d87d8";
+
+// Clothing items array
 export const defaultClothingItems = [
   {
     _id: 0,
@@ -61,3 +66,5 @@ export const weatherOptions = [
     type: "moon",
   },
 ];
+
+// export { APIkey, latitude, longitude, weatherConditions, defaultClothingItems };
