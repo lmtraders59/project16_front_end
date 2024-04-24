@@ -30,7 +30,7 @@ const ItemCard = ({ item, onSelectCard, handleLikeClick, isLoggedIn }) => {
             type="button"
             className={itemLikeButtonClass}
             onClick={() => {
-              handleLikeClick(item._id, !isLiked);
+              handleLikeClick(item._id, isLiked);
             }}
           ></button>
         ) : (

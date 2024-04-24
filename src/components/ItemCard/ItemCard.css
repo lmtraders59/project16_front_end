@@ -5,20 +5,21 @@
   border: none;
   opacity: 100%;
   cursor: pointer;
-  left: 5px;
+  margin-left: 10px;
 }
 .card__like-button:hover {
   cursor: pointer;
   opacity: 0.7;
 }
 .card__like-button_liked {
-  background: transparent url("../../images/full-heart.png") no-repeat;
+  background: transparent url("../../images/full-heart.png") center no-repeat;
   width: 21px;
   /* height: 19px; */
   border: none;
   opacity: 100%;
   cursor: pointer;
   top: 16px;
+  margin-left: 10px;
 }
 
 .card__like-button_hidden {

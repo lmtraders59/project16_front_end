@@ -94,14 +94,14 @@ function App() {
 
   const handleLike = (id, isLiked) => {
     isLiked
-      ? addLike(id)
+      ? removeLike(id)
           .then((updatedCard) => {
             setClothingItems((cards) =>
               cards.map((card) => (card._id === id ? updatedCard.data : card))
             );
           })
           .catch((err) => console.log(err))
-      : removeLike(id)
+      : addLike(id)
           .then((updatedCard) => {
             setClothingItems((cards) =>
               cards.map((card) => (card._id === id ? updatedCard.data : card))

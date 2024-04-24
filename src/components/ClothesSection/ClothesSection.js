@@ -7,6 +7,7 @@ const ClothesSection = ({
   clothingItems,
   currentUser,
   isLoggedIn,
+  handleLikeClick,
 }) => {
   return (
     <div className="profile__items">
@@ -30,6 +31,7 @@ const ClothesSection = ({
               onSelectCard={onSelectCard}
               currentUser={currentUser}
               isLoggedIn={isLoggedIn}
+              handleLikeClick={handleLikeClick}
             />
           ))}
         </div>
