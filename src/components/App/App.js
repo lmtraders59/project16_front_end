@@ -71,6 +71,7 @@ function App() {
       handleCloseModal();
     }
   };
+
   const handleSelectedCard = (card) => {
     setActiveModal("preview");
     setSelectedCard(card);
@@ -293,6 +294,7 @@ function App() {
               isOpen={activeModal === "delete"}
               buttonText={"Delete"}
               onClose={handleCloseModal}
+              onClick={handleOverlayClick}
               handleConfirm={handleCardDelete}
               handleCancel={() => {
                 setActiveModal("preview");

@@ -1,5 +1,4 @@
 import "../Profile/Profile.css";
-// import avatar from "../../images/Avatar.svg";
 
 export function SideBar({ currentUser, handleLogout,  handleEditClick }) {
   return (

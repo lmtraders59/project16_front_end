@@ -35,22 +35,6 @@ const Header = ({ onCreateModal, isLoggedIn, handleRegister, handleLogin }) => {
         <ToggleSwitch />
         {isLoggedIn ? (
           <>
-            {/* <button
-              type="button"
-              className="header__button"
-              onClick={openModal}
-            >
-              + Add clothes
-            </button> */}
-            {/* <NavLink to="/profile" activeClassName="menu__item-active">
-              <p className="header__user">{currentUser.name}</p>
-            </NavLink> */}
-            {/* <img
-              className="header__avatar"
-              src={currentUser.avatar}
-              alt="User avatar"
-            /> */}
-            {/* <div> */}
             <div
               className="header__add-clothes"
               type="text"

@@ -3,15 +3,10 @@ import React from "react";
 import { useContext } from "react";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 
-// function ItemCard({
-//   handleLikeClick,
-// }) {
-
 const ItemCard = ({ item, onSelectCard, handleLikeClick, isLoggedIn }) => {
   const { currentUser } = useContext(CurrentUserContext);
 
   const isLiked = item.likes.some((user) => user === currentUser._id);
-  // console.log(item);
   const itemLikeButtonClass = `card__like-button ${
     isLiked ? "card__like-button_liked" : "card__like-button"
   } `;
