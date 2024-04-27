@@ -1,9 +1,9 @@
 import { handleServerResponse } from "../utils/api.js";
+import { APIkey, latitude, longitude} from "./constants.js"
+// const latitude = 40.713051;
+// const longitude = -74.007233;
 
-const latitude = 40.713051;
-const longitude = -74.007233;
-
-const APIkey = "2ddacdfd9cc9f65a43c686f0974d87d8";
+// const APIkey = "2ddacdfd9cc9f65a43c686f0974d87d8";
 // const handleResponse = (handleServerResponse);
 
 export const getForecastWeather = () => {

@@ -11,7 +11,6 @@ import {
 } from "../../utils/weatherApi.js";
 import { CurrentTemperatureUnitContext } from "../../contexts/CurrentTemperatureUnitContext.js";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext.js";
-// import { APIkey, latitude, longitude } from "../../utils/constants";
 import {
   Switch,
   Route,
@@ -44,6 +43,7 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
   const [isLoading, setIsLoading] = useState(false);
+  // const [weatherData, setWeatherData] = useState({});
 
   // storage for my cards
   const [clothingItems, setClothingItems] = useState([]);
@@ -156,7 +156,6 @@ function App() {
           localStorage.setItem("token", res.token);
           setIsLoggedIn(true);
           handleCloseModal();
-          // setCurrentUser();
         }
         checkToken(res.token)
           .then((data) => {
