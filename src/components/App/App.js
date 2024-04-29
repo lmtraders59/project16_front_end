@@ -57,6 +57,7 @@ function App() {
   };
 
   useEffect(() => {
+    if (!activeModal) return;
     const closeByEsc = (e) => {
       if (e.key === "Escape") {
         handleCloseModal();
@@ -64,7 +65,7 @@ function App() {
     };
     window.addEventListener("keydown", closeByEsc);
     return () => window.removeEventListener("keydown", closeByEsc);
-  }, []);
+  }, [activeModal]);
 
   const handleOverlayClick = (e) => {
     if (e.target === e.currentTarget) {
