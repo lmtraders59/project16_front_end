@@ -31,7 +31,7 @@ const EditProfileModal = ({
       onClose={onClose}
       onSubmit={handleSubmit}
     >
-      <h4 className="form__heading">Name</h4>
+      <label className="form__heading">Name</label>
       <input
         className="form__input form__input_type_name"
         name="name"
@@ -44,7 +44,7 @@ const EditProfileModal = ({
         minLength={2}
         maxLength={30}
       />
-      <h4 className="form__heading">Avatar URL</h4>
+      <label className="form__heading">Avatar URL</label>
       <input
         className="form__input form__input_type_image"
         name="Avatar URL"

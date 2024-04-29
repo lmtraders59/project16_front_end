@@ -173,7 +173,6 @@ function App() {
   const onAddItem = ({ name, link, weatherType }) => {
     addItem(name, link, weatherType)
       .then((item) => {
-        // console.log(">>> ITEM", item);
         const items = [item.data, ...clothingItems];
         setClothingItems(items);
         handleCloseModal();

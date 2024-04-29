@@ -26,7 +26,7 @@ const RegisterModal = ({
       onClose={onClose}
       onSubmit={handleSubmit}
     >
-      <h4 className="form__label">Email</h4>
+      <label className="form__label">Email</label>
       <input
         className="form__input form__input_type_email"
         type="email"
@@ -37,7 +37,7 @@ const RegisterModal = ({
         minLength="1"
         maxLength="30"
       />
-      <h4 className="form__label">Password</h4>
+      <label className="form__label">Password</label>
       <input
         className="form__input form__input_type_password"
         type="password"
@@ -47,7 +47,7 @@ const RegisterModal = ({
         value={password}
         minLength="5"
       />
-      <h4 className="form__label">Name</h4>
+      <label className="form__label">Name</label>
       <input
         className="form__input form__input_type_name"
         type="text"
@@ -58,7 +58,7 @@ const RegisterModal = ({
         minLength="1"
         maxLength="30"
       />
-      <h4 className="form__label">Avatar URL</h4>
+      <label className="form__label">Avatar URL</label>
       <input
         className="form__input form__input_type_avatar"
         type="url"

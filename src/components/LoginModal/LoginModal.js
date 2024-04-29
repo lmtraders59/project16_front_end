@@ -24,7 +24,7 @@ const LoginModal = ({
       title="Log In"
       buttonText={isLoading ? "Logging in..." : "Log in"}
     >
-      <h4 className="form__label">Email</h4>
+      <label className="form__label">Email</label>
       <input
         className="form__input form__input_type_email"
         type="email"
