@@ -26,7 +26,7 @@ function Main({
         return "hot";
       } else if (temp >= 19 && temp <= 29) {
         return "warm";
-      } else if (temp <= 19) {
+      } else if (temp <= 18) {
         return "cold";
       }
     }

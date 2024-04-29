@@ -15,7 +15,7 @@ const ItemModal = ({ selectedCard, onClose, handleDeleteModal }) => {
             alt={selectedCard.name}
           />
         </div>
-        <div className="item__selected-card">{selectedCard.name}</div>
+        <h3 className="item__selected-card">{selectedCard.name}</h3>
         <div className="item__weather-type">
           Weather: {selectedCard.weather}
         </div>

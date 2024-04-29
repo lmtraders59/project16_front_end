@@ -204,9 +204,9 @@ function App() {
         const temperature = parseWeatherData(data);
         setTemp(temperature);
       })
-      .catch((err) => {
-        console.log(err);
-      });
+      // .catch((err) => {
+      //   console.log(err);
+      .catch(console.error);
 
     // request items from server
     getItems()
@@ -223,7 +223,7 @@ function App() {
         value={{
           currentTemperatureUnit,
           handleToggleSwitchChange,
-          currentUser,
+          CurrentUserContext,
         }}
       >
         <HashRouter>
@@ -241,7 +241,7 @@ function App() {
             <Route exact path="/">
               <Main
                 isLoggedIn={isLoggedIn}
-                currentUser={currentUser}
+                CurrentUserContext
                 weatherTemp={temperature}
                 onSelectCard={handleSelectedCard}
                 clothingItems={clothingItems}
@@ -251,25 +251,22 @@ function App() {
             </Route>
             <ProtectedRoute
               path="/profile"
-              children={Profile}
               isLoggedIn={isLoggedIn}
               currentUser={currentUser}
             >
-              <Route path="/profile" children={Profile}>
-                <Profile
-                  onSelectCard={handleSelectedCard}
-                  onCreateModal={handleCreateModal}
-                  clothingItems={clothingItems}
-                  currentUser={currentUser}
-                  handleLogout={handleLogout}
-                  isLoggedIn={isLoggedIn}
-                  handleLikeClick={handleLike}
-                  handleEditClick={() => {
-                    setActiveModal("edit");
-                  }}
-                  onCardLike={handleLike}
-                />
-              </Route>
+              <Profile
+                onSelectCard={handleSelectedCard}
+                onCreateModal={handleCreateModal}
+                clothingItems={clothingItems}
+                currentUser={currentUser}
+                handleLogout={handleLogout}
+                isLoggedIn={isLoggedIn}
+                handleLikeClick={handleLike}
+                handleEditClick={() => {
+                  setActiveModal("edit");
+                }}
+                onCardLike={handleLike}
+              />
             </ProtectedRoute>
           </Switch>
           <Footer />
