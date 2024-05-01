@@ -204,8 +204,6 @@ function App() {
         const temperature = parseWeatherData(data);
         setTemp(temperature);
       })
-      // .catch((err) => {
-      //   console.log(err);
       .catch(console.error);
 
     // request items from server
