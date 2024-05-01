@@ -279,7 +279,7 @@ function App() {
           )}
           {activeModal === "preview" && (
             <ItemModal
-              selectedCard={selectedCard}
+              item={selectedCard}
               onClose={handleCloseModal}
               handleDeleteModal={handleDeleteModal}
               onClick={handleOverlayClick}

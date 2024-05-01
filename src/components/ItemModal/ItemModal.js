@@ -1,7 +1,11 @@
 import "./ItemModal.css";
 import closeButton from "../../images/close_button.svg";
 
-const ItemModal = ({ selectedCard, onClose, handleDeleteModal }) => {
+const ItemModal = ({ onClose, handleDeleteModal, item, currentUser }) => {
+  const isOwn = item.owner === currentUser._id;
+  const deleteClass = `item__modal-delete ${
+    isOwn ? "item__modal-delete_visible" : "item__modal-delete_hidden"
+  }`;
   return (
     <div className={`modal item__modal`}>
       <div className="item__content item__content_type_image">
@@ -9,18 +13,12 @@ const ItemModal = ({ selectedCard, onClose, handleDeleteModal }) => {
           <img src={closeButton} alt="close button" />
         </button>
         <div className="item item__container">
-          <img
-            className="item__image"
-            src={selectedCard.imageUrl}
-            alt={selectedCard.name}
-          />
+          <img className="item__image" src={item.imageUrl} alt={item.name} />
         </div>
-        <h3 className="item__selected-card">{selectedCard.name}</h3>
-        <div className="item__weather-type">
-          Weather: {selectedCard.weather}
-        </div>
+        <h3 className="item__selected-card">{item.name}</h3>
+        <div className="item__weather-type">Weather: {item.weather}</div>
         <button
-          className="item__modal-delete"
+          className={deleteClass}
           type="button"
           onClick={handleDeleteModal}
         >

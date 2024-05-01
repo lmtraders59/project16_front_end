@@ -57,6 +57,14 @@
   cursor: pointer;
 }
 
+.item__modal-delete_visible {
+  visibility: visible;
+}
+
+.item__modal-delete_hidden {
+  visibility: hidden;
+}
+
 .item__close {
   position: absolute;
   top: 20px;
