@@ -31,30 +31,34 @@ const EditProfileModal = ({
       onClose={onClose}
       onSubmit={handleSubmit}
     >
-      <label className="form__heading">Name</label>
-      <input
-        className="form__input form__input_type_name"
-        name="name"
-        type="text"
-        placeholder="Name"
-        id="name"
-        required
-        onChange={handleName}
-        value={name}
-        minLength={2}
-        maxLength={30}
-      />
-      <label className="form__heading">Avatar URL</label>
-      <input
-        className="form__input form__input_type_image"
-        name="Avatar URL"
-        type="text"
-        placeholder="Avatar URL"
-        id="avatar-URL"
-        required
-        onChange={handleAvatar}
-        value={avatar}
-      />
+      <label className="form__heading">
+        Name
+        <input
+          className="form__input form__input_type_name"
+          name="name"
+          type="text"
+          placeholder="Name"
+          id="name"
+          required
+          onChange={handleName}
+          value={name}
+          minLength={2}
+          maxLength={30}
+        />
+      </label>
+      <label className="form__heading">
+        Avatar URL
+        <input
+          className="form__input form__input_type_image"
+          name="Avatar URL"
+          type="text"
+          placeholder="Avatar URL"
+          id="avatar-URL"
+          required
+          onChange={handleAvatar}
+          value={avatar}
+        />
+      </label>
     </ModalWithForm>
   );
 };

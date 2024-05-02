@@ -221,7 +221,6 @@ function App() {
         value={{
           currentTemperatureUnit,
           handleToggleSwitchChange,
-          CurrentUserContext,
         }}
       >
         <HashRouter>
@@ -239,7 +238,6 @@ function App() {
             <Route exact path="/">
               <Main
                 isLoggedIn={isLoggedIn}
-                CurrentUserContext
                 weatherTemp={temperature}
                 onSelectCard={handleSelectedCard}
                 clothingItems={clothingItems}
@@ -250,7 +248,7 @@ function App() {
             <ProtectedRoute
               path="/profile"
               isLoggedIn={isLoggedIn}
-              currentUser={currentUser}
+              CurrentUserContext
             >
               <Profile
                 onSelectCard={handleSelectedCard}
