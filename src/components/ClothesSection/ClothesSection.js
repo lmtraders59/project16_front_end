@@ -5,7 +5,6 @@ const ClothesSection = ({
   onSelectCard,
   onCreateModal,
   clothingItems,
-  currentUser,
   isLoggedIn,
   handleLikeClick,
 }) => {
@@ -29,7 +28,6 @@ const ClothesSection = ({
               weather={item.weather}
               item={item}
               onSelectCard={onSelectCard}
-              currentUser={currentUser}
               isLoggedIn={isLoggedIn}
               handleLikeClick={handleLikeClick}
             />

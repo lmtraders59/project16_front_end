@@ -1,7 +1,10 @@
 import "./ItemModal.css";
 import closeButton from "../../images/close_button.svg";
+import { CurrentUserContext } from "../../contexts/CurrentUserContext";
+import { useContext } from "react";
 
-const ItemModal = ({ onClose, handleDeleteModal, item, currentUser }) => {
+const ItemModal = ({ onClose, handleDeleteModal, item }) => {
+  const { currentUser } = useContext(CurrentUserContext);
   const isOwn = item.owner === currentUser._id;
   const deleteClass = `item__modal-delete ${
     isOwn ? "item__modal-delete_visible" : "item__modal-delete_hidden"

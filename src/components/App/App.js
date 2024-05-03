@@ -254,7 +254,6 @@ function App() {
                 onSelectCard={handleSelectedCard}
                 onCreateModal={handleCreateModal}
                 clothingItems={clothingItems}
-                currentUser={currentUser}
                 handleLogout={handleLogout}
                 isLoggedIn={isLoggedIn}
                 handleLikeClick={handleLike}
@@ -279,7 +278,6 @@ function App() {
               onClose={handleCloseModal}
               handleDeleteModal={handleDeleteModal}
               onClick={handleOverlayClick}
-              currentUser={currentUser}
             />
           )}
           {activeModal === "delete" && (
@@ -321,7 +319,6 @@ function App() {
               name={"edit"}
               onClose={handleCloseModal}
               onRegister={handleRegister}
-              currentUser={currentUser}
               handleEditProfile={handleEditProfile}
               isLoading={isLoading}
             />

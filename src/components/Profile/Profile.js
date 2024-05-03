@@ -8,22 +8,16 @@ export function Profile({
   clothingItems,
   handleLogout,
   handleEditClick,
-  currentUser,
   isLoggedIn,
   handleLikeClick,
 }) {
   return (
     <div className="profile">
-      <SideBar
-        handleLogout={handleLogout}
-        currentUser={currentUser}
-        handleEditClick={handleEditClick}
-      />
+      <SideBar handleLogout={handleLogout} handleEditClick={handleEditClick} />
       <ClothesSection
         clothingItems={clothingItems}
         onCreateModal={onCreateModal}
         onSelectCard={onSelectCard}
-        currentUser={currentUser}
         isLoggedIn={isLoggedIn}
         handleLikeClick={handleLikeClick}
       />
