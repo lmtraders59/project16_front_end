@@ -34,7 +34,7 @@ const EditProfileModal = ({
       onSubmit={handleSubmit}
     >
       <label className="form__heading">
-        Name
+        Name*
         <input
           className="form__input form__input_type_name"
           name="name"
@@ -49,7 +49,7 @@ const EditProfileModal = ({
         />
       </label>
       <label className="form__heading">
-        Avatar URL
+        Avatar URL*
         <input
           className="form__input form__input_type_image"
           name="Avatar URL"
