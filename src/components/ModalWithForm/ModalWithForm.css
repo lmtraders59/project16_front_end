@@ -116,7 +116,7 @@
   line-height: 20px;
   cursor: pointer;
   margin-bottom: 16px;
-  margin-top: 16px;
+  /* margin-top: 8px; */
   font-family: Cabinet Grotesk;
 }
 
