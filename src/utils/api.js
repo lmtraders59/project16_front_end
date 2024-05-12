@@ -1,6 +1,6 @@
 const baseUrl =
   process.env.NODE_ENV === "production"
-    ? "https://api.wtwr.mooo.com"
+    ? "https:api.www.project15.routesmaps.com"
     : "http://localhost:3001";
 
 const handleServerResponse = (res) => {
@@ -85,6 +85,13 @@ const removeLike = async (id) => {
   return handleServerResponse(res);
 };
 
-export { getItems, addItem, deleteItem, baseUrl, editUserInfo, addLike, removeLike, handleServerResponse };
-
- 
+export {
+  getItems,
+  addItem,
+  deleteItem,
+  baseUrl,
+  editUserInfo,
+  addLike,
+  removeLike,
+  handleServerResponse,
+};
