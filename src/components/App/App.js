@@ -43,7 +43,6 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
   const [isLoading, setIsLoading] = useState(false);
-  // const [weatherData, setWeatherData] = useState({});
 
   // storage for my cards
   const [clothingItems, setClothingItems] = useState([]);
