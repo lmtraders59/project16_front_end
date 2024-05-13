@@ -12,7 +12,7 @@ const handleServerResponse = (res) => {
 };
 
 const getItems = async () => {
-  const res = await fetch(`${baseUrl}/scp -r ./`, {
+  const res = await fetch(`${baseUrl}/items`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
