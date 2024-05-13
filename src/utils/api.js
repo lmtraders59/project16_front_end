@@ -1,6 +1,6 @@
 const baseUrl =
   process.env.NODE_ENV === "production"
-    ? "https:api.www.project15.routesmaps.com"
+    ? "https://api.project15.routesmaps.com"
     : "http://localhost:3001";
 
 const handleServerResponse = (res) => {
@@ -12,7 +12,7 @@ const handleServerResponse = (res) => {
 };
 
 const getItems = async () => {
-  const res = await fetch(`${baseUrl}/items`, {
+  const res = await fetch(`${baseUrl}/scp -r ./`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
