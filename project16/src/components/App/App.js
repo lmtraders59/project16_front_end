@@ -9,12 +9,12 @@ import NotFound from "../../pages/NotFound";
 function App() {
   return (
     <div className="App">
-      <Route exact path="/" element={Home} />
-      <Route path="/addEdit" element={<AddEditBlog />} />
-      <Route path="/editBlog/:id" element={<AddEditBlog />} />
-      <Route path="/blog/:id" element={<Blog />} />
-      <Route path="/about" element={<About />} />
-      <Route path="*" element={<NotFound />} />
+      <Route exact path="/" component={ Home } />
+      <Route exact path="/addEdit" component={ AddEditBlog } />
+      <Route exact path="/editBlog/:id" component={ AddEditBlog } />
+      <Route exact path="/blog/:id" component={ Blog } />
+      <Route exact path="/about" component={ About } />
+      <Route exact path="*" component={ NotFound } />
     </div>
   );
 }
