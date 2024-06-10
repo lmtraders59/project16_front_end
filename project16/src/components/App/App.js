@@ -5,10 +5,13 @@ import AddEditBlog from "../../pages/AddEditBlog";
 import Blog from "../../pages/Blog";
 import About from "../../pages/About";
 import NotFound from "../../pages/NotFound";
+// import "../Profile/Profile.css";
+// import Profile from "../Profile/Profile.js";
 
 function App() {
   return (
     <div className="App">
+      <header />
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/addEdit" component={AddEditBlog} />

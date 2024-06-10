@@ -1,0 +1,112 @@
+.profile {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  min-height: 60px;
+  padding: 0 20px;
+  position: relative;
+}
+
+.profile__sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: last baseline;
+  height: 40px;
+}
+
+.profile__add-clothes {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
+  display: flexbox;
+}
+
+.profile__new-clothes {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
+  display: flexbox;
+}
+
+.profile__avatar-logo {
+  gap: 20px;
+  align-items: center;
+  height: 56px;
+  width: 56px;
+  border-radius: 30px;
+}
+
+.profile__name-person {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
+  margin-right: 68px;
+  width: max-content;
+  margin-left: 20px;
+  margin-top: 15px;
+}
+
+.profile__name_avatar-section {
+  display: flex;
+  /* flex-direction: column; */
+}
+
+.profile__items {
+  display: flex;
+  left: 20px;
+}
+
+.profile__clothes-section {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  position: relative;
+  margin-right: 80px;
+}
+
+.profile__add-button {
+  background-color: initial;
+  border: none;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 25px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.profile__add-new {
+  display: flex;
+  align-items: center;
+  margin-left: 102px;
+}
+.sidebar__profile-data {
+  margin: 0 0 8px 0;
+  width: 190px;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
+  font-family: Cabinet Grotesk;
+}
+
+.sidebar__profile-data:hover {
+  opacity: 0.5;
+}
+
+.sidebar__logout {
+  margin: 0;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
+  cursor: pointer;
+  top: 100px;
+  flex-direction: row;
+  font-family: Cabinet Grotesk;
+}
+.sidebar__logout:hover {
+  opacity: 0.5;
+}
