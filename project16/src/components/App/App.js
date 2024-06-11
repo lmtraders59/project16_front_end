@@ -7,11 +7,12 @@ import About from "../../pages/About";
 import NotFound from "../../pages/NotFound";
 // import "../Profile/Profile.css";
 // import Profile from "../Profile/Profile.js";
+import Header from "../Header/Header";
 
 function App() {
   return (
     <div className="App">
-      <header />
+      <Header />
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/addEdit" component={AddEditBlog} />
