@@ -44,10 +44,10 @@ const Header = () => {
             <Link to="/about">Profile</Link>
           </li>
           <li className="header__nav-item">
-            <Link to="/about">Signup</Link>
+            <Link to="/about">Sign up</Link>
           </li>
           <li className="header__nav-item">
-            <Link to="/about">Login</Link>
+            <Link to="/about">Log in</Link>
           </li>
         </ul>
       </nav>
