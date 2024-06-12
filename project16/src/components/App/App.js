@@ -1,10 +1,10 @@
 import "./App.css";
 import { Route, Switch } from "react-router-dom";
-import Home from "../../pages/Home";
-import AddEditBlog from "../../pages/AddEditBlog";
-import Blog from "../../pages/Blog";
-import About from "../../pages/About";
-import NotFound from "../../pages/NotFound";
+import Home from "../../pages/Home/Home.js";
+import AddEditBlog from "../../pages/AddEditBlog/AddEditBlog.js";
+import Blog from "../../pages/Blog/Blog.js";
+import About from "../../pages/About/About.js";
+import NotFound from "../../pages/NotFound/NotFound.js";
 // import "../Profile/Profile.css";
 // import Profile from "../Profile/Profile.js";
 import Header from "../Header/Header";
