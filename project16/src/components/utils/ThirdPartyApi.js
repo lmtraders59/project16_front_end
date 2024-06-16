@@ -1,7 +1,7 @@
 // API KEY AIzaSyCOILWuoOgG7mZguLKaqglSRfEYHvIQ8xc from Google: https://developers.google.com/blogger/docs/3.0/using
 const baseUrl =
   process.env.NODE_ENV === "production"
-    ? "https://api.project15.routesmaps.com"
+    ? "http://localhost:3000"
     : "http://localhost:3001";
 
 const handleServerResponse = (res) => {
