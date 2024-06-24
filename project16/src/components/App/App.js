@@ -6,10 +6,23 @@ import AddEditBlog from "../../pages/AddEditBlog/AddEditBlog.js";
 import Blog from "../../pages/Blog/Blog.js";
 import About from "../../pages/About/About.js";
 import NotFound from "../../pages/NotFound/NotFound.js";
-import { Profile } from "../../pages/Profile/Profile.js";
+import Profile  from "../../pages/Profile/Profile.js";
 import Header from "../Header/Header";
 import { SignUp } from "../../pages/SignUp/SignUp.js";
 import { LogIn } from "../../pages/LogIn/LogIn.js";
+// import { useState, useEffect } from "react";
+
+// useEffect(() => {
+//   if (!activeModal) return;
+//   const closeByEsc = (e) => {
+//     if (e.key === "Escape") {
+//       handleCloseModal();
+//     }
+//   };
+//   window.addEventListener("keydown", closeByEsc);
+//   return () => window.removeEventListener("keydown", closeByEsc);
+// }, [activeModal]);
+
 
 function App() {
   return (

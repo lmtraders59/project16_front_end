@@ -12,7 +12,7 @@ const Home = () => {
     {
       title: "Second Blog",
       description: "This is the second blog description",
-      image: "./images/alexander-zaytsev-92YMxPAllKY-unsplash.jpg",
+      image: "./images/eberhard-grossgasteiger-BsOWuFy9GIM-unsplash.jpg",
     },
     {
       title: "Third Blog",
