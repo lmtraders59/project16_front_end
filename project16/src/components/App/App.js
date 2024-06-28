@@ -1,3 +1,5 @@
+// import React, { useEffect, useState } from 'react';
+// import { fetchBlogPosts } from '../BlogService/blogService.js';
 import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -25,6 +27,15 @@ import { LogIn } from "../../pages/LogIn/LogIn.js";
 
 
 function App() {
+  //   const [blogs, setPosts] = useState([]);
+
+  // useEffect(() => {
+  //   const getBlogPosts = async () => {
+  //     const fetchedPosts = await fetchBlogPosts();
+  //     setPosts(fetchedPosts);
+  //   };
+  //   getBlogPosts();
+  // }, []);
   return (
     <div className="App">
       <Router>
@@ -47,18 +58,25 @@ function App() {
 
 export default App;
 
-// import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 // const App = () => {
+
+
 //   return (
-//     <Router>
-//       <Header />
-//       <Switch>
-//         <Route path="/" exact component={Home} />
-//         <Route path="/signup" component={Signup} />
-//         <Route path="/about" component={About} />
-//         {/* Add other routes here */}
-//       </Switch>
-//     </Router>
+//     <div className="App">
+//       <header className="App-header">
+//         <h1>Blog Posts</h1>
+//         <div className="posts">
+//           {posts.map(post => (
+//             <div key={post.id} className="post-card">
+//               <h2>{post.title}</h2>
+//               <p>{post.content}</p>
+//             </div>
+//           ))}
+//         </div>
+//       </header>
+//     </div>
 //   );
-// };
+// }
+
+// export default App;
