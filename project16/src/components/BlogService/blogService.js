@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const API_KEY = "YOUR_API_KEY";
-const BLOG_ID = "YOUR_BLOG_ID";
+const API_KEY = "AIzaSyCOILWuoOgG7mZguLKaqglSRfEYHvIQ8xc";
+const BLOG_ID = "4384002785269825300";
 
 export const fetchBlogPosts = async () => {
   try {

@@ -51,3 +51,22 @@ const Home = () => {
 
 export default Home;
 
+// const App = () => {
+
+
+//   return (
+//     <div className="App">
+//       <header className="App-header">
+//         <h1>Blog Posts</h1>
+//         <div className="posts">
+//           {posts.map(post => (
+//             <div key={post.id} className="post-card">
+//               <h2>{post.title}</h2>
+//               <p>{post.content}</p>
+//             </div>
+//           ))}
+//         </div>
+//       </header>
+//     </div>
+//   );
+// }

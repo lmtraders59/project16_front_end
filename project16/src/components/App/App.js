@@ -1,6 +1,6 @@
-// import React, { useEffect, useState } from 'react';
-// import { fetchBlogPosts } from '../BlogService/blogService.js';
-import React from "react";
+import React, { useEffect, useState } from 'react';
+import { fetchBlogPosts } from '../BlogService/blogService.js';
+// import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "../../pages/Home/Home.js";
@@ -27,15 +27,15 @@ import { LogIn } from "../../pages/LogIn/LogIn.js";
 
 
 function App() {
-  //   const [blogs, setPosts] = useState([]);
+    const [posts, setPosts] = useState([]);
 
-  // useEffect(() => {
-  //   const getBlogPosts = async () => {
-  //     const fetchedPosts = await fetchBlogPosts();
-  //     setPosts(fetchedPosts);
-  //   };
-  //   getBlogPosts();
-  // }, []);
+  useEffect(() => {
+    const getBlogPosts = async () => {
+      const fetchedPosts = await fetchBlogPosts();
+      setPosts(fetchedPosts);
+    };
+    getBlogPosts();
+  }, []);
   return (
     <div className="App">
       <Router>
