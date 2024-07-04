@@ -1,17 +1,17 @@
 // API KEY AIzaSyCOILWuoOgG7mZguLKaqglSRfEYHvIQ8xc from Google: https://developers.google.com/blogger/docs/3.0/using
 const apiKey = "AIzaSyCOILWuoOgG7mZguLKaqglSRfEYHvIQ8xc";
 
-// function getBlog(userInput) {
-//   return fetch(
-//     `${baseUrl}/everything?q=${userInput}&from=${dateFrom()}&to=${dateTo}&apiKey=${apiKey}`
-//   ).then((res) => checkResponse(res));
-// }
-
 const baseUrl =
   process.env.NODE_ENV === "production"
     ? "http://localhost:3000"
     : "http://localhost:3001";
 
+    function getBlog(userInput) {
+      return fetch(
+        `${baseUrl}/everything?q=${userInput}&from=${dateFrom()}&to=${dateTo}&apiKey=${apiKey}`
+      ).then((res) => checkResponse(res));
+    }
+    
 const handleServerResponse = (res) => {
   if (res.ok) {
     return res.json();
