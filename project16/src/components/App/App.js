@@ -12,7 +12,6 @@ import Header from "../Header/Header";
 import { SignUp } from "../../pages/SignUp/SignUp.js";
 import { LogIn } from "../../pages/LogIn/LogIn.js";
 
-
 function App() {
   const [posts, setPosts] = useState([]);
   const [activeModal, setActiveModal] = useState("");
@@ -49,9 +48,9 @@ function App() {
     <div className="App">
       <Router>
         <Header />
-        {/* <Home posts = { posts } updatePosts = { setPosts } /> */}
+        <blogService />
         <Switch>
-          <Route exact path="/" component={Home} />
+          <Route exact path="/" component={Home} posts={posts} />
           <Route exact path="/add-Blog" component={AddEditBlog} />
           <Route exact path="/add-Blog/:id" component={AddEditBlog} />
           <Route exact path="/blog/:id" component={Blog} />
@@ -94,24 +93,3 @@ function App() {
 }
 
 export default App;
-
-// const App = () => {
-
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <h1>Blog Posts</h1>
-//         <div className="posts">
-//           {posts.map(post => (
-//             <div key={post.id} className="post-card">
-//               <h2>{post.title}</h2>
-//               <p>{post.content}</p>
-//             </div>
-//           ))}
-//         </div>
-//       </header>
-//     </div>
-//   );
-// }
-
-// export default App;

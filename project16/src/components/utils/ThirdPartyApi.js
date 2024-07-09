@@ -6,12 +6,12 @@ const baseUrl =
     ? "http://localhost:3000"
     : "http://localhost:3001";
 
-    function getBlog(userInput) {
-      return fetch(
-        `${baseUrl}/everything?q=${userInput}&from=${dateFrom()}&to=${dateTo}&apiKey=${apiKey}`
-      ).then((res) => checkResponse(res));
-    }
-    
+// function getBlog(userInput) {
+//   return fetch(
+//     `${baseUrl}/everything?q=${userInput}&from=${dateFrom()}&to=${dateTo}&apiKey=${apiKey}`
+//   ).then((res) => checkResponse(res));
+// }
+
 const handleServerResponse = (res) => {
   if (res.ok) {
     return res.json();

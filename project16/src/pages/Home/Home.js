@@ -1,8 +1,9 @@
 // import React from "react";
 import React, { useState, useEffect } from "react";
 import { fetchBlogPosts } from "../../components/BlogService/blogService.js";
+// import { post } from "../Posts/Post.js"
 // import Blog from "../Blog/Blog";
-// import "./Home.css";
+import "./Home.css";
 
 // const Home = () => {
 //   const blogs = [
@@ -82,19 +83,21 @@ function Home() {
   }
 
   return (
-    <div>
-      <h1>Blog Posts</h1>
-      <ul>
-        {posts.map(post => (
-          <li key={post.id}>{post.title}</li>
-        ))}
+    <div className="Home">
+      <h1 className="home__title">Blog Posts</h1>
+      <ul className="home__blogs">
+          {posts.map((post) => (
+            <li key={post.id}>
+              {post.title}
+              {post.content}
+            </li>
+          ))}
       </ul>
     </div>
   );
 }
 
 export default Home;
-
 
 // function Home(props) {
 //  const posts = props.posts;
@@ -103,23 +106,4 @@ export default Home;
 //      <div>
 //         <p>HomePage</p>
 //      </div>
-// }
-
-// const App = () => {
-
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <h1>Blog Posts</h1>
-//         <div className="posts">
-//           {posts.map(post => (
-//             <div key={post.id} className="post-card">
-//               <h2>{post.title}</h2>
-//               <p>{post.content}</p>
-//             </div>
-//           ))}
-//         </div>
-//       </header>
-//     </div>
-//   );
 // }
