@@ -86,12 +86,12 @@ function Home() {
     <div className="Home">
       <h1 className="home__title">Blog Posts</h1>
       <ul className="home__blogs">
-          {posts.map((post) => (
-            <li key={post.id}>
-              {post.title}
-              {post.content}
-            </li>
-          ))}
+        {posts.map((post) => (
+          <li key={post.id}>
+            {post.title}
+            <div dangerouslySetInnerHTML={{ __html: post.content }}></div>
+          </li>
+        ))}
       </ul>
     </div>
   );

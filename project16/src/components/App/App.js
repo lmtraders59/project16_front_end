@@ -59,6 +59,13 @@ function App() {
           <Route exact path="/signup" component={SignUp} />
           <Route exact path="/login" component={LogIn} />
           <Route exact path="*" component={NotFound} />
+          {/* const router = createdBrowserRouter([
+            {
+              path: "/",
+              element: <Layout />
+              errorElement: <ErrorPage />
+            }
+          ]) */}
         </Switch>
       </Router>
       {/* {activeModal === "create" && (
@@ -93,3 +100,4 @@ function App() {
 }
 
 export default App;
+
