@@ -1,9 +1,11 @@
 // import React from "react";
 import React, { useState, useEffect } from "react";
 import { fetchBlogPosts } from "../../components/BlogService/blogService.js";
-// import { post } from "../Posts/Post.js"
+import DOMPurify from "dompurify";
+import { post } from "../Posts/Post.js"
 // import Blog from "../Blog/Blog";
 import "./Home.css";
+// import Post from "../Posts/Post.js";
 
 // const Home = () => {
 //   const blogs = [
@@ -58,12 +60,15 @@ function Home() {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [content, setContent] = useState("");
 
   useEffect(() => {
     const getBlogPosts = async () => {
       try {
         const fetchedPosts = await fetchBlogPosts();
         setPosts(fetchedPosts);
+        const sanitizedContent = DOMPurify.sanitize(post.content);
+        setContent(sanitizedContent);
       } catch (error) {
         setError(error.message);
       } finally {
