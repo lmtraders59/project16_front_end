@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { fetchBlogPosts } from "../../components/BlogService/blogService.js";
 import DOMPurify from "dompurify";
-import { post } from "../Posts/Post.js"
+import post from "../Posts/Post.js"
 // import Blog from "../Blog/Blog";
 import "./Home.css";
 // import Post from "../Posts/Post.js";
