@@ -11,6 +11,11 @@ import Profile from "../../pages/Profile/Profile.js";
 import Header from "../Header/Header";
 import { SignUp } from "../../pages/SignUp/SignUp.js";
 import { LogIn } from "../../pages/LogIn/LogIn.js";
+import { checkToken, signIn, signUp } from "../../utils/auth.js";
+import {
+  deleteItem,
+  editUserInfo,
+} from "../../utils/api.js";
 
 function App() {
   const [posts, setPosts] = useState([]);
@@ -18,6 +23,10 @@ function App() {
   const handleCloseModal = () => {
     setActiveModal("");
   };
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [currentUser, setCurrentUser] = useState({});
+  const [isLoading, setIsLoading] = useState(false);
+  const [selectedCard, setSelectedCard] = useState({});
 
   useEffect(() => {
     if (!activeModal) return;
@@ -35,6 +44,86 @@ function App() {
   //     handleCloseModal();
   //   }
   // };
+
+  const handleCardDelete = () => {
+    deleteItem(selectedCard._id)
+      .then(() => {
+        setSelectedCard({});
+        handleCloseModal();
+      })
+      .catch((err) => console.log(err));
+  };
+
+  function handleLogout(e) {
+    e.preventDefault();
+    localStorage.removeItem("token");
+    setIsLoggedIn(false);
+    setCurrentUser({});
+  }
+
+  const handleRedirect = () => {
+    activeModal === "signup"
+      ? setActiveModal("login")
+      : setActiveModal("signup");
+  };
+
+  function handleEditProfile(name, avatar) {
+    setIsLoading(true);
+    editUserInfo(name, avatar)
+      .then((data) => {
+        handleCloseModal();
+        setCurrentUser(data);
+      })
+      .catch((err) => console.log(err))
+      .finally(() => {
+        setIsLoading(false);
+      });
+  }
+
+  function handleRegister({ name, avatar, email, password }) {
+    setIsLoading(true);
+    signUp(name, avatar, email, password)
+      .then((res) => {
+        handleSignIn({ email, password });
+      })
+      .catch((err) => console.log(err))
+      .finally(() => {
+        setIsLoading(false);
+      });
+  }
+
+  function handleSignIn({ email, password }) {
+    setIsLoading(true);
+    signIn(email, password)
+      .then((res) => {
+        if (res) {
+          localStorage.setItem("token", res.token);
+          setIsLoggedIn(true);
+          handleCloseModal();
+        }
+        checkToken(res.token)
+          .then((data) => {
+            setCurrentUser(data);
+          })
+          .catch((err) => console.log(err));
+      })
+      .catch((err) => console.log(err))
+      .finally(() => {
+        setIsLoading(false);
+      });
+  }
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      checkToken(token)
+        .then((res) => {
+          setCurrentUser(res);
+          setIsLoggedIn(true);
+        })
+        .catch((err) => console.log(err.message));
+    }
+  }, []);
 
   useEffect(() => {
     const getBlogPosts = async () => {
@@ -100,4 +189,3 @@ function App() {
 }
 
 export default App;
-
