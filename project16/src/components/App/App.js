@@ -12,10 +12,9 @@ import Header from "../Header/Header";
 import { SignUp } from "../../pages/SignUp/SignUp.js";
 import { LogIn } from "../../pages/LogIn/LogIn.js";
 import { checkToken, signIn, signUp } from "../../utils/auth.js";
-import {
-  deleteItem,
-  editUserInfo,
-} from "../../utils/api.js";
+import { deleteItem, editUserInfo } from "../../utils/api.js";
+import AddItemModal from "../AddItemModal/AddItemModal.js";
+import DeleteModal from "../DeleteModal/DeleteModal.js";
 
 function App() {
   const [posts, setPosts] = useState([]);
@@ -39,11 +38,11 @@ function App() {
     return () => window.removeEventListener("keydown", closeByEsc);
   }, [activeModal]);
 
-  // const handleOverlayClick = (e) => {
-  //   if (e.target === e.currentTarget) {
-  //     handleCloseModal();
-  //   }
-  // };
+  const handleOverlayClick = (e) => {
+    if (e.target === e.currentTarget) {
+      handleCloseModal();
+    }
+  };
 
   const handleCardDelete = () => {
     deleteItem(selectedCard._id)
@@ -79,6 +78,10 @@ function App() {
         setIsLoading(false);
       });
   }
+
+  const handleDeleteModal = () => {
+    setActiveModal("delete");
+  };
 
   function handleRegister({ name, avatar, email, password }) {
     setIsLoading(true);
@@ -157,33 +160,33 @@ function App() {
           ]) */}
         </Switch>
       </Router>
-      {/* {activeModal === "create" && (
-            <AddItemModal
-              handleCloseModal={handleCloseModal}
-              isOpen={activeModal === "create"}
-              onAddItem={onAddItem}
-            />
-          )}
-          {activeModal === "preview" && (
-            <ItemModalAddItemModal
-              item={selectedCard}
-              onClose={handleCloseModal}
-              handleDeleteModal={handleDeleteModal}
-              onClick={handleOverlayClick}
-            />
-          )}
-          {activeModal === "delete" && (
-            <DeleteModal
-              isOpen={activeModal === "delete"}
-              buttonText={"Delete"}
-              onClose={handleCloseModal}
-              onClick={handleOverlayClick}
-              handleConfirm={handleCardDelete}
-              handleCancel={() => {
-                setActiveModal("preview");
-              }}
-            />
-          )} */}
+      {activeModal === "create" && (
+        <AddItemModal
+          handleCloseModal={handleCloseModal}
+          isOpen={activeModal === "create"}
+          onAddItem={onAddItem}
+        />
+      )}
+      {activeModal === "preview" && (
+        <ItemModalAddItemModal
+          item={selectedCard}
+          onClose={handleCloseModal}
+          handleDeleteModal={handleDeleteModal}
+          onClick={handleOverlayClick}
+        />
+      )}
+      {activeModal === "delete" && (
+        <DeleteModal
+          isOpen={activeModal === "delete"}
+          buttonText={"Delete"}
+          onClose={handleCloseModal}
+          onClick={handleOverlayClick}
+          handleConfirm={handleCardDelete}
+          handleCancel={() => {
+            setActiveModal("preview");
+          }}
+        />
+      )}
     </div>
   );
 }
