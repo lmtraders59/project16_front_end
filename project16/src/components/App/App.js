@@ -14,7 +14,9 @@ import { LogIn } from "../../pages/LogIn/LogIn.js";
 import { checkToken, signIn, signUp } from "../../utils/auth.js";
 import { deleteItem, editUserInfo } from "../../utils/api.js";
 import AddItemModal from "../AddItemModal/AddItemModal.js";
+import ItemModal from "../ItemModal/ItemModal.js";
 import DeleteModal from "../DeleteModal/DeleteModal.js";
+import { CurrentUserContext } from "../../contexts/CurrentUserContext.js";
 
 function App() {
   const [posts, setPosts] = useState([]);
@@ -137,57 +139,65 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <Router>
-        <Header />
-        <blogService />
-        <Switch>
-          <Route exact path="/" component={Home} posts={posts} />
-          <Route exact path="/add-Blog" component={AddEditBlog} />
-          <Route exact path="/add-Blog/:id" component={AddEditBlog} />
-          <Route exact path="/blog/:id" component={Blog} />
-          <Route exact path="/about" component={About} />
-          <Route exact path="/profile" component={Profile} />
-          <Route exact path="/signup" component={SignUp} />
-          <Route exact path="/login" component={LogIn} />
-          <Route exact path="*" component={NotFound} />
-          {/* const router = createdBrowserRouter([
+    <CurrentUserContext.Provider value={{ currentUser }}>
+      <div className="App">
+        <Router>
+          <Header />
+          <blogService />
+          <Switch>
+            <Route
+              exact
+              path="/"
+              component={Home}
+              posts={posts}
+              isLoggedIn={isLoggedIn}
+            />
+            <Route exact path="/add-Blog" component={AddEditBlog} />
+            <Route exact path="/add-Blog/:id" component={AddEditBlog} />
+            <Route exact path="/blog/:id" component={Blog} />
+            <Route exact path="/about" component={About} />
+            <Route exact path="/profile" component={Profile} />
+            <Route exact path="/signup" component={SignUp} />
+            <Route exact path="/login" component={LogIn} />
+            <Route exact path="*" component={NotFound} />
+            {/* const router = createdBrowserRouter([
             {
               path: "/",
               element: <Layout />
               errorElement: <ErrorPage />
             }
           ]) */}
-        </Switch>
-      </Router>
-      {activeModal === "create" && (
-        <AddItemModal
-          handleCloseModal={handleCloseModal}
-          isOpen={activeModal === "create"}
-          onAddItem={onAddItem}
-        />
-      )}
-      {activeModal === "preview" && (
-        <ItemModalAddItemModal
-          item={selectedCard}
-          onClose={handleCloseModal}
-          handleDeleteModal={handleDeleteModal}
-          onClick={handleOverlayClick}
-        />
-      )}
-      {activeModal === "delete" && (
-        <DeleteModal
-          isOpen={activeModal === "delete"}
-          buttonText={"Delete"}
-          onClose={handleCloseModal}
-          onClick={handleOverlayClick}
-          handleConfirm={handleCardDelete}
-          handleCancel={() => {
-            setActiveModal("preview");
-          }}
-        />
-      )}
-    </div>
+          </Switch>
+        </Router>
+        {activeModal === "create" && (
+          <AddItemModal
+            handleCloseModal={handleCloseModal}
+            isOpen={activeModal === "create"}
+            // onAddItem={onAddItem}
+          />
+        )}
+        {activeModal === "preview" && (
+          <ItemModal
+            item={selectedCard}
+            onClose={handleCloseModal}
+            handleDeleteModal={handleDeleteModal}
+            onClick={handleOverlayClick}
+          />
+        )}
+        {activeModal === "delete" && (
+          <DeleteModal
+            isOpen={activeModal === "delete"}
+            buttonText={"Delete"}
+            onClose={handleCloseModal}
+            onClick={handleOverlayClick}
+            handleConfirm={handleCardDelete}
+            handleCancel={() => {
+              setActiveModal("preview");
+            }}
+          />
+        )}
+      </div>
+    </CurrentUserContext.Provider>
   );
 }
 
