@@ -16,7 +16,7 @@ const Profile = () => {
     {
       title: "First Blog",
       description: "This is the first blog description",
-      image: "../images/"
+      image: "../../images/tobias-reich-7bXY-DW4MqM-unsplash.jpg",
     },
     {
       title: "Second Blog",
