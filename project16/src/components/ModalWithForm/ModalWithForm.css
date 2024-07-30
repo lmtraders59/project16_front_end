@@ -1,0 +1,269 @@
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal__content {
+  background-color: white;
+  max-width: 496px;
+  width: 100%;
+  border-radius: 20px;
+  position: relative;
+  padding-bottom: 20px;
+  overflow: hidden;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-family: Cabinet Grotesk;
+}
+
+.modal__content_type_image {
+  background-color: white;
+  max-width: 498px;
+  width: 100%;
+  border-radius: 20px;
+  position: relative;
+  padding-bottom: 20px;
+  overflow: hidden;
+  padding-left: 0;
+}
+
+.modal__radio-buttons {
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.modal__name {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  border: none;
+  border-bottom: solid;
+  border-bottom-width: 1px;
+  width: 100%;
+}
+
+.modal__link {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  border: none;
+  border-bottom: solid;
+  border-bottom-width: 1px;
+  width: 100%;
+}
+
+.modal__form-title {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  margin-bottom: 24px;
+  text-align: left;
+  font-family: Cabinet Grotesk;
+}
+
+.modal__hot {
+  margin-bottom: 10px;
+}
+
+.modal__warm {
+  margin-bottom: 10px;
+}
+
+.modal__cold {
+  margin-bottom: 40px;
+}
+
+.modal__close {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  border: none;
+  background-color: white;
+  background: transparent;
+}
+
+.modal__button-text {
+  font-size: large;
+  bottom: 20px;
+  background-color: gray;
+  color: white;
+}
+
+.modal__selected-card {
+  margin-left: 20px;
+}
+
+.modal__weather-type {
+  margin-left: 20px;
+}
+
+.modal__submit {
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 1);
+  width: 124px;
+  height: 36px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  cursor: pointer;
+  margin-bottom: 16px;
+  /* margin-top: 8px; */
+  font-family: Cabinet Grotesk;
+}
+
+.modal__submit:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal__submit:disabled {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.form {
+  width: 440px;
+  margin: auto;
+}
+
+.form__label {
+  margin-bottom: 0;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  margin-top: 0;
+}
+
+.form__input {
+  margin-bottom: 16px;
+  height: 32px;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #000;
+  padding: 0;
+}
+
+.form__radio-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 4px;
+  row-gap: 8px;
+  margin-bottom: 32px;
+}
+
+.form__label-radio {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  color: rgba(0, 0, 0, 0.5);
+  display: inline-block;
+}
+
+.form__label-radio:hover {
+  cursor: pointer;
+}
+
+.form__input-radio {
+  cursor: pointer;
+  margin-right: 8px;
+  display: inline-block;
+}
+
+.form__input-radio:checked + label {
+  color: rgba(0, 0, 0, 1);
+}
+
+.form__radio {
+  display: inline-block;
+  position: relative;
+}
+
+.form__radio input[type="radio"] {
+  display: none;
+}
+
+.form__radio label {
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: 700;
+}
+
+.form__radio label:before {
+  content: " ";
+  display: inline-block;
+  position: relative;
+  width: 16px;
+  height: 16px;
+  top: 3px;
+  left: -8px;
+  border-radius: 8px;
+  margin: 0 8px 0;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  background-color: transparent;
+}
+
+.form__radio input[type="radio"]:checked + label:after {
+  border-radius: 8px;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 7px;
+  left: 4px;
+  content: " ";
+  display: block;
+  background-color: #000;
+  color: #000;
+  border-color: #000;
+  opacity: 1;
+}
+
+.form__submit {
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 1);
+  width: 124px;
+  height: 36px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.form__submit:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.form__submit:disabled {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.form__switch {
+  margin: 0;
+  position: relative;
+  top: 32px;
+  left: 140px;
+  font-family: "Cabinet Grotesk Bold", "Arial", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  cursor: pointer;
+}
+
+.form__switch:hover {
+  opacity: 0.6;
+}
+
+.form__heading {
+  font-family: "Cabinet Grotesk Bold", "Arial", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+}
