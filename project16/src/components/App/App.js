@@ -17,6 +17,8 @@ import AddItemModal from "../AddItemModal/AddItemModal.js";
 import ItemModal from "../ItemModal/ItemModal.js";
 import DeleteModal from "../DeleteModal/DeleteModal.js";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext.js";
+import LoginModal from "../LoginModal/LoginModal.js";
+import RegisterModal from "../RegisterModal/RegisterModal.js";
 
 function App() {
   const [posts, setPosts] = useState([]);
@@ -194,6 +196,27 @@ function App() {
             handleCancel={() => {
               setActiveModal("preview");
             }}
+          />
+        )}
+        {activeModal === "signup" && (
+          <RegisterModal
+            isOpen
+            name={"register"}
+            onClose={handleCloseModal}
+            onRegister={handleRegister}
+            switchToLogin={handleRedirect}
+            isLoading={isLoading}
+          />
+        )}
+        {activeModal === "login" && (
+          <LoginModal
+            isOpen
+            name={"login"}
+            title={"Login"}
+            onClose={handleCloseModal}
+            onLogin={handleSignIn}
+            switchToRegister={handleRedirect}
+            isLoading={isLoading}
           />
         )}
       </div>
