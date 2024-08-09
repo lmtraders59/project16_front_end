@@ -43,7 +43,6 @@
 
 // export { signUp, signIn, checkToken };
 
-
 export const authorize = (email, password) => {
   // Pretend we did a fetch request that gave us back a token
   return new Promise((resolve, reject) => {

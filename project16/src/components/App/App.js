@@ -10,8 +10,8 @@ import NotFound from "../../pages/NotFound/NotFound.js";
 import Profile from "../../pages/Profile/Profile.js";
 import Header from "../Header/Header";
 import { SignUp } from "../../pages/SignUp/SignUp.js";
-import { LogIn } from "../../pages/LogIn/LogIn.js";
-import { checkToken, signIn, signUp } from "../../utils/auth.js";
+// import { LogIn } from "../../pages/LogIn/LogIn.js";
+import { checkToken, authorize } from "../../utils/auth.js";
 import { deleteItem, editUserInfo } from "../../utils/api.js";
 import AddItemModal from "../AddItemModal/AddItemModal.js";
 import ItemModal from "../ItemModal/ItemModal.js";
@@ -23,9 +23,11 @@ import RegisterModal from "../RegisterModal/RegisterModal.js";
 function App() {
   const [posts, setPosts] = useState([]);
   const [activeModal, setActiveModal] = useState("");
+
   const handleCloseModal = () => {
     setActiveModal("");
   };
+
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
   const [isLoading, setIsLoading] = useState(false);
@@ -86,10 +88,11 @@ function App() {
   const handleDeleteModal = () => {
     setActiveModal("delete");
   };
+  
 
   function handleRegister({ name, avatar, email, password }) {
     setIsLoading(true);
-    signUp(name, avatar, email, password)
+    authorize(name, avatar, email, password)
       .then((res) => {
         handleSignIn({ email, password });
       })
@@ -101,7 +104,7 @@ function App() {
 
   function handleSignIn({ email, password }) {
     setIsLoading(true);
-    signIn(email, password)
+    authorize(email, password)
       .then((res) => {
         if (res) {
           localStorage.setItem("token", res.token);
@@ -144,8 +147,8 @@ function App() {
     <CurrentUserContext.Provider value={{ currentUser }}>
       <div className="App">
         <Router>
-          <Header />
-          <blogService />
+          <Header onOpenLogin={() => setActiveModal("login")} />
+          {/* <blogService /> */}
           <Switch>
             <Route
               exact
@@ -160,7 +163,7 @@ function App() {
             <Route exact path="/about" component={About} />
             <Route exact path="/profile" component={Profile} />
             <Route exact path="/signup" component={SignUp} />
-            <Route exact path="/login" component={LogIn} />
+            {/* <Route exact path="/login" component={LogIn} /> */}
             <Route exact path="*" component={NotFound} />
             {/* const router = createdBrowserRouter([
             {
@@ -200,7 +203,7 @@ function App() {
         )}
         {activeModal === "signup" && (
           <RegisterModal
-            isOpen
+            isOpen={activeModal === "login"}
             name={"register"}
             onClose={handleCloseModal}
             onRegister={handleRegister}
@@ -210,7 +213,7 @@ function App() {
         )}
         {activeModal === "login" && (
           <LoginModal
-            isOpen
+            isOpen={activeModal === "login"}
             name={"login"}
             title={"Login"}
             onClose={handleCloseModal}

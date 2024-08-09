@@ -2,8 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../Header/Header.css";
 
-
-const Header = () => {
+const Header = ({ onOpenLogin }) => {
   return (
     <header className="header">
       <div className="header__logo">
@@ -29,7 +28,7 @@ const Header = () => {
             <Link to="/signup">Sign up</Link>
           </li>
           <li className="header__nav-item">
-            <Link to="/login">Log in</Link>
+            <button onClick={onOpenLogin}>Log In</button>
           </li>
         </ul>
       </nav>
