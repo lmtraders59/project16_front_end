@@ -26,6 +26,7 @@ const Header = ({ onOpenLogin }) => {
           </li>
           <li className="header__nav-item">
             <Link to="/signup">Sign up</Link>
+            {/* <button>Sign up</button> */}
           </li>
           <li className="header__nav-item">
             <button onClick={onOpenLogin}>Log In</button>

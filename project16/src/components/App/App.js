@@ -10,7 +10,6 @@ import NotFound from "../../pages/NotFound/NotFound.js";
 import Profile from "../../pages/Profile/Profile.js";
 import Header from "../Header/Header";
 import { SignUp } from "../../pages/SignUp/SignUp.js";
-// import { LogIn } from "../../pages/LogIn/LogIn.js";
 import { checkToken, authorize } from "../../utils/auth.js";
 import { deleteItem, editUserInfo } from "../../utils/api.js";
 import AddItemModal from "../AddItemModal/AddItemModal.js";
@@ -19,6 +18,7 @@ import DeleteModal from "../DeleteModal/DeleteModal.js";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext.js";
 import LoginModal from "../LoginModal/LoginModal.js";
 import RegisterModal from "../RegisterModal/RegisterModal.js";
+ 
 
 function App() {
   const [posts, setPosts] = useState([]);
@@ -88,7 +88,6 @@ function App() {
   const handleDeleteModal = () => {
     setActiveModal("delete");
   };
-  
 
   function handleRegister({ name, avatar, email, password }) {
     setIsLoading(true);
@@ -148,7 +147,6 @@ function App() {
       <div className="App">
         <Router>
           <Header onOpenLogin={() => setActiveModal("login")} />
-          {/* <blogService /> */}
           <Switch>
             <Route
               exact
@@ -163,7 +161,6 @@ function App() {
             <Route exact path="/about" component={About} />
             <Route exact path="/profile" component={Profile} />
             <Route exact path="/signup" component={SignUp} />
-            {/* <Route exact path="/login" component={LogIn} /> */}
             <Route exact path="*" component={NotFound} />
             {/* const router = createdBrowserRouter([
             {
@@ -220,6 +217,7 @@ function App() {
             onLogin={handleSignIn}
             switchToRegister={handleRedirect}
             isLoading={isLoading}
+            handleLogout={handleLogout}
           />
         )}
       </div>

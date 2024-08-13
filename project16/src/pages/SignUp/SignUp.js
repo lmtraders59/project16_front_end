@@ -1,15 +1,12 @@
-import React from 'react'
+import React from "react";
 
 export const SignUp = () => {
-  return (
-     <h2>SignUp</h2> 
-  )
-}
-
+  return <h2>SignUp</h2>;
+};
 // import { useState } from "react";
 // import ModalWithForm from "../../components/ModalWithForm/ModalWithForm.js";
 
-// const RegisterModal = ({
+// const SignUp = ({
 //   isOpen,
 //   onClose,
 //   onRegister,
@@ -90,4 +87,4 @@ export const SignUp = () => {
 //   );
 // };
 
-// export default RegisterModal;
+// export default SignUp;

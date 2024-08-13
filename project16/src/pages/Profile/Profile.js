@@ -60,3 +60,53 @@ const Profile = () => {
 };
 
 export default Profile;
+
+
+
+// function Home() {
+//   const [posts, setPosts] = useState([]);
+//   const [loading, setLoading] = useState(true);
+//   const [error, setError] = useState(null);
+//   const [content, setContent] = useState("");
+
+//   useEffect(() => {
+//     const getBlogPosts = async () => {
+//       try {
+//         const fetchedPosts = await fetchBlogPosts();
+//         setPosts(fetchedPosts);
+//         const sanitizedContent = DOMPurify.sanitize(post.content);
+//         setContent(sanitizedContent);
+//       } catch (error) {
+//         setError(error.message);
+//       } finally {
+//         setLoading(false);
+//       }
+//     };
+
+//     getBlogPosts();
+//   }, []);
+
+//   if (loading) {
+//     return <div>Loading...</div>;
+//   }
+
+//   if (error) {
+//     return <div>Error: {error}</div>;
+//   }
+
+//   return (
+//     <div className="Home">
+//       <h1 className="home__title">Blog Posts</h1>
+//       <ul className="home__blogs">
+//         {posts.map((post) => (
+//           <li key={post.id}>
+//             {post.title}
+//             <div dangerouslySetInnerHTML={{ __html: post.content }}></div>
+//           </li>
+//         ))}
+//       </ul>
+//     </div>
+//   );
+// }
+
+// export default Home;

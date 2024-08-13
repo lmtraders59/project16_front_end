@@ -22,6 +22,9 @@ const LoginModal = ({
       onClose={onClose}
       onSubmit={handleSubmit}
       title="Log In"
+      hasAlternativeButton={true}
+      alternativeButtonClick={switchToRegister}
+      alternativeButtonText="or Sign up"
       buttonText={isLoading ? "Logging in..." : "Log in"}
     >
       <label className="form__label">
@@ -50,9 +53,9 @@ const LoginModal = ({
           maxLength={35}
         />
       </label>
-      <p className="form__switch" onClick={switchToRegister}>
-        or Sign up
-      </p>
+      {/* <p className="form__switch" onClick={switchToRegister}>
+        "or Sign up"
+      </p> */}
     </ModalWithForm>
   );
 };
