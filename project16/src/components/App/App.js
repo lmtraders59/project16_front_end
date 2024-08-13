@@ -18,7 +18,7 @@ import DeleteModal from "../DeleteModal/DeleteModal.js";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext.js";
 import LoginModal from "../LoginModal/LoginModal.js";
 import RegisterModal from "../RegisterModal/RegisterModal.js";
- 
+import Footer from "../Footer/Footer.js";
 
 function App() {
   const [posts, setPosts] = useState([]);
@@ -170,6 +170,7 @@ function App() {
             }
           ]) */}
           </Switch>
+          <Footer />
         </Router>
         {activeModal === "create" && (
           <AddItemModal
