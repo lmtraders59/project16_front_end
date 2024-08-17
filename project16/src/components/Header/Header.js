@@ -28,12 +28,12 @@ const Header = ({ onOpenLogin }) => {
             <Link to="/signup">Sign up</Link>
             {/* <button>Sign up</button> */}
           </li>
-          {!isLoggedIn && (
-          <li className="header__nav-item">
-            <button onClick={onOpenLogin}>Log In</button>
-          </li>
+          {!isLoggedIn ? (
+            <li className="header__nav-item">
+              <button onClick={onOpenLogin}>Log In</button>
+            </li>
           ) : (
-              <li>{user.name}</li>
+            <li>{user.name}</li>
           )}
         </ul>
       </nav>
@@ -43,11 +43,7 @@ const Header = ({ onOpenLogin }) => {
 
 export default Header;
 
-
-// {!isLoggedIn && (
+// {!isLoggedIn ? (
 //   <li className="header__nav-item">
-//     <button onClick={onOpenLogin}>Log In</button>
-//   </li>
-// ) : (
-//   <li>USERNAME GOES HERE</li>
-// )}
+// <button onClick={onOpenLogin}>Log In</button>
+// </li>
