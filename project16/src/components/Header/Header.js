@@ -1,8 +1,11 @@
 import React from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import "../Header/Header.css";
+import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 
 const Header = ({ onOpenLogin }) => {
+  const { currentUser, isLoggedIn } = useContext(CurrentUserContext);
   return (
     <header className="header">
       <div className="header__logo">
@@ -33,7 +36,7 @@ const Header = ({ onOpenLogin }) => {
               <button onClick={onOpenLogin}>Log In</button>
             </li>
           ) : (
-            <li>{user.name}</li>
+            <li>{currentUser.name}</li>
           )}
         </ul>
       </nav>
