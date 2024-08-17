@@ -3,7 +3,7 @@
 const AddEditBlog = () => {
   return (
     <div>
-      <h2>AddEditBlog</h2>
+      <h2>Add Edit Blog</h2>
     </div>
   );
 };

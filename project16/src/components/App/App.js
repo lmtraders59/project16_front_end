@@ -19,6 +19,7 @@ import { CurrentUserContext } from "../../contexts/CurrentUserContext.js";
 import LoginModal from "../LoginModal/LoginModal.js";
 import RegisterModal from "../RegisterModal/RegisterModal.js";
 import Footer from "../Footer/Footer.js";
+import EditProfileModal from "../EditProfileModal/EditProfileModal.js";
 
 function App() {
   const [posts, setPosts] = useState([]);
@@ -58,6 +59,16 @@ function App() {
       })
       .catch((err) => console.log(err));
   };
+
+  // const onAddItem = ({ name, link, weatherType }) => {
+  //   addItem(name, link, weatherType)
+  //     .then((item) => {
+  //       const items = [item.data, ...clothingItems];
+  //       setClothingItems(items);
+  //       handleCloseModal();
+  //     })
+  //     .catch((err) => console.log(err));
+  // };
 
   function handleLogout(e) {
     e.preventDefault();
@@ -160,7 +171,14 @@ function App() {
             <Route exact path="/blog/:id" component={Blog} />
             <Route exact path="/about" component={About} />
             <Route exact path="/profile" component={Profile} />
-            <Route exact path="/signup" component={SignUp} />
+            <Route
+              exact
+              path="/signup"
+              component={SignUp}
+              className="nav__register-button"
+              type="button"
+              onClick={handleRegister}
+            />
             <Route exact path="*" component={NotFound} />
             {/* const router = createdBrowserRouter([
             {
@@ -219,6 +237,16 @@ function App() {
             switchToRegister={handleRedirect}
             isLoading={isLoading}
             handleLogout={handleLogout}
+          />
+        )}
+        {activeModal === "edit" && (
+          <EditProfileModal
+            isOpen
+            name={"edit"}
+            onClose={handleCloseModal}
+            onRegister={handleRegister}
+            handleEditProfile={handleEditProfile}
+            isLoading={isLoading}
           />
         )}
       </div>

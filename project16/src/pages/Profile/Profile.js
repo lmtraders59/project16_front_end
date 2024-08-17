@@ -1,6 +1,7 @@
 import React from "react";
 import "./Profile.css";
 import Blog from "../Blog/Blog";
+
 // import { SideBar }  from "../SideBar/SideBar.js";
 
 // export const Profile = () => {
@@ -60,8 +61,6 @@ const Profile = () => {
 };
 
 export default Profile;
-
-
 
 // function Home() {
 //   const [posts, setPosts] = useState([]);

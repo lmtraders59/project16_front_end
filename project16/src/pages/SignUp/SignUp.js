@@ -1,7 +1,7 @@
 import React from "react";
 
 export const SignUp = () => {
-  return <h2>SignUp</h2>;
+  return (<h2>Sign Up</h2>);
 };
 // import { useState } from "react";
 // import ModalWithForm from "../../components/ModalWithForm/ModalWithForm.js";
