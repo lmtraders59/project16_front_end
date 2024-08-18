@@ -122,7 +122,7 @@ function App() {
           handleCloseModal();
         }
         checkToken(res.token)
-          .then((data) => {
+          .then((data) => { data = {data: {...}}
             setCurrentUser(data);
           })
           .catch((err) => console.log(err));
