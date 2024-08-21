@@ -122,7 +122,8 @@ function App() {
           handleCloseModal();
         }
         checkToken(res.token)
-          .then((data) => { data = {data: {...}}
+          .then((res2) => {
+            const data = res2.data;
             setCurrentUser(data);
           })
           .catch((err) => console.log(err));
@@ -154,10 +155,14 @@ function App() {
   }, []);
 
   return (
-    <CurrentUserContext.Provider value={{ currentUser }}>
+    <CurrentUserContext.Provider value={{ currentUser, isLoggedIn }}>
       <div className="App">
         <Router>
-          <Header onOpenLogin={() => setActiveModal("login")} />
+          <Header
+            onOpenLogin={() => setActiveModal("login")}
+            onClose={handleCloseModal}
+            onClick={handleOverlayClick}
+          />
           <Switch>
             <Route
               exact

@@ -36,7 +36,7 @@ const Header = ({ onOpenLogin }) => {
               <button onClick={onOpenLogin}>Log In</button>
             </li>
           ) : (
-            <li>{currentUser.name}</li>
+            <li><Link to="/login">{currentUser.name}</Link></li>
           )}
         </ul>
       </nav>
