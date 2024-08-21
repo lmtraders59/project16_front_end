@@ -139,7 +139,7 @@ function App() {
     if (token) {
       checkToken(token)
         .then((res) => {
-          setCurrentUser(res);
+          setCurrentUser(res.data);
           setIsLoggedIn(true);
         })
         .catch((err) => console.log(err.message));
