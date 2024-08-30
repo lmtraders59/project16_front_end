@@ -177,7 +177,7 @@ function App() {
             <Route exact path="/add-Blog/:id" component={AddEditBlog} />
             <Route exact path="/blog/:id" component={Blog} />
             <Route exact path="/about" component={About} />
-            <Route exact path="/profile" component={Profile} />
+            <Route exact path="/profile" component={Profile}  />
             <Route
               exact
               path="/signup"
