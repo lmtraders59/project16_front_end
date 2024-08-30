@@ -134,17 +134,17 @@ function App() {
       });
   }
 
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (token) {
-      checkToken(token)
-        .then((res) => {
-          setCurrentUser(res.data);
-          setIsLoggedIn(true);
-        })
-        .catch((err) => console.log(err.message));
-    }
-  }, []);
+  // useEffect(() => {
+  //   const token = localStorage.getItem("token");
+  //   if (token) {
+  //     checkToken(token)
+  //       .then((res) => {
+  //         setCurrentUser(res.data);
+  //         setIsLoggedIn(true);
+  //       })
+  //       .catch((err) => console.log(err.message));
+  //   }
+  // }, []);
 
   useEffect(() => {
     const getBlogPosts = async () => {
@@ -159,7 +159,9 @@ function App() {
       <div className="App">
         <Router>
           <Header
-            onOpenLogin={() => setActiveModal("login")}
+            onOpenLogin={() => {
+              setActiveModal("login");
+            }}
             onClose={handleCloseModal}
             onClick={handleOverlayClick}
           />
@@ -234,7 +236,7 @@ function App() {
         )}
         {activeModal === "login" && (
           <LoginModal
-            isOpen={activeModal === "login"}
+            // isOpen={activeModal === "login"}
             name={"login"}
             title={"Login"}
             onClose={handleCloseModal}

@@ -54,7 +54,7 @@ export const checkToken = (token) => {
   // Pretend we did a fetch request that gave us back a user
   return new Promise((resolve, reject) => {
     resolve({
-      data: { name: "Login", email: "fake@example,com", id: "fake-id" },
+      data: { name: "Username", email: "fake@example,com", id: "fake-id" },
     });
   });
 };

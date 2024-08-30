@@ -33,7 +33,7 @@ const Header = ({ onOpenLogin }) => {
           </li>
           {!isLoggedIn ? (
             <li className="header__nav-item">
-              <button onClick={onOpenLogin}>Log In</button>
+              <button onClick={onOpenLogin()}>Log In</button>
             </li>
           ) : (
             <li>
