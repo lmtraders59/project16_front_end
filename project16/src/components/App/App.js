@@ -151,8 +151,9 @@ function App() {
       const fetchedPosts = await fetchBlogPosts();
       setPosts(fetchedPosts);
     };
-    getBlogPosts();
-  }, []);
+    if (isLoggedIn) {
+    getBlogPosts()};
+  }, [isLoggedIn]);
 
   return (
     <CurrentUserContext.Provider value={{ currentUser, isLoggedIn }}>
@@ -177,7 +178,7 @@ function App() {
             <Route exact path="/add-Blog/:id" component={AddEditBlog} />
             <Route exact path="/blog/:id" component={Blog} />
             <Route exact path="/about" component={About} />
-            <Route exact path="/profile" component={Profile}  />
+            <Route exact path="/profile" component={Profile} />
             <Route
               exact
               path="/signup"
