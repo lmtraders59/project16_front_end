@@ -1,8 +1,7 @@
 import React from "react";
 import "./Profile.css";
 import Blog from "../Blog/Blog";
-
-// import { SideBar }  from "../SideBar/SideBar.js";
+// import { SideBar } from "../SideBar/SideBar.js";
 
 // export const Profile = () => {
 //   return (
@@ -45,7 +44,10 @@ const Profile = () => {
   return (
     <div className="profile">
       {/* <SideBar  /> */}
-      <h1 className="profile__title">Blog Posts</h1>
+      <div className="profile__sidebar">
+        <h1 className="profile__title">Blog Posts</h1>
+        <p className="sidebar__logout">Log out</p>
+      </div>
       <div className="profile__blogs">
         {blogs.map((blog, index) => (
           <Blog
