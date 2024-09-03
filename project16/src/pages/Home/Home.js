@@ -67,8 +67,8 @@ function Home() {
       try {
         const fetchedPosts = await fetchBlogPosts();
         setPosts(fetchedPosts);
-        const sanitizedContent = DOMPurify.sanitize(post.content);
-        setContent(sanitizedContent);
+        // const sanitizedContent = DOMPurify.sanitize(post.content);
+        // setContent(sanitizedContent);
       } catch (error) {
         setError(error.message);
       } finally {

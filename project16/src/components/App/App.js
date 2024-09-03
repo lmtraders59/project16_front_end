@@ -18,8 +18,9 @@ import DeleteModal from "../DeleteModal/DeleteModal.js";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext.js";
 import LoginModal from "../LoginModal/LoginModal.js";
 import RegisterModal from "../RegisterModal/RegisterModal.js";
-import Footer from "../Footer/Footer.js";
+import Footer from "../Footer/Footer.js"; 
 import EditProfileModal from "../EditProfileModal/EditProfileModal.js";
+// import Preloader from "../Preloader/Preloader.js";
 
 function App() {
   const [posts, setPosts] = useState([]);
@@ -33,6 +34,7 @@ function App() {
   const [currentUser, setCurrentUser] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const [selectedCard, setSelectedCard] = useState({});
+  const [, setContent] = useState("");
 
   useEffect(() => {
     if (!activeModal) return;
@@ -152,7 +154,8 @@ function App() {
       setPosts(fetchedPosts);
     };
     if (isLoggedIn) {
-    getBlogPosts()};
+      getBlogPosts();
+    }
   }, [isLoggedIn]);
 
   return (
