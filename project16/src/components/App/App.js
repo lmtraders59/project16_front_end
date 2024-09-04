@@ -202,9 +202,12 @@ function App() {
             <Route
               exact
               path="/profile"
-              component={Profile}
-              posts={posts}
-              isLoggedIn={isLoggedIn}
+              // component={Profile}
+              // posts={posts}
+              // isLoggedIn={isLoggedIn}
+              render={(props) => (
+              <Profile {...props} posts={posts} isLoggedIn={isLoggedIn} />
+              )}
             />
             <Route
               exact

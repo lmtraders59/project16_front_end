@@ -11,35 +11,35 @@ import Blog from "../Blog/Blog";
 //   );
 // };
 
-const Profile = () => {
-  const blogs = [
-    {
-      title: "First Blog",
-      description: "This is the first blog description",
-      image: "../../images/tobias-reich-7bXY-DW4MqM-unsplash.jpg",
-    },
-    {
-      title: "Second Blog",
-      description: "This is the second blog description",
-      image: "./images/alexander-zaytsev-92YMxPAllKY-unsplash.jpg",
-    },
-    {
-      title: "Third Blog",
-      description: "This is the third blog description",
-      image: "./images/daniel-deiev-4eojU9_FrkE-unsplash.jpg",
-    },
-    {
-      title: "Fourth Blog",
-      description: "This is the fourth blog description",
-      image: "./images/ian-dooley-TevqnfbI0Zc-unsplash.jpg",
-    },
-    {
-      title: "Fifth Blog",
-      description: "This is the fifth blog description",
-      image: "./images/kalen-emsley-7bwQXzbF6KE-unsplash.jpg",
-    },
-    // Add more blogs here
-  ];
+const Profile = ({ posts, isLoggedIn}) => {
+  // const blogs = [
+  //   {
+  //     title: "First Blog",
+  //     description: "This is the first blog description",
+  //     image: "../../images/tobias-reich-7bXY-DW4MqM-unsplash.jpg",
+  //   },
+  //   {
+  //     title: "Second Blog",
+  //     description: "This is the second blog description",
+  //     image: "./images/alexander-zaytsev-92YMxPAllKY-unsplash.jpg",
+  //   },
+  //   {
+  //     title: "Third Blog",
+  //     description: "This is the third blog description",
+  //     image: "./images/daniel-deiev-4eojU9_FrkE-unsplash.jpg",
+  //   },
+  //   {
+  //     title: "Fourth Blog",
+  //     description: "This is the fourth blog description",
+  //     image: "./images/ian-dooley-TevqnfbI0Zc-unsplash.jpg",
+  //   },
+  //   {
+  //     title: "Fifth Blog",
+  //     description: "This is the fifth blog description",
+  //     image: "./images/kalen-emsley-7bwQXzbF6KE-unsplash.jpg",
+  //   },
+  //   // Add more blogs here
+  // ];
 
   return (
     <div className="profile">
@@ -49,7 +49,7 @@ const Profile = () => {
         <p className="sidebar__logout">Log out</p>
       </div>
       <div className="profile__blogs">
-        {blogs.map((blog, index) => (
+        {posts.map((blog, index) => (
           <Blog
             key={index}
             title={blog.title}
