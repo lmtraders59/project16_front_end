@@ -18,7 +18,7 @@ import DeleteModal from "../DeleteModal/DeleteModal.js";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext.js";
 import LoginModal from "../LoginModal/LoginModal.js";
 import RegisterModal from "../RegisterModal/RegisterModal.js";
-import Footer from "../Footer/Footer.js"; 
+import Footer from "../Footer/Footer.js";
 import EditProfileModal from "../EditProfileModal/EditProfileModal.js";
 // import Preloader from "../Preloader/Preloader.js";
 
@@ -176,7 +176,6 @@ function App() {
     getBlogPosts();
   }, [isLoggedIn]);
 
-
   return (
     <CurrentUserContext.Provider value={{ currentUser, isLoggedIn }}>
       <div className="App">
@@ -200,7 +199,13 @@ function App() {
             <Route exact path="/add-Blog/:id" component={AddEditBlog} />
             <Route exact path="/blog/:id" component={Blog} />
             <Route exact path="/about" component={About} />
-            <Route exact path="/profile" component={Profile} />
+            <Route
+              exact
+              path="/profile"
+              component={Profile}
+              posts={posts}
+              isLoggedIn={isLoggedIn}
+            />
             <Route
               exact
               path="/signup"
