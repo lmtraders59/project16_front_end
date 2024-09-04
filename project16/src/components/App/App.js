@@ -34,7 +34,8 @@ function App() {
   const [currentUser, setCurrentUser] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const [selectedCard, setSelectedCard] = useState({});
-  const [, setContent] = useState("");
+  // const [, setContent] = useState("");
+  const [, setError] = useState(null);
 
   useEffect(() => {
     if (!activeModal) return;
@@ -148,15 +149,33 @@ function App() {
   //   }
   // }, []);
 
+  // useEffect(() => {
+  //   const getBlogPosts = async () => {
+  //     const fetchedPosts = await fetchBlogPosts();
+  //     setPosts(fetchedPosts);
+  //   };
+  //   if (isLoggedIn) {
+  //     getBlogPosts();
+  //   }
+  // }, [isLoggedIn]);
+
   useEffect(() => {
     const getBlogPosts = async () => {
-      const fetchedPosts = await fetchBlogPosts();
-      setPosts(fetchedPosts);
+      try {
+        const fetchedPosts = await fetchBlogPosts();
+        setPosts(fetchedPosts);
+        // const sanitizedContent = DOMPurify.sanitize(post.content);
+        // setContent(sanitizedContent);
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setIsLoading(false);
+      }
     };
-    if (isLoggedIn) {
-      getBlogPosts();
-    }
+
+    getBlogPosts();
   }, [isLoggedIn]);
+
 
   return (
     <CurrentUserContext.Provider value={{ currentUser, isLoggedIn }}>

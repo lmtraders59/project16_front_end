@@ -1,8 +1,8 @@
 // import React from "react";
 import React, { useState, useEffect } from "react";
 import { fetchBlogPosts } from "../../components/BlogService/BlogService.js";
-import DOMPurify from "dompurify";
-import post from "../Posts/Post.js";
+// import DOMPurify from "dompurify";
+// import post from "../Posts/Post.js";
 // import Blog from "../Blog/Blog";
 import "./Home.css";
 // import Post from "../Posts/Post.js";
@@ -60,7 +60,7 @@ function Home() {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [, setContent] = useState("");
+  // const [, setContent] = useState("");
 
   useEffect(() => {
     const getBlogPosts = async () => {
