@@ -1,15 +1,7 @@
 import React from "react";
 import "./Profile.css";
-import Blog from "../Blog/Blog";
+// import Blog from "../Blog/Blog";
 // import { SideBar } from "../SideBar/SideBar.js";
-
-// export const Profile = () => {
-//   return (
-//     <div className="Profile">
-//       <h2>Profile</h2>
-//     </div>
-//   );
-// };
 
 const Profile = ({ posts, isLoggedIn}) => {
   // const blogs = [
@@ -49,13 +41,19 @@ const Profile = ({ posts, isLoggedIn}) => {
         <p className="sidebar__logout">Log out</p>
       </div>
       <div className="profile__blogs">
-        {posts.map((blog, index) => (
+        {/* {posts.map((blog, index) => (
           <Blog
             key={index}
             title={blog.title}
             description={blog.description}
             image={blog.image}
           />
+        ))} */}
+        {posts.map((post) => (
+          <li key={post.id}>
+            {post.title}
+            <div dangerouslySetInnerHTML={{ __html: post.content }}></div>
+          </li>
         ))}
       </div>
     </div>
