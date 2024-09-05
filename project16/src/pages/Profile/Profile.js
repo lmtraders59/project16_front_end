@@ -3,7 +3,7 @@ import "./Profile.css";
 // import Blog from "../Blog/Blog";
 // import { SideBar } from "../SideBar/SideBar.js";
 
-const Profile = ({ posts, isLoggedIn}) => {
+const Profile = ({ posts, isLoggedIn }) => {
   // const blogs = [
   //   {
   //     title: "First Blog",
@@ -30,7 +30,6 @@ const Profile = ({ posts, isLoggedIn}) => {
   //     description: "This is the fifth blog description",
   //     image: "./images/kalen-emsley-7bwQXzbF6KE-unsplash.jpg",
   //   },
-  //   // Add more blogs here
   // ];
 
   return (
@@ -41,14 +40,6 @@ const Profile = ({ posts, isLoggedIn}) => {
         <p className="sidebar__logout">Log out</p>
       </div>
       <div className="profile__blogs">
-        {/* {posts.map((blog, index) => (
-          <Blog
-            key={index}
-            title={blog.title}
-            description={blog.description}
-            image={blog.image}
-          />
-        ))} */}
         {posts.map((post) => (
           <li key={post.id}>
             {post.title}
