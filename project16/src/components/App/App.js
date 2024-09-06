@@ -20,6 +20,7 @@ import LoginModal from "../LoginModal/LoginModal.js";
 import RegisterModal from "../RegisterModal/RegisterModal.js";
 import Footer from "../Footer/Footer.js";
 import EditProfileModal from "../EditProfileModal/EditProfileModal.js";
+import ProtectedRoute from "../ProtectedRoute/ProtectedRoute.js";
 // import Preloader from "../Preloader/Preloader.js";
 
 function App() {
@@ -172,8 +173,9 @@ function App() {
         setIsLoading(false);
       }
     };
-
-    getBlogPosts();
+    if (isLoggedIn) {
+      getBlogPosts();
+    }
   }, [isLoggedIn]);
 
   return (
@@ -191,22 +193,25 @@ function App() {
             <Route
               exact
               path="/"
-              component={Home}
-              posts={posts}
-              isLoggedIn={isLoggedIn}
+              // component={Home}
+              // posts={posts}
+              // isLoggedIn={isLoggedIn}
+              render={(props) => (
+                <Home {...props} posts={posts} isLoggedIn={isLoggedIn} />
+              )}
             />
             <Route exact path="/add-Blog" component={AddEditBlog} />
             <Route exact path="/add-Blog/:id" component={AddEditBlog} />
             <Route exact path="/blog/:id" component={Blog} />
             <Route exact path="/about" component={About} />
-            <Route
+            <ProtectedRoute
               exact
               path="/profile"
               // component={Profile}
               // posts={posts}
               // isLoggedIn={isLoggedIn}
               render={(props) => (
-              <Profile {...props} posts={posts} isLoggedIn={isLoggedIn} />
+                <Profile {...props} posts={posts} isLoggedIn={isLoggedIn} />
               )}
             />
             <Route
