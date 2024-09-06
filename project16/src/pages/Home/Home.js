@@ -1,6 +1,6 @@
 // import React from "react";
-import React, { useState, useEffect } from "react";
-import { fetchBlogPosts } from "../../components/BlogService/BlogService.js";
+// import React, { useState, useEffect } from "react";
+// import { fetchBlogPosts } from "../../components/BlogService/BlogService.js";
 // import DOMPurify from "dompurify";
 // import post from "../Posts/Post.js";
 // import Blog from "../Blog/Blog";
@@ -56,10 +56,10 @@ import "./Home.css";
 
 // export default Home;
 
-function Home() {
-  const [posts, setPosts] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+function Home(posts, isLoading, error) {
+  // const [posts, setPosts] = useState([]);
+  // const [loading, setLoading] = useState(true);
+  // const [error, setError] = useState(null);
   // const [, setContent] = useState("");
 
   // useEffect(() => {
@@ -79,7 +79,7 @@ function Home() {
   //   getBlogPosts();
   // }, []);
 
-  if (loading) {
+  if (isLoading) {
     return <div>Loading...</div>;
   }
 

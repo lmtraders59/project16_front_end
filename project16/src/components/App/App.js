@@ -37,6 +37,7 @@ function App() {
   const [selectedCard, setSelectedCard] = useState({});
   // const [, setContent] = useState("");
   const [, setError] = useState(null);
+  
 
   useEffect(() => {
     if (!activeModal) return;
@@ -197,7 +198,7 @@ function App() {
               // posts={posts}
               // isLoggedIn={isLoggedIn}
               render={(props) => (
-                <Home {...props} posts={posts} isLoggedIn={isLoggedIn} />
+                <Home {...props} posts={posts} isLoggedIn={isLoggedIn} isLoading={isLoading} error={error}/>
               )}
             />
             <Route exact path="/add-Blog" component={AddEditBlog} />
@@ -208,11 +209,8 @@ function App() {
               path="/profile"
               isLoggedIn={isLoggedIn}
               CurrentUserContext
-            >  
-             <Profile  
-               isLoggedIn={isLoggedIn}
-               handleLogout={handleLogout}
-            />
+            >
+              <Profile isLoggedIn={isLoggedIn} handleLogout={handleLogout} />
             </ProtectedRoute>
             <Route
               exact
