@@ -62,22 +62,22 @@ function Home() {
   const [error, setError] = useState(null);
   // const [, setContent] = useState("");
 
-  useEffect(() => {
-    const getBlogPosts = async () => {
-      try {
-        const fetchedPosts = await fetchBlogPosts();
-        setPosts(fetchedPosts);
-        // const sanitizedContent = DOMPurify.sanitize(post.content);
-        // setContent(sanitizedContent);
-      } catch (error) {
-        setError(error.message);
-      } finally {
-        setLoading(false);
-      }
-    };
+  // useEffect(() => {
+  //   const getBlogPosts = async () => {
+  //     try {
+  //       const fetchedPosts = await fetchBlogPosts();
+  //       setPosts(fetchedPosts);
+  //       // const sanitizedContent = DOMPurify.sanitize(post.content);
+  //       // setContent(sanitizedContent);
+  //     } catch (error) {
+  //       setError(error.message);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
 
-    getBlogPosts();
-  }, []);
+  //   getBlogPosts();
+  // }, []);
 
   if (loading) {
     return <div>Loading...</div>;

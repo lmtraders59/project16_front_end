@@ -205,15 +205,15 @@ function App() {
             <Route exact path="/blog/:id" component={Blog} />
             <Route exact path="/about" component={About} />
             <ProtectedRoute
-              exact
               path="/profile"
-              // component={Profile}
-              // posts={posts}
-              // isLoggedIn={isLoggedIn}
-              render={(props) => (
-                <Profile {...props} posts={posts} isLoggedIn={isLoggedIn} />
-              )}
+              isLoggedIn={isLoggedIn}
+              CurrentUserContext
+            >  
+             <Profile  
+               isLoggedIn={isLoggedIn}
+               handleLogout={handleLogout}
             />
+            </ProtectedRoute>
             <Route
               exact
               path="/signup"
