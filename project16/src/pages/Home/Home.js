@@ -56,7 +56,7 @@ import "./Home.css";
 
 // export default Home;
 
-function Home(posts, isLoading, error) {
+function Home({ posts, isLoading, error }) {
   // const [posts, setPosts] = useState([]);
   // const [loading, setLoading] = useState(true);
   // const [error, setError] = useState(null);
