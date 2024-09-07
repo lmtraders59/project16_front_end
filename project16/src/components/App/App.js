@@ -36,8 +36,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [selectedCard, setSelectedCard] = useState({});
   // const [, setContent] = useState("");
-  const [, setError] = useState(null);
-  
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     if (!activeModal) return;
@@ -198,7 +197,13 @@ function App() {
               // posts={posts}
               // isLoggedIn={isLoggedIn}
               render={(props) => (
-                <Home {...props} posts={posts} isLoggedIn={isLoggedIn} isLoading={isLoading} error={error}/>
+                <Home
+                  {...props}
+                  posts={posts}
+                  isLoggedIn={isLoggedIn}
+                  isLoading={isLoading}
+                  error={error}
+                />
               )}
             />
             <Route exact path="/add-Blog" component={AddEditBlog} />
