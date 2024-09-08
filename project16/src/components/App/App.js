@@ -211,9 +211,17 @@ function App() {
             <Route exact path="/blog/:id" component={Blog} />
             <Route exact path="/about" component={About} />
             <ProtectedRoute
-              path="/profile"
-              isLoggedIn={isLoggedIn}
-              CurrentUserContext
+              render={(props) => (
+                <Profile
+                  path="/profile"
+                  {...props}
+                  posts={posts}
+                  isLoggedIn={isLoggedIn}
+                  isLoading={isLoading}
+                  error={error}
+                  CurrentUserContext
+                />
+              )}
             >
               <Profile isLoggedIn={isLoggedIn} handleLogout={handleLogout} />
             </ProtectedRoute>

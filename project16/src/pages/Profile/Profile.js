@@ -3,7 +3,7 @@ import "./Profile.css";
 // import Blog from "../Blog/Blog";
 // import { SideBar } from "../SideBar/SideBar.js";
 
-const Profile = ({ posts, isLoggedIn }) => {
+const Profile = ({ posts, isLoggedIn, isLoading  }) => {
   // const blogs = [
   //   {
   //     title: "First Blog",
@@ -31,7 +31,9 @@ const Profile = ({ posts, isLoggedIn }) => {
   //     image: "./images/kalen-emsley-7bwQXzbF6KE-unsplash.jpg",
   //   },
   // ];
-
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
   return (
     <div className="profile">
       {/* <SideBar  /> */}
