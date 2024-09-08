@@ -203,6 +203,8 @@ function App() {
                   isLoggedIn={isLoggedIn}
                   isLoading={isLoading}
                   error={error}
+                  CurrentUserContext={CurrentUserContext}
+                  // handleLogout={handleLogout}
                 />
               )}
             />
@@ -211,15 +213,16 @@ function App() {
             <Route exact path="/blog/:id" component={Blog} />
             <Route exact path="/about" component={About} />
             <ProtectedRoute
+              path="/profile"
               render={(props) => (
                 <Profile
-                  path="/profile"
                   {...props}
                   posts={posts}
                   isLoggedIn={isLoggedIn}
                   isLoading={isLoading}
                   error={error}
-                  CurrentUserContext
+                  CurrentUserContext={CurrentUserContext}
+                  // handleLogout={handleLogout}
                 />
               )}
             >
