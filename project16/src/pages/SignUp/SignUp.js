@@ -1,18 +1,13 @@
 import React from "react";
 
 export const SignUp = () => {
-  return (<h2>Sign Up</h2>);
+  return <h2>Sign Up</h2>;
 };
+
 // import { useState } from "react";
 // import ModalWithForm from "../../components/ModalWithForm/ModalWithForm.js";
 
-// const SignUp = ({
-//   isOpen,
-//   onClose,
-//   onRegister,
-//   switchToLogin,
-//   isLoading,
-// }) => {
+// const SignUp = ({ isOpen, onClose, onRegister, switchToLogin, isLoading }) => {
 //   const [email, setEmail] = useState("");
 //   const [password, setPassword] = useState("");
 //   const [name, setName] = useState("");

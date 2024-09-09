@@ -204,7 +204,7 @@ function App() {
                   isLoading={isLoading}
                   error={error}
                   CurrentUserContext={CurrentUserContext}
-                  // handleLogout={handleLogout}
+                  handleLogout={handleLogout}
                 />
               )}
             />
@@ -212,21 +212,15 @@ function App() {
             <Route exact path="/add-Blog/:id" component={AddEditBlog} />
             <Route exact path="/blog/:id" component={Blog} />
             <Route exact path="/about" component={About} />
-            <ProtectedRoute
-              path="/profile"
-              render={(props) => (
-                <Profile
-                  {...props}
-                  posts={posts}
-                  isLoggedIn={isLoggedIn}
-                  isLoading={isLoading}
-                  error={error}
-                  CurrentUserContext={CurrentUserContext}
-                  // handleLogout={handleLogout}
-                />
-              )}
-            >
-              <Profile isLoggedIn={isLoggedIn} handleLogout={handleLogout} />
+            <ProtectedRoute path="/profile" isLoggedIn={isLoggedIn}>
+              <Profile
+                posts={posts}
+                isLoggedIn={isLoggedIn}
+                isLoading={isLoading}
+                error={error}
+                CurrentUserContext={CurrentUserContext}
+                handleLogout={handleLogout}
+              />
             </ProtectedRoute>
             <Route
               exact
