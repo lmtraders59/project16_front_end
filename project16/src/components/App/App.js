@@ -53,15 +53,6 @@ function App() {
     }
   };
 
-  // const handleCardDelete = () => {
-  //   deleteItem(selectedCard._id)
-  //     .then(() => {
-  //       setSelectedCard({});
-  //       handleCloseModal();
-  //     })
-  //     .catch((err) => console.log(err));
-  // };
-
   function handleLogout(e) {
     e.preventDefault();
     localStorage.removeItem("token");
@@ -74,23 +65,6 @@ function App() {
       ? setActiveModal("login")
       : setActiveModal("signup");
   };
-
-  // function handleEditProfile(name, avatar) {
-  //   setIsLoading(true);
-  //   editUserInfo(name, avatar)
-  //     .then((data) => {
-  //       handleCloseModal();
-  //       setCurrentUser(data);
-  //     })
-  //     .catch((err) => console.log(err))
-  //     .finally(() => {
-  //       setIsLoading(false);
-  //     });
-  // }
-
-  // const handleDeleteModal = () => {
-  //   setActiveModal("delete");
-  // };
 
   function handleRegister({ name, avatar, email, password }) {
     setIsLoading(true);
