@@ -12,8 +12,6 @@ import Header from "../Header/Header";
 import { SignUp } from "../../pages/SignUp/SignUp.js";
 import { checkToken, authorize } from "../../utils/auth.js";
 import { deleteItem, editUserInfo } from "../../utils/api.js";
-import AddItemModal from "../AddItemModal/AddItemModal.js";
-import ItemModal from "../ItemModal/ItemModal.js";
 import DeleteModal from "../DeleteModal/DeleteModal.js";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext.js";
 import LoginModal from "../LoginModal/LoginModal.js";
@@ -64,16 +62,6 @@ function App() {
       .catch((err) => console.log(err));
   };
 
-  // const onAddItem = ({ name, link, weatherType }) => {
-  //   addItem(name, link, weatherType)
-  //     .then((item) => {
-  //       const items = [item.data, ...clothingItems];
-  //       setClothingItems(items);
-  //       handleCloseModal();
-  //     })
-  //     .catch((err) => console.log(err));
-  // };
-
   function handleLogout(e) {
     e.preventDefault();
     localStorage.removeItem("token");
@@ -100,9 +88,9 @@ function App() {
       });
   }
 
-  const handleDeleteModal = () => {
-    setActiveModal("delete");
-  };
+  // const handleDeleteModal = () => {
+  //   setActiveModal("delete");
+  // };
 
   function handleRegister({ name, avatar, email, password }) {
     setIsLoading(true);
@@ -138,28 +126,6 @@ function App() {
       });
   }
 
-  // useEffect(() => {
-  //   const token = localStorage.getItem("token");
-  //   if (token) {
-  //     checkToken(token)
-  //       .then((res) => {
-  //         setCurrentUser(res.data);
-  //         setIsLoggedIn(true);
-  //       })
-  //       .catch((err) => console.log(err.message));
-  //   }
-  // }, []);
-
-  // useEffect(() => {
-  //   const getBlogPosts = async () => {
-  //     const fetchedPosts = await fetchBlogPosts();
-  //     setPosts(fetchedPosts);
-  //   };
-  //   if (isLoggedIn) {
-  //     getBlogPosts();
-  //   }
-  // }, [isLoggedIn]);
-
   useEffect(() => {
     const getBlogPosts = async () => {
       try {
@@ -193,9 +159,6 @@ function App() {
             <Route
               exact
               path="/"
-              // component={Home}
-              // posts={posts}
-              // isLoggedIn={isLoggedIn}
               render={(props) => (
                 <Home
                   {...props}
@@ -231,31 +194,9 @@ function App() {
               onClick={handleRegister}
             />
             <Route exact path="*" component={NotFound} />
-            {/* const router = createdBrowserRouter([
-            {
-              path: "/",
-              element: <Layout />
-              errorElement: <ErrorPage />
-            }
-          ]) */}
           </Switch>
           <Footer />
         </Router>
-        {activeModal === "create" && (
-          <AddItemModal
-            handleCloseModal={handleCloseModal}
-            isOpen={activeModal === "create"}
-            // onAddItem={onAddItem}
-          />
-        )}
-        {activeModal === "preview" && (
-          <ItemModal
-            item={selectedCard}
-            onClose={handleCloseModal}
-            handleDeleteModal={handleDeleteModal}
-            onClick={handleOverlayClick}
-          />
-        )}
         {activeModal === "delete" && (
           <DeleteModal
             isOpen={activeModal === "delete"}

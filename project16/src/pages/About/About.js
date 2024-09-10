@@ -4,7 +4,7 @@ import "./About.css";
 const About = () => {
   return (
     <div className="about">
-      <h2>
+      <h3>
         The tech world is constantly evolving, and 2024 is set to be a year of
         groundbreaking advancements. From artificial intelligence (AI) becoming
         more integrated into our daily lives to augmented reality (AR)
@@ -13,7 +13,7 @@ const About = () => {
         created with Google Blogger and called via a API from Google Blogger.
         The intent is to only show these blogs when the user is logged into this
         site.
-      </h2>
+      </h3>
     </div>
   );
 };
