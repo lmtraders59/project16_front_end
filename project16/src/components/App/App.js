@@ -11,7 +11,7 @@ import Profile from "../../pages/Profile/Profile.js";
 import Header from "../Header/Header";
 import { SignUp } from "../../pages/SignUp/SignUp.js";
 import { checkToken, authorize } from "../../utils/auth.js";
-import { deleteItem, editUserInfo } from "../../utils/api.js";
+// import { deleteItem, editUserInfo } from "../../utils/api.js";
 import DeleteModal from "../DeleteModal/DeleteModal.js";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext.js";
 import LoginModal from "../LoginModal/LoginModal.js";
@@ -32,7 +32,7 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
   const [isLoading, setIsLoading] = useState(false);
-  const [selectedCard, setSelectedCard] = useState({});
+  // const [selectedCard, setSelectedCard] = useState({});
   // const [, setContent] = useState("");
   const [error, setError] = useState(null);
 
@@ -53,14 +53,14 @@ function App() {
     }
   };
 
-  const handleCardDelete = () => {
-    deleteItem(selectedCard._id)
-      .then(() => {
-        setSelectedCard({});
-        handleCloseModal();
-      })
-      .catch((err) => console.log(err));
-  };
+  // const handleCardDelete = () => {
+  //   deleteItem(selectedCard._id)
+  //     .then(() => {
+  //       setSelectedCard({});
+  //       handleCloseModal();
+  //     })
+  //     .catch((err) => console.log(err));
+  // };
 
   function handleLogout(e) {
     e.preventDefault();
@@ -75,18 +75,18 @@ function App() {
       : setActiveModal("signup");
   };
 
-  function handleEditProfile(name, avatar) {
-    setIsLoading(true);
-    editUserInfo(name, avatar)
-      .then((data) => {
-        handleCloseModal();
-        setCurrentUser(data);
-      })
-      .catch((err) => console.log(err))
-      .finally(() => {
-        setIsLoading(false);
-      });
-  }
+  // function handleEditProfile(name, avatar) {
+  //   setIsLoading(true);
+  //   editUserInfo(name, avatar)
+  //     .then((data) => {
+  //       handleCloseModal();
+  //       setCurrentUser(data);
+  //     })
+  //     .catch((err) => console.log(err))
+  //     .finally(() => {
+  //       setIsLoading(false);
+  //     });
+  // }
 
   // const handleDeleteModal = () => {
   //   setActiveModal("delete");
@@ -203,7 +203,7 @@ function App() {
             buttonText={"Delete"}
             onClose={handleCloseModal}
             onClick={handleOverlayClick}
-            handleConfirm={handleCardDelete}
+            // handleConfirm={handleCardDelete}
             handleCancel={() => {
               setActiveModal("preview");
             }}
@@ -237,7 +237,7 @@ function App() {
             name={"edit"}
             onClose={handleCloseModal}
             onRegister={handleRegister}
-            handleEditProfile={handleEditProfile}
+            // handleEditProfile={handleEditProfile}
             isLoading={isLoading}
           />
         )}
