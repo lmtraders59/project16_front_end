@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { fetchBlogPosts } from "../BlogService/BlogService.js";
 import "./App.css";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "../../pages/Home/Home.js";
 import AddEditBlog from "../../pages/AddEditBlog/AddEditBlog.js";
 import Blog from "../../pages/Blog/Blog.js";
