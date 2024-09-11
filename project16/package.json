@@ -45,7 +45,8 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^6.1.1",
     "jest": "^27.5.1"
   },
-  "homepage": "http://www.project15.routesmaps.com"
+  "homepage": "https://lmtraders59.github.io/lmtraders59/project16_front_end"
 }
