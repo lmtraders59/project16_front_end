@@ -10,7 +10,7 @@ const Header = ({ onOpenLogin }) => {
     <header className="header">
       <div className="header__logo">
         <Link to="/">
-          <img src="/images/cuckoo_clocks.png" alt="logo" />
+          <img src="../images/cuckoo_clocks.png" alt="logo" />
         </Link>
       </div>
       <nav className="header__nav">
