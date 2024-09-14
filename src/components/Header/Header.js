@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import "../Header/Header.css";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
+import cuckoo_clocks from "../../images/cuckoo_clocks.png";
 
 const Header = ({ onOpenLogin }) => {
   const { currentUser, isLoggedIn } = useContext(CurrentUserContext);
@@ -10,7 +11,7 @@ const Header = ({ onOpenLogin }) => {
     <header className="header">
       <div className="header__logo">
         <Link to="/">
-          <img src="/images/cuckoo_clocks.png" alt="logo" />
+          <img src={cuckoo_clocks} alt="logo" />
         </Link>
       </div>
       <nav className="header__nav">
