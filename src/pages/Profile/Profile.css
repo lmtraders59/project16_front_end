@@ -1,6 +1,6 @@
 .profile {
-  padding: 20px;
-  padding-top: 140px;
+  /* padding: 20px; */
+  padding-top: 60px;
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 20px;
@@ -13,7 +13,7 @@
 
 .profile__blogs {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   justify-items: self-end;
   list-style-type: none;

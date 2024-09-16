@@ -24,5 +24,3 @@ const Profile = ({ posts, isLoggedIn, isLoading }) => {
 };
 
 export default Profile;
-
- 

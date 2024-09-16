@@ -12,7 +12,7 @@ function Home({ posts, isLoading, error }) {
   }
 
   return (
-    <div className="Home">
+    <div className="home">
       <h1 className="home__title">Blog Posts</h1>
       <ul className="home__blogs">
         {posts.map((post) => (
@@ -22,6 +22,13 @@ function Home({ posts, isLoading, error }) {
           </li>
         ))}
       </ul>
+      {/* {posts.map((post) => (
+          <Blog 
+            key={post.id} 
+            title={post.title} 
+            description={dangerouslySetInnerHTML={{ __html: post.content }}}>
+          />
+        ))} */}
     </div>
   );
 }
