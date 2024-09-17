@@ -20,7 +20,6 @@ function Home({ posts, isLoading, error }) {
             <div dangerouslySetInnerHTML={{ __html: post.content }}></div>
           </li>
         ))}
-        {/* render blog card here */}
       </ul>
     </div>
   );
