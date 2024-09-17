@@ -1,5 +1,4 @@
 // import DOMPurify from "dompurify";
-
 import "./Home.css";
 
 function Home({ posts, isLoading, error }) {
@@ -21,14 +20,8 @@ function Home({ posts, isLoading, error }) {
             <div dangerouslySetInnerHTML={{ __html: post.content }}></div>
           </li>
         ))}
+        {/* render blog card here */}
       </ul>
-      {/* {posts.map((post) => (
-          <Blog 
-            key={post.id} 
-            title={post.title} 
-            description={dangerouslySetInnerHTML={{ __html: post.content }}}>
-          />
-        ))} */}
     </div>
   );
 }

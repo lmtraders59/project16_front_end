@@ -4,7 +4,6 @@ import "./App.css";
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "../../pages/Home/Home.js";
 import AddEditBlog from "../../pages/AddEditBlog/AddEditBlog.js";
-import Blog from "../../pages/Blog/Blog.js";
 import About from "../../pages/About/About.js";
 import NotFound from "../../pages/NotFound/NotFound.js";
 import Profile from "../../pages/Profile/Profile.js";
@@ -147,7 +146,6 @@ function App() {
             />
             <Route exact path="/add-Blog" component={AddEditBlog} />
             <Route exact path="/add-Blog/:id" component={AddEditBlog} />
-            <Route exact path="/blog/:id" component={Blog} />
             <Route exact path="/about" component={About} />
             <ProtectedRoute path="/profile" isLoggedIn={isLoggedIn}>
               <Profile
