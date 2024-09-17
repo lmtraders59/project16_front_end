@@ -19,6 +19,25 @@
   list-style-type: none;
 }
 
+.profile__blog-card {
+  background-color: white; /* White background for the blog card */
+  margin: 10px 0; /* Space between blog cards */
+  padding: 15px; /* Padding inside each card */
+  border: 1px solid #ccc; /* Light border */
+  border-radius: 10px; /* Slightly rounded corners */
+  transition: box-shadow 0.3s; /* Smooth transition for shadow effect */
+}
+
+.profile__blog-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect on hover */
+}
+
+.home__blog-title {
+  font-size: 1.5em; /* Size for the blog title */
+  color: #007bff; /* Customize color */
+  margin: 0 0 10px; /* Space below the title */
+}
+
 @media (max-width: 768px) {
   .profile__blogs {
     grid-template-columns: repeat(2, 1fr);
@@ -76,6 +95,7 @@ sidebar__profile-data {
   top: 100px;
   flex-direction: row;
   font-family: Cabinet Grotesk;
+  margin-left: 20px;
 }
 .sidebar__logout:hover {
   opacity: 0.5;

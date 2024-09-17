@@ -15,8 +15,8 @@ function Home({ posts, isLoading, error }) {
       <h1 className="home__title">Blog Posts</h1>
       <ul className="home__blogs">
         {posts.map((post) => (
-          <li key={post.id}>
-            {post.title}
+          <li key={post.id} className="home__blog-card">
+            <h2 className="home__blog-title">{post.title}</h2>
             <div dangerouslySetInnerHTML={{ __html: post.content }}></div>
           </li>
         ))}

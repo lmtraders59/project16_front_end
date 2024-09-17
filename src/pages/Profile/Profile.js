@@ -13,8 +13,8 @@ const Profile = ({ posts, isLoggedIn, isLoading }) => {
       </div>
       <div className="profile__blogs">
         {posts.map((post) => (
-          <li key={post.id}>
-            {post.title}
+          <li key={post.id} className="profile__blog-card">
+            <h2 className="home__blog-title">{post.title}</h2>
             <div dangerouslySetInnerHTML={{ __html: post.content }}></div>
           </li>
         ))}
