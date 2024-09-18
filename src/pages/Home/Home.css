@@ -1,5 +1,5 @@
 .home {
-  margin-top: 60px;
+  /* margin-top: 60px; */
   /* padding: 20px; */
   /* display: flex; */
   justify-content: center;
@@ -50,10 +50,26 @@
   margin: 0 0 10px; /* Space below the title */
 }
 
-.home__blog-card-body a {
-  width: 320px;
+.home__blog-card-body {
+  /* width: 320px;
   height: 200px;
-  object-fit: cover;
+  object-fit: cover; */
+}
+
+.home__blog-card-body .separator {
+  /* width: 320px;
+  height: 200px;
+  object-fit: cover; */
+}
+
+.home__blog-card-body a {
+  /* width: 320px;
+  height: 200px;
+  object-fit: cover; */
+}
+
+.home__blog-card-body .separator {
+  /*...styles for the div with class="separator"*/
 }
 
 @media (max-width: 768px) {
