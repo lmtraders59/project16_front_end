@@ -1,4 +1,3 @@
-// import DOMPurify from "dompurify";
 import "./Home.css";
 
 function Home({ posts, isLoading, error }) {
