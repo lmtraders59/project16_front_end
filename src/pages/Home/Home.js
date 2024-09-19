@@ -16,9 +16,7 @@ function Home({ posts, isLoading, error }) {
         {posts.map((post) => (
           <li key={post.id} className="home__blog-card">
             <h2 className="home__blog-title">{post.title}</h2>
-            <div className="home__blog-card-body">
-              <div dangerouslySetInnerHTML={{ __html: post.content }}></div>
-            </div>
+            <div dangerouslySetInnerHTML={{ __html: post.content }}></div>
           </li>
         ))}
       </ul>
