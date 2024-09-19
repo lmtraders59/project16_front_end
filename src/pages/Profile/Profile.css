@@ -1,5 +1,4 @@
 .profile {
-  /* padding: 20px; */
   padding-top: 60px;
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -64,15 +63,6 @@ sidebar__profile-data {
 .sidebar__profile-data:hover {
   opacity: 0.5;
 }
-
-/* .profile {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    height: 100vh;
-    padding-top: 70px;
-    padding-left: 0;
-  } */
 
 .sidebar__logout {
   margin: 0;
