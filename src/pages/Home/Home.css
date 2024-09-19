@@ -75,11 +75,13 @@
 @media (max-width: 768px) {
   .home__blogs {
     grid-template-columns: repeat(2, 1fr);
+    overflow: hidden;
   }
 }
 
 @media (max-width: 480px) {
   .home__blogs {
     grid-template-columns: 1fr;
+    overflow: hidden;
   }
 }

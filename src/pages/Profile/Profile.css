@@ -93,11 +93,13 @@ sidebar__profile-data {
   .profile__blogs {
     grid-template-columns: repeat(2, 1fr);
     list-style-type: none;
+    overflow: hidden;
   }
 }
 
 @media (max-width: 480px) {
   .profile__blogs {
     grid-template-columns: 1fr;
+    overflow: hidden;
   }
 }

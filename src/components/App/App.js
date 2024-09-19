@@ -10,7 +10,6 @@ import Profile from "../../pages/Profile/Profile.js";
 import Header from "../Header/Header";
 import { SignUp } from "../../pages/SignUp/SignUp.js";
 import { checkToken, authorize } from "../../utils/auth.js";
-// import { deleteItem, editUserInfo } from "../../utils/api.js";
 import DeleteModal from "../DeleteModal/DeleteModal.js";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext.js";
 import LoginModal from "../LoginModal/LoginModal.js";
@@ -31,8 +30,6 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
   const [isLoading, setIsLoading] = useState(false);
-  // const [selectedCard, setSelectedCard] = useState({});
-  // const [, setContent] = useState("");
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -104,8 +101,6 @@ function App() {
       try {
         const fetchedPosts = await fetchBlogPosts();
         setPosts(fetchedPosts);
-        // const sanitizedContent = DOMPurify.sanitize(post.content);
-        // setContent(sanitizedContent);
       } catch (error) {
         setError(error.message);
       } finally {
@@ -175,7 +170,6 @@ function App() {
             buttonText={"Delete"}
             onClose={handleCloseModal}
             onClick={handleOverlayClick}
-            // handleConfirm={handleCardDelete}
             handleCancel={() => {
               setActiveModal("preview");
             }}
@@ -193,7 +187,6 @@ function App() {
         )}
         {activeModal === "login" && (
           <LoginModal
-            // isOpen={activeModal === "login"}
             name={"login"}
             title={"Login"}
             onClose={handleCloseModal}
@@ -209,7 +202,6 @@ function App() {
             name={"edit"}
             onClose={handleCloseModal}
             onRegister={handleRegister}
-            // handleEditProfile={handleEditProfile}
             isLoading={isLoading}
           />
         )}
