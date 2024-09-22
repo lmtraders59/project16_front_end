@@ -50,14 +50,30 @@
   font-weight: bold;
 }
 
+.header__menu-icon {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .header {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .header__nav {
+    display: none;
+  }
+  .header__menu-icon {
+    display: block;
   }
 }
 
 @media (max-width: 480px) {
   .header {
     grid-template-columns: 1fr;
+  }
+  .header__nav {
+    display: none;
+  }
+  .header__menu-icon {
+    display: block;
   }
 }

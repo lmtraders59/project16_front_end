@@ -114,7 +114,7 @@ function App() {
 
   return (
     <CurrentUserContext.Provider value={{ currentUser, isLoggedIn }}>
-      <div className="App">
+      <div className="app">
         <Router>
           <Header
             onOpenLogin={() => {

@@ -50,7 +50,7 @@ h1 {
   height: 40px;
 }
 
-sidebar__profile-data {
+/* sidebar__profile-data {
   margin: 0 0 8px 0;
   width: 190px;
   cursor: pointer;
@@ -58,11 +58,11 @@ sidebar__profile-data {
   line-height: 24px;
   font-weight: 700;
   font-family: Cabinet Grotesk;
-}
+} */
 
-.sidebar__profile-data:hover {
+/* .sidebar__profile-data:hover {
   opacity: 0.5;
-}
+} */
 
 .sidebar__logout {
   margin: 0;

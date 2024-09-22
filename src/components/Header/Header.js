@@ -14,6 +14,7 @@ const Header = ({ onOpenLogin }) => {
           <img src={cuckoo_clocks} alt="logo" />
         </Link>
       </div>
+      <nav className="header__menu-icon>"></nav>
       <nav className="header__nav">
         <ul className="header__nav-list">
           <li className="header__nav-item">
