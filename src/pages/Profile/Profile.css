@@ -45,24 +45,10 @@ h1 {
 .profile__sidebar {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 5px;
   align-items: start;
   height: 40px;
 }
-
-/* sidebar__profile-data {
-  margin: 0 0 8px 0;
-  width: 190px;
-  cursor: pointer;
-  font-size: 20px;
-  line-height: 24px;
-  font-weight: 700;
-  font-family: Cabinet Grotesk;
-} */
-
-/* .sidebar__profile-data:hover {
-  opacity: 0.5;
-} */
 
 .sidebar__logout {
   margin: 0;
@@ -79,11 +65,31 @@ h1 {
   opacity: 0.5;
 }
 
+.sidebar__nav-item a {
+  margin: 0;
+  font-size: 20px;
+  line-height: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  top: 100px;
+  flex-direction: row;
+  font-family: Cabinet Grotesk;
+  margin-left: 5px;
+  color: black;
+}
+
+.sidebar__nav-item a:hover {
+  opacity: 0.5;
+}
+
 @media (max-width: 768px) {
   .profile__blogs {
     grid-template-columns: repeat(2, 1fr);
     list-style-type: none;
     overflow: hidden;
+  }
+  .profile__title {
+    display: none;
   }
 }
 
@@ -91,5 +97,8 @@ h1 {
   .profile__blogs {
     grid-template-columns: 1fr;
     overflow: hidden;
+  }
+  .profile__title {
+    display: none;
   }
 }

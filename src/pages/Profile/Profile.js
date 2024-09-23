@@ -1,5 +1,6 @@
 import React from "react";
 import "./Profile.css";
+import { Link } from "react-router-dom";
 
 const Profile = ({ posts, isLoggedIn, isLoading }) => {
   if (isLoading) {
@@ -10,6 +11,18 @@ const Profile = ({ posts, isLoggedIn, isLoading }) => {
       <div className="profile__sidebar">
         <h1 className="profile__title">Blog Posts</h1>
         <p className="sidebar__logout">Log out</p>
+        <p className="sidebar__nav-item">
+          <Link to="/">Home</Link>
+        </p>
+        <p className="sidebar__nav-item">
+          <Link to="/add-blog">Add Blog</Link>
+        </p>
+        <p className="sidebar__nav-item">
+          <Link to="/about">About</Link>
+        </p>
+        <p className="sidebar__nav-item">
+          <Link to="/signup">Sign up</Link>
+        </p>
       </div>
       <div className="profile__blogs">
         {posts.map((post) => (
