@@ -25,7 +25,11 @@
   border: 1px solid #ccc; /* Light border */
   border-radius: 10px; /* Slightly rounded corners */
   transition: box-shadow 0.3s; /* Smooth transition for shadow effect */
-  width: 320px;
+  width: 280px;
+}
+
+.profile__blog-card img {
+  width: 100%;
 }
 
 .profile__blog-card:hover {
@@ -47,7 +51,7 @@ h1 {
   flex-direction: column;
   gap: 5px;
   align-items: start;
-  height: 40px;
+  /* height: 40px; */
 }
 
 .sidebar__logout {
@@ -86,7 +90,6 @@ h1 {
   .profile__blogs {
     grid-template-columns: repeat(2, 1fr);
     list-style-type: none;
-    overflow: hidden;
   }
   .profile__title {
     display: none;
@@ -96,9 +99,14 @@ h1 {
 @media (max-width: 480px) {
   .profile__blogs {
     grid-template-columns: 1fr;
-    overflow: hidden;
   }
   .profile__title {
     display: none;
+  }
+  .profile {
+    padding-top: 60px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 }
