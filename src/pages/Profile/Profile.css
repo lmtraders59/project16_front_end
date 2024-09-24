@@ -120,6 +120,6 @@ h1 {
     border: 1px solid #ccc; /* Light border */
     border-radius: 10px; /* Slightly rounded corners */
     transition: box-shadow 0.3s; /* Smooth transition for shadow effect */
-    width: 260px;
+    width: 240px;
   }
 }
