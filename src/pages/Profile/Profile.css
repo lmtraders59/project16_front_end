@@ -16,7 +16,7 @@
   gap: 20px;
   justify-items: self-end;
   list-style-type: none;
-  margin-left: 20px;
+  /* margin-left: 20px; */
 }
 
 .profile__blog-card {
@@ -95,7 +95,7 @@ h1 {
     display: none;
   }
   .profile__blog-card {
-    padding-left: 0;
+    padding-left: 10px;
   }
 }
 
@@ -120,5 +120,6 @@ h1 {
     border: 1px solid #ccc; /* Light border */
     border-radius: 10px; /* Slightly rounded corners */
     transition: box-shadow 0.3s; /* Smooth transition for shadow effect */
+    width: 260px;
   }
 }
