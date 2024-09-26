@@ -54,9 +54,9 @@
   .header {
     grid-template-columns: repeat(2, 1fr);
   }
-  .header__nav {
+  /* .header__nav {
     display: none;
-  }
+  } */
   .header__menu-icon {
     display: block;
   }
@@ -66,9 +66,9 @@
   .header {
     grid-template-columns: 1fr;
   }
-  .header__nav {
+  /* .header__nav {
     display: none;
-  }
+  } */
   .header__menu-icon {
     display: block;
   }
