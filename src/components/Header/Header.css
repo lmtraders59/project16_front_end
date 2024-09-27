@@ -14,8 +14,9 @@
 .header__logo img {
   max-width: 180px;
   margin-top: 35px;
+  /* width: 300px; /* Set the width to 300 pixels */
+  /* height: 200px;   */
 }
-
 .header__nav {
   margin-left: auto;
 }
@@ -52,24 +53,24 @@
 
 @media (max-width: 768px) {
   .header {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 480px);
+    /* width: auto; */
   }
   /* .header__nav {
     display: none;
   } */
   .header__menu-icon {
-    display: block;
+    display: none;
   }
 }
 
 @media (max-width: 480px) {
   .header {
-    grid-template-columns: 1fr;
+    grid-template-columns: 480px;
   }
   /* .header__nav {
-    display: none;
-  } */
+    display: none;  } */
   .header__menu-icon {
-    display: block;
+    display: none;
   }
 }

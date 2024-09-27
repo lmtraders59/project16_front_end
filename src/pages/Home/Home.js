@@ -1,4 +1,5 @@
 import "./Home.css";
+import "../../components/Header/Header.css";
 
 function Home({ posts, isLoading, error }) {
   if (isLoading) {
