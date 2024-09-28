@@ -9,6 +9,12 @@ function Home({ posts, isLoading, error }) {
   if (error) {
     return <div>Error: {error}</div>;
   }
+  const modifyHtmlString = (html) => {
+    return html.replace(
+      /<a /g,
+      '<a target="_blank" rel="noopener noreferrer" '
+    );
+  };
 
   return (
     <div className="home">
@@ -17,7 +23,11 @@ function Home({ posts, isLoading, error }) {
         {posts.map((post) => (
           <li key={post.id} className="home__blog-card">
             <h2 className="home__blog-title">{post.title}</h2>
-            <div dangerouslySetInnerHTML={{ __html: post.content }}></div>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: modifyHtmlString(post.content),
+              }}
+            ></div>
           </li>
         ))}
       </ul>

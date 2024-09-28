@@ -6,6 +6,13 @@ const Profile = ({ posts, isLoggedIn, isLoading }) => {
   if (isLoading) {
     return <div>Loading...</div>;
   }
+  const modifyHtmlString = (html) => {
+    return html.replace(
+      /<a /g,
+      '<a target="_blank" rel="noopener noreferrer" '
+    );
+  };
+
   return (
     <div className="profile">
       <div className="profile__sidebar">
@@ -28,7 +35,11 @@ const Profile = ({ posts, isLoggedIn, isLoading }) => {
         {posts.map((post) => (
           <li key={post.id} className="profile__blog-card">
             <h2 className="home__blog-title">{post.title}</h2>
-            <div dangerouslySetInnerHTML={{ __html: post.content }}></div>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: modifyHtmlString(post.content),
+              }}
+            ></div>
           </li>
         ))}
       </div>
