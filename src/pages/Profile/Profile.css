@@ -92,7 +92,7 @@ h1 {
 
 @media (max-width: 768px) {
   .profile__blogs {
-    grid-template-columns: repeat(2, 320px);
+    grid-template-columns: repeat(1, 320px);
     list-style-type: none;
     box-sizing: border-box;
   }
