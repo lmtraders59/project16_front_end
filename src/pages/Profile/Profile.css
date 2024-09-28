@@ -17,9 +17,9 @@
   display: grid;
   grid-template-columns: repeat(2, 2fr);
   gap: 10px;
-  justify-items: self-end;
+  justify-items: center;
   list-style-type: none;
-  /* margin-left: 20px; */
+  justify-content: center;
 }
 
 .profile__blog-card {
@@ -92,11 +92,12 @@ h1 {
 
 @media (max-width: 768px) {
   .profile__blogs {
-    grid-template-columns: repeat(2, 480px);
+    grid-template-columns: repeat(2, 320px);
     list-style-type: none;
     box-sizing: border-box;
   }
   .profile__title {
+    /* text-align: left; */
     display: none;
   }
 }

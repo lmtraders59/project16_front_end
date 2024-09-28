@@ -20,18 +20,18 @@ const Header = ({ onOpenLogin }) => {
           <li className="header__nav-item">
             <Link to="/">Home</Link>
           </li>
-          <li className="header__nav-item">
+          {/* <li className="header__nav-item">
             <Link to="/add-blog">Add Blog</Link>
           </li>
           <li className="header__nav-item">
             <Link to="/about">About</Link>
-          </li>
+          </li> */}
           <li className="header__nav-item">
             <Link to="/profile">Profile</Link>
           </li>
-          <li className="header__nav-item">
+          {/* <li className="header__nav-item">
             <Link to="/signup">Sign up</Link>
-          </li>
+          </li> */}
           {!isLoggedIn ? (
             <li className="header__nav-item">
               <button onClick={onOpenLogin}>Log In</button>

@@ -9,12 +9,12 @@ const Profile = ({ posts, isLoggedIn, isLoading }) => {
   return (
     <div className="profile">
       <div className="profile__sidebar">
-        <h1 className="profile__title">Blog Posts</h1>
+        <h2 className="profile__title">Blog Posts</h2>
         <p className="sidebar__logout">Log out</p>
         <p className="sidebar__nav-item">
           <Link to="/">Home</Link>
         </p>
-        <p className="sidebar__nav-item">
+        {/* <p className="sidebar__nav-item">
           <Link to="/add-blog">Add Blog</Link>
         </p>
         <p className="sidebar__nav-item">
@@ -22,7 +22,7 @@ const Profile = ({ posts, isLoggedIn, isLoading }) => {
         </p>
         <p className="sidebar__nav-item">
           <Link to="/signup">Sign up</Link>
-        </p>
+        </p> */}
       </div>
       <div className="profile__blogs">
         {posts.map((post) => (

@@ -16,6 +16,7 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   justify-items: center;
+  justify-content: center;
   list-style-type: none;
   margin-right: 30px;
 }
@@ -55,9 +56,9 @@
     margin-bottom: 20px;
     display: none;
   }
-  .header__nav {
+  /* .header__nav {
     display:none;
-  }
+  } */
 }
 
 @media (max-width: 480px) {
@@ -74,7 +75,7 @@
   .home__blog-card {
     width: 280px;
   }
-  .header__nav {
+  /* .header__nav {
     display:none;
-  }
+  } */
 }

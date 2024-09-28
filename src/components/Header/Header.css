@@ -45,6 +45,7 @@
 .header__username {
   margin-right: 10px;
   font-weight: bold;
+  font-size: 1.5vw;
 }
 
 .header__menu-icon {
@@ -62,6 +63,9 @@
   .header__menu-icon {
     display: none;
   }
+  .header__nav-item a {
+    font-size: 8px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -72,5 +76,8 @@
     display: none;  } */
   .header__menu-icon {
     display: none;
+  }
+  .header__nav-item a {
+    font-size: 8px;
   }
 }
