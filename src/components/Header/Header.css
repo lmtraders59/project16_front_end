@@ -74,9 +74,7 @@
   }
   /* .header__nav {
     display: none;  } */
-  .header__menu-icon {
-    display: none;
-  }
+
   .header__nav-item a {
     font-size: 8px;
   }

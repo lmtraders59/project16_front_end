@@ -1,5 +1,6 @@
 import React from "react";
 import "./Profile.css";
+import "../../components/Header/Header.css";
 import { Link } from "react-router-dom";
 
 const Profile = ({ posts, isLoggedIn, isLoading }) => {

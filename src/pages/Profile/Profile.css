@@ -119,4 +119,8 @@ h1 {
   .profile__blog-card {
     width: auto;
   }
+  .header__nav-list {
+    display: none;
+  }
+  
 }
