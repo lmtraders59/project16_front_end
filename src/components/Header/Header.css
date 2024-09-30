@@ -19,12 +19,16 @@
 }
 .header__nav {
   margin-left: auto;
+  justify-items: center;
+  justify-content: center;
 }
 
 .header__nav-list {
   list-style-type: none;
   display: flex;
   align-items: center;
+  justify-items: center;
+  justify-content: center;
   margin: 0;
 }
 .header__nav-item {
@@ -36,6 +40,7 @@
   text-decoration: none;
   font-weight: bold;
   font-size: 1.5vw;
+  font-family: "CabinetGrotesk-Bold";
 }
 
 .header__nav-item a:hover {

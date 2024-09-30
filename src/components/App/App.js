@@ -96,6 +96,8 @@ function App() {
       });
   }
 
+  //  Get blog posts via BlogService API from Google Blogger API
+
   useEffect(() => {
     const getBlogPosts = async () => {
       try {
