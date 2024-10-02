@@ -39,6 +39,7 @@ const Header = ({ onOpenLogin }) => {
             <li className="header__username">{currentUser.name}</li>
           )}
         </ul>
+        <button className="header__menu-icon">Menu</button>
       </nav>
     </header>
   );
