@@ -80,7 +80,7 @@
   .home__blog-card {
     width: 280px;
   }
-  .home__mobile-item {
+  /* .home__mobile-item {
     display: block;
     font-weight: bold;
     cursor: pointer;
@@ -92,7 +92,7 @@
     font-weight: 700;
     color: black;
     text-decoration: inherit;
-  }
+  } */
   /* .home__logout {
     font-size: 20px;
     line-height: 24px;
@@ -107,4 +107,7 @@
   .home__logout:hover {
     opacity: 0.5;
   } */
+  .home__mobile-item {
+    display: none;
+  }
 }

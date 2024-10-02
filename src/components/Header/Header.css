@@ -86,6 +86,7 @@
   .header__menu-icon {
     display: block;
     margin-right: 10px;
+    font-weight: 700;
   }
   .header__nav-list {
     display: none;
