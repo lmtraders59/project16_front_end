@@ -41,6 +41,7 @@ const Header = ({ onOpenLogin }) => {
         </ul>
         <button className="header__menu-icon">Menu</button>
       </nav>
+      
     </header>
   );
 };
