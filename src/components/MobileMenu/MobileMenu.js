@@ -1,7 +1,7 @@
 import React from "react";
 
 const MobileMenu = ({ isOpen, onClose }) => (
-  <div className={`mobile-menu ${isOpen ? "open" : ""}`}>
+  <div className={`mobile-menu ${isOpen ? "mobile-menu_visible" : ""}`}>
     <div className="close-button" onClick={onClose}>
       ×
     </div>

@@ -4,9 +4,18 @@ import { Link } from "react-router-dom";
 import "../Header/Header.css";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import cuckoo_clocks from "../../images/cuckoo_clocks.png";
+import MobileMenu from "../MobileMenu/MobileMenu";
+import "../MobileMenu/MobileMenu.css";
 
 const Header = ({ onOpenLogin }) => {
   const { currentUser, isLoggedIn } = useContext(CurrentUserContext);
+
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <header className="header">
       <div className="header__logo">
@@ -39,9 +48,11 @@ const Header = ({ onOpenLogin }) => {
             <li className="header__username">{currentUser.name}</li>
           )}
         </ul>
-        <button className="header__menu-icon">Menu</button>
+        <button onClick={toggleMenu} className="header__menu-icon">
+          Menu
+        </button>
       </nav>
-      
+      <MobileMenu isOpen={isMenuOpen} onClose={toggleMenu} />
     </header>
   );
 };
