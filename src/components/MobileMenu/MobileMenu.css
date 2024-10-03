@@ -6,7 +6,7 @@
 
 .mobile-menu {
   display: none;
-  position: fixed;
+  /* position: fixed;
   top: 0;
   right: 0;
   height: 100%;
@@ -15,12 +15,11 @@
   color: white;
   padding: 1rem;
   transform: translateX(100%);
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out; */
 }
 .mobile-menu_visible {
-  display: none;
+  display:none;
 }
-
 .mobile-menu.open {
   transform: translateX(0);
   display: block;
@@ -45,6 +44,9 @@
     display: none;
   }
   .menu-icon {
+    display: block;
+  }
+  .mobile-menu_visible {
     display: block;
   }
 }
