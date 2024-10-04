@@ -95,8 +95,8 @@
   .close-button {
     cursor: pointer;
     font-size: 24px;
-    color: #333; /* Close button color */
-    margin-bottom: 15px; /* Space below close button */
+    color: #333;
+    margin-bottom: 10px;
   }
 
   .mobile-menu ul {
