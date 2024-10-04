@@ -47,7 +47,10 @@
 .mobile-menu li {
   margin: 1rem 0;
 }
-
+.mobile-username {
+  color: black;
+  font-weight: bold;
+}
 @media (max-width: 768px) {
   .desktop-menu {
     display: none;
@@ -70,16 +73,19 @@
 
   .mobile-menu {
     position: fixed;
-    top: 50%;
+    top: 25%;
     left: 50%;
-    transform: translate(-50%, -50%); /* Center the modal */
+    width: 80%; /* Adjust as needed */
+    max-width: 150px; /* Set a maximum width */
+    height: auto; /* Allow for dynamic height */
+    padding: 40px; /* Increase padding for more space */
     background-color: white;
-    padding: 20px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     border-radius: 8px;
-    z-index: 1000; /* Above overlay */
+    z-index: 1000; /* Ensure it's above the overlay */
     opacity: 0; /* Start hidden */
     transition: opacity 0.3s ease; /* Fade effect */
+    transform: translate(-50%, -50%); /* Center the modal */
   }
 
   .mobile-menu_visible {

@@ -16,7 +16,7 @@ const MobileMenu = ({ isOpen, onClose }) => (
           <a href="#profile">Profile</a>
         </li>
         <li>
-          <a href="#username">Username</a>
+          <p className="mobile-username">Username</p>
         </li>
       </ul>
     </div>
