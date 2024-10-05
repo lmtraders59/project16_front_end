@@ -26,7 +26,7 @@
   background-color: white; /* White background for the blog card */
   margin: 10px 0; /* Space between blog cards */
   padding: 15px; /* Padding inside each card
-     transition: box-shadow 0.3s; /* Smooth transition for shadow effect */
+     transition: box-shadow 0.3s;   */
   width: 280px;
   border: 1px solid #ccc; /* Light border */
   border-radius: 10px; /* Slightly rounded corners */
@@ -92,9 +92,9 @@ h1 {
 
 @media (max-width: 768px) {
   .profile__blogs {
-    grid-template-columns: repeat(1, 320px);
+    /* grid-template-columns: repeat(1, 320px); */
     list-style-type: none;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
   }
   .profile__title {
     display: none;

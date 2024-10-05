@@ -72,13 +72,15 @@
   .home__blogs {
     grid-template-columns: 1fr;
     padding-top: 20px;
+    gap: 20px;
+    box-sizing: border-box;
   }
   .home__title {
-    margin-bottom: 20px;
     display: none;
   }
   .home__blog-card {
-    width: 280px;
+    /* width: 280px; */
+    width: auto;
   }
   /* .home__mobile-item {
     display: block;
