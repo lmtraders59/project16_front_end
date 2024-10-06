@@ -17,7 +17,7 @@ import RegisterModal from "../RegisterModal/RegisterModal.js";
 import Footer from "../Footer/Footer.js";
 import EditProfileModal from "../EditProfileModal/EditProfileModal.js";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute.js";
-// import Preloader from "../Preloader/Preloader.js";
+ 
 
 function App() {
   const [posts, setPosts] = useState([]);

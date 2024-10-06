@@ -2,7 +2,6 @@
   justify-content: center;
   padding: 1rem;
   margin-top: 40px;
-
   justify-content: center;
 }
 
@@ -10,7 +9,6 @@
   text-align: center;
   margin-bottom: 20px;
   color: blue;
-  /* margin-right: 280px; */
 }
 
 .home__blogs {
@@ -79,36 +77,8 @@
     display: none;
   }
   .home__blog-card {
-    /* width: 280px; */
     width: auto;
   }
-  /* .home__mobile-item {
-    display: block;
-    font-weight: bold;
-    cursor: pointer;
-    font-weight: 700;
-  }
-  a {
-    font-size: 20px;
-    line-height: 24px;
-    font-weight: 700;
-    color: black;
-    text-decoration: inherit;
-  } */
-  /* .home__logout {
-    font-size: 20px;
-    line-height: 24px;
-    font-weight: 700;
-    cursor: pointer;
-    top: 100px;
-    flex-direction: column;
-    font-family: Cabinet Grotesk;
-    margin-left: 5px;
-    display: block;
-  }
-  .home__logout:hover {
-    opacity: 0.5;
-  } */
   .home__mobile-item {
     display: none;
   }

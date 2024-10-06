@@ -3,7 +3,6 @@ import React from "react";
 const MobileMenu = ({ isOpen, onClose }) => (
   <>
     {isOpen && <div className="modal-overlay" onClick={onClose}></div>}
-    {/* const MobileMenu = ({ isOpen, onClose }) => ( */}
     <div className={`mobile-menu ${isOpen ? "mobile-menu_visible" : ""}`}>
       <div className="close-button" onClick={onClose}>
         ×
@@ -15,9 +14,9 @@ const MobileMenu = ({ isOpen, onClose }) => (
         <li>
           <a href="#profile">Profile</a>
         </li>
-        <li>
+        {/* <li>
           <p className="mobile-username">Username</p>
-        </li>
+        </li> */}
       </ul>
     </div>
   </>

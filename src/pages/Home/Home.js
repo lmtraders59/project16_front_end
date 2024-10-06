@@ -22,7 +22,6 @@ function Home({ posts, isLoading, error }) {
     <div className="home">
       <h1 className="home__title">Blog Posts</h1>
       <ul className="home__blogs">
-        {/* <p className="home__logout">Log out</p> */}
         <p className="home__mobile-item">
           <Link to="/Profile">Profile</Link>
         </p>
