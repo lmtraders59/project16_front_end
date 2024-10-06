@@ -121,7 +121,7 @@ h1 {
     grid-template-columns: 1fr;
   }
   .profile__blog-card {
-    width: auto;
+    width: 100%;
   }
   .header__nav-list {
     display: none;
