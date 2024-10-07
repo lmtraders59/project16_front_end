@@ -14,7 +14,7 @@ const Header = ({ onOpenLogin }) => {
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-  }
+  };
 
   return (
     <header className="header">
