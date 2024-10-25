@@ -14,7 +14,6 @@ const Profile = ({ posts, isLoggedIn, isLoading }) => {
     );
   };
 
-  // return
   return (
     <div className="profile">
       <div className="profile__sidebar">
